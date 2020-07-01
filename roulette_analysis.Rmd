@@ -1,7 +1,7 @@
 ---
 title: "Analysis Roulette Gambling Study"
-author: "Henrik Singmann"
-date: "`r format(Sys.time(), '%d %B %Y')`"
+author: "Philip W. S. Newall, Leonardo Weiss-Cohen, Henrik Singmann, Lukasz Walasek, & Elliot A. Ludvig"
+date: "Analysis by Henrik Singmann; Script run on `r format(Sys.time(), '%d. %B %Y')`"
 output: 
   html_document:
     toc: true
