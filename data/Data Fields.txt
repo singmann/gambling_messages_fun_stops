@@ -1,0 +1,63 @@
+------------
+Participants
+------------
+ppt_id: unique id, anonymized
+progress: stage of task reached, outro=end of task
+start_date: date of start of task (all dates/times use the clock on participant's computer)
+time_zone: timezone of participant's computer
+start_time: time of start of task
+consent_time: time finished consent form
+captchas_time: time finished captchas (end of task if failed captchas)
+instructions_time: time finished reading instructions
+roulette_time: time exited roulette
+questions_time: time finished the questions (end of task)
+check_consent: true = checked consent box
+correct_captchas: number of correct captchas, out of 10 (x/10)
+exp_cond: experimental condition of logo. None (no logo), Yellow or White (logos)
+bonus: amount of bonus finished task
+bet_count: number of bets placed
+browser: browser identifier
+window_size: size of browser window
+screen_size: size of computer screen
+age: age (from Prolific)
+Sex: sex (from Prolific)
+
+NB: time stamps are for finishing that specific part of the task.
+Time stamps and part of tasks are in the sequence shown above (start>consent>captchas>instructions>roulette>questions) 
+To calculate time spent, subtract the previous time stamp from the one of interest.
+E.g., time spent on the captchas was captchas_time-consent_time, time playing roulette was roulette_time-instructions_time, etc.
+
+----
+Bets
+----
+ppt_id: unique id, anonymized
+bet_no: number of the bet for each participant, sequential, starts with 1
+bet_time: time bet was placed
+old_bonus: bonus before the bet was placed (starts at 3 for bet 1, then carryover from previous bet's new_bonus)
+total_amt_bet: total amount bet in current bet (negative, range -0.1 to -1.0)
+win: total amount won on this bet 
+new_bonus: bonus at the end of the roulette spin = old_bons+total_amt_bet+win
+average_odds: standard deviation of odds for current bet (range 0.03 - very spread out/low risk - to 35.03 - very concentrated/high risk)
+total_numbers_bet: total numbers in which participant placed a bet (range 1 to 37)
+no_tokens: number of tokens used (range 1 to 10)
+
+---------
+Questions
+---------
+ppt_id: unique id, anonymized
+Motives.Feeling
+Motives.Exciting
+Motives.High
+Motives.Fun
+Motives.Good
+PGSI.Afford
+PGSI.Excitement
+PGSI.WinBack
+PGSI.Borrowed
+PGSI.Problem
+PGSI.Health
+PGSI.Criticised
+PGSI.Financial
+PGSI.Guilty
+
+

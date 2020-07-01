@@ -1,0 +1,11 @@
+missing data
+
+finished, but some missing data (server error?):
+P0181 - one bet is missing
+P1476 - gambling questionnaire answers are missing
+
+did not finish - already excluded from dataset:
+EXCL01 - did not finish the task - deleted (instructions)
+EXCL02 - did not finish the task - deleted (game, no bets)
+EXCL03 - did not finish the task - deleted (game, no bets)
+EXCL04 - did not finish the task - deleted (questions, placed bets)
