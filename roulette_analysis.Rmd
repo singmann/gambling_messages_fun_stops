@@ -18,6 +18,7 @@ knitr::opts_chunk$set(dpi=200, out.width="70%", fig.asp = 0.618,
 options(width = 110)
 options("dplyr.summarise.inform" = FALSE)
 options(pillar.sigfig = 3)
+options(mc.cores = parallel::detectCores()) # fitting uses multicore by default
 ```
 
 # Preparation
@@ -220,25 +221,11 @@ if (file.exists(tmp_model_filename)) {
   load(tmp_model_filename)
 } else {
   mzoib <- brm(formula = zoib_model, data = part2, 
-               stanvars = stanvars, prior = np)
+               stanvars = stanvars, prior = np, 
+               iter = 26000, warmup = 1000, chains = 4) ## 100,000 post-warmup
 save(mzoib, file = tmp_model_filename, compress = "xz")
 }
 
-```
-
-
-
-```{r, eval=FALSE, include=FALSE}
-zoib_model_test <- bf(
-  new_prop ~ 1,
-  phi ~ 1,
-  zoi ~ 1,
-  coi ~ 1, 
-  family = zero_one_inflated_beta
-)
-make_stancode(zoib_model_test, data = part2)
-mtest <- brm(formula = zoib_model_test, data = part2)
-save(mzoib, file = "model_zoib.rda", compress = "xz")
 ```
 
 
@@ -1056,8 +1043,7 @@ tmp_model_filename <- "model_fits/model_risk2.rda"
 if (file.exists(tmp_model_filename)) {
   load(tmp_model_filename)
 } else {
-  mrisk2 <- brm(formula = risk_frml2, data = bets_av, family = Beta(), 
-                chains = 4, cores = 4)
+  mrisk2 <- brm(formula = risk_frml2, data = bets_av, family = Beta())
   save(mrisk2, file = tmp_model_filename, compress = "xz")
 }
 
@@ -1190,8 +1176,8 @@ tmp_model_filename <- "model_fits/model_risk.rda"
 if (file.exists(tmp_model_filename)) {
   load(tmp_model_filename)
 } else {
-  mrisk <- brm(formula = risk_frml, data = bets_av, family = zero_one_inflated_beta(), 
-               chains = 4, cores = 4)
+  mrisk <- brm(formula = risk_frml, data = bets_av, 
+               family = zero_one_inflated_beta())
   save(mrisk, file = tmp_model_filename, compress = "xz")
 }
 
