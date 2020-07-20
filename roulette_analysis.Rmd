@@ -165,7 +165,7 @@ a &= \mu \times \phi \\
 b &= (1-\mu) \times \phi
 \end{align}$$
 
-Where $g$ is the zero inflation probability (`zipp`) and reflects the probability to gamble, $e$ is the conditional one-inflation probability (`coi`) or conditional probability to gamble everything (i.e., conditional probability to have a value of one, if one gambles), $\mu$ is the mean of the beta distribution (`Intercept`), and $\phi$ is the precision of the beta distribution (`phi`). As we use `Stan` for modelling, we need to model on the real line and need appropriate link functions. For `\phi` the link is log (inverse is `exp()`), for all other parameters it is logit (inverse is `plogis()`).
+Where $1 - g$ is the zero inflation probability, `zipp` is $g$ and reflects the probability to gamble, $e$ is the conditional one-inflation probability (`coi`) or conditional probability to gamble everything (i.e., conditional probability to have a value of one, if one gambles), $\mu$ is the mean of the beta distribution (`Intercept`), and $\phi$ is the precision of the beta distribution (`phi`). As we use `Stan` for modelling, we need to model on the real line and need appropriate link functions. For `\phi` the link is log (inverse is `exp()`), for all other parameters it is logit (inverse is `plogis()`).
 
 We fit this model and add experimental condition as a factor to the three main model parameters (i.e., only the precision parameter is fixed across conditions). The following table provides the overview of the model and all model parameters and show good convergence.
 
