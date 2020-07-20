@@ -638,7 +638,8 @@ if (file.exists(tmp_model_filename)) {
   load(tmp_model_filename)
 } else {
   mzoib2 <- brm(formula = zoib_model2, data = part2, 
-                stanvars = stanvars, prior = np)
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
   save(mzoib2, file = tmp_model_filename, compress = "xz")
 }
 
@@ -862,7 +863,8 @@ if (file.exists(tmp_model_filename)) {
   load(tmp_model_filename)
 } else {
   mzoib3 <- brm(formula = zoib_model3, data = part2, 
-                stanvars = stanvars, prior = np)
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
   save(mzoib3, file = tmp_model_filename, compress = "xz")
 }
 ```
