@@ -617,6 +617,16 @@ The covariates do not differ between conditions (strong BF evidence for the null
 1/anovaBF(motives ~ exp_cond, part2, progress = FALSE)
 ```
 
+
+The following table shows mean and SDs of the covariates per group.
+
+```{r}
+part2 %>% 
+  group_by(exp_cond) %>% 
+  summarise(across(c(pgsi, motives), list(mean = mean, sd = sd)))
+```
+
+
 ## Model with Main Effects
 
 ```{r, eval=TRUE, include=FALSE}
