@@ -126,6 +126,28 @@ part2 %>%
 ```
 
 
+# Payed bonus
+
+Overall bonus paid out was:
+
+```{r}
+round(mean(part2$bonus), 2)
+```
+
+If we split bonus by whether or not participants played, we see clearly that playing leads to less payout:
+
+```{r}
+part2 %>% 
+  mutate(bet_at_all = ifelse(bet_count == 0, "no bet", "bet")) %>% 
+  group_by(bet_at_all) %>% 
+  summarise(mean_bonus = mean(bonus), 
+            sd_bonus = sd(bonus), 
+            se_bonus = sd(bonus)/sqrt(n()), 
+            max_bonus = max(bonus),
+            min_bonus = min(bonus))
+```
+
+
 # Distribution of DV
 
 Our DV clearly does not look normally distributed.
