@@ -1,0 +1,2357 @@
+"pptid","Condition","Match","Bet.Category","Subcategory","Bet.Description","Stake","Potential.Payout"
+"F.1014","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.1217","Control","Sheffield Utd vs Fulham","90 Minutes","Draw","Draw",1,3.25
+"F.1217","Control","West Brom vs Burnley","90 Minutes","Draw","Draw",1,3.3
+"F.1217","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0726","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.0579","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1.5,2.5
+"F.0513","Control","Everton vs Liverpool","Correct Score","Away","1--2",0.5,4
+"F.0594","Treatment","Leeds vs Wolves","Correct Score","Home","2--1",0.2,1.9
+"F.0594","Treatment","Tottenham vs West Ham","Correct Score","Home","2--0",0.2,1.5
+"F.0594","Treatment","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",0.2,0.54
+"F.0594","Treatment","Man City vs Arsenal","Correct Score","Away","0--2",0.2,8.2
+"F.0594","Treatment","West Brom vs Burnley","Correct Score","Home","2--1",0.2,1.9
+"F.0594","Treatment","Sheffield Utd vs Fulham","90 Minutes","Draw","Draw",0.2,0.65
+"F.0594","Treatment","Newcastle vs Man Utd","First Goalscorer","Away","Edinson Cavani",0.2,0.9
+"F.0594","Treatment","Newcastle vs Man Utd","Correct Score","Away","1--3",0.2,2.4
+"F.0594","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.2,0.33
+"F.0594","Treatment","Leicester vs Aston Villa","First Goalscorer","Away","Trezeguet",0.2,2.6
+"F.0594","Treatment","Leicester vs Aston Villa","First Goalscorer","Home","Youri Tielemans",0.2,2.2
+"F.0594","Treatment","Leicester vs Aston Villa","Correct Score","Draw","1--1",0.2,1.3
+"F.0594","Treatment","Chelsea vs Southampton","First Goalscorer","Away","Danny Ings",0.2,1.1
+"F.0594","Treatment","Chelsea vs Southampton","Correct Score","Away","0--2",0.2,6.8
+"F.0594","Treatment","Everton vs Liverpool","Correct Score","Home","3--1",0.2,5.2
+"F.0757","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.1278","Control","Everton vs Liverpool","Correct Score","Draw","1--1",1,7
+"F.1278","Control","Newcastle vs Man Utd","Correct Score","Away","1--2",1,8
+"F.1059","Control","Man City vs Arsenal","90 Minutes","Draw","Draw",1,5
+"F.1059","Control","Man City vs Arsenal","Correct Score","Draw","2--2",1,15
+"F.1059","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0411","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0268","Control","Newcastle vs Man Utd","90 Minutes","Draw","Draw",0.5,2
+"F.1306","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0538","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0538","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0538","Treatment","Everton vs Liverpool","First Goalscorer","Away","Mohamed Salah",0.5,2.1
+"F.0566","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",3,5.4
+"F.0659","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0443","Control","Leeds vs Wolves","Correct Score","Draw","3--3",0.5,28
+"F.0443","Control","Everton vs Liverpool","Correct Score","Home","2--1",0.5,6.5
+"F.1285","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0504","Control","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0665","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0994","Treatment","Everton vs Liverpool","First Goalscorer","Away","Mohamed Salah",1,4.2
+"F.0994","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.1236","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0047","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0342","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0813","Treatment","Tottenham vs West Ham","Correct Score","Away","2--3",1,41
+"F.0813","Treatment","Leeds vs Wolves","First Goalscorer","Home","Patrick Bamford",1,6
+"F.0813","Treatment","Tottenham vs West Ham","90 Minutes","Away","West Ham",1,5.8
+"F.0482","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1.5,2.78
+"F.0482","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1.5,6.5
+"F.0071","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",0.1,0.25
+"F.0071","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.2,0.31
+"F.0071","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",0.25,0.65
+"F.0071","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1166","Control","Newcastle vs Man Utd","Correct Score","Home","2--1",0.5,7.5
+"F.0218","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0218","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",2,3
+"F.0025","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0354","Treatment","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",1,3.2
+"F.0585","Treatment","Leicester vs Aston Villa","Correct Score","Draw","2--2",0.5,6
+"F.0585","Treatment","Tottenham vs West Ham","Correct Score","Home","4--0",0.5,11.5
+"F.0585","Treatment","Everton vs Liverpool","Correct Score","Away","1--3",0.5,6
+"F.0933","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1.5,7.5
+"F.0933","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1.5,2.25
+"F.0134","Control","Everton vs Liverpool","Correct Score","Home","3--1",3,78
+"F.0326","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1153","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1.5,2.36
+"F.1153","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1,2.7
+"F.1153","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0893","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0893","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0893","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0822","Control","Everton vs Liverpool","Correct Score","Draw","1--1",1,7
+"F.0135","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.0213","Control","Chelsea vs Southampton","Correct Score","Home","1--0",0.5,4.5
+"F.0213","Control","Chelsea vs Southampton","Correct Score","Home","2--0",1.5,12
+"F.0213","Control","Chelsea vs Southampton","Correct Score","Home","2--1",1,7.5
+"F.0537","Control","West Brom vs Burnley","90 Minutes","Draw","Draw",0.15,0.5
+"F.0537","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.2,1
+"F.0537","Control","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",0.3,0.96
+"F.0537","Control","Leeds vs Wolves","Correct Score","Draw","3--3",0.1,5.6
+"F.0537","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.0537","Control","Tottenham vs West Ham","90 Minutes","Draw","Draw",0.25,1.05
+"F.0537","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.15,0.98
+"F.0537","Control","Man City vs Arsenal","Correct Score","Draw","2--2",0.1,1.5
+"F.0537","Control","Leicester vs Aston Villa","First Goalscorer","Home","Jamie Vardy",0.25,0.83
+"F.0537","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0902","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",3,22.5
+"F.0327","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",0.5,4
+"F.0327","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1083","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1083","Treatment","West Brom vs Burnley","90 Minutes","Away","Burnley",1,2.88
+"F.1083","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0734","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0734","Control","Chelsea vs Southampton","90 Minutes","Draw","Draw",0.5,2.2
+"F.0596","Treatment","Leicester vs Aston Villa","Correct Score","Home","2--1",1,8
+"F.0596","Treatment","Newcastle vs Man Utd","Correct Score","Draw","1--1",1,6.5
+"F.0596","Treatment","Tottenham vs West Ham","Correct Score","Draw","2--2",1,15
+"F.0194","Control","Everton vs Liverpool","First Goalscorer","Away","Mohamed Salah",1.5,6.3
+"F.0430","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",0.5,1.95
+"F.0430","Control","Leicester vs Aston Villa","Correct Score","Home","2--1",0.25,2
+"F.0430","Control","West Brom vs Burnley","90 Minutes","Draw","Draw",0.25,0.83
+"F.0430","Control","Chelsea vs Southampton","Correct Score","Home","3--1",0.25,2.75
+"F.0430","Control","Newcastle vs Man Utd","Correct Score","Away","1--3",0.25,3
+"F.0708","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",3,4.2
+"F.0131","Control","Tottenham vs West Ham","First Goalscorer","Home","Harry Kane",3,11.4
+"F.0476","Treatment","Tottenham vs West Ham","Correct Score","Home","1--0",0.2,1.5
+"F.0210","Control","Chelsea vs Southampton","Correct Score","Home","3--2",0.25,4.75
+"F.0210","Control","West Brom vs Burnley","90 Minutes","Draw","Draw",0.25,0.83
+"F.0210","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.25,0.35
+"F.0210","Control","Man City vs Arsenal","Correct Score","Home","2--0",0.25,2.13
+"F.0210","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",0.25,0.98
+"F.0210","Control","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",0.25,0.8
+"F.0210","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",0.25,0.65
+"F.0210","Control","Tottenham vs West Ham","90 Minutes","Draw","Draw",0.25,1.05
+"F.0210","Control","Leicester vs Aston Villa","Correct Score","Home","3--2",0.25,4.75
+"F.0210","Control","Sheffield Utd vs Fulham","90 Minutes","Away","Fulham",0.25,0.94
+"F.0210","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.25,0.53
+"F.0210","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.25,1.25
+"F.0826","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0082","Treatment","Chelsea vs Southampton","90 Minutes","Draw","Draw",3,13.2
+"F.0395","Control","Leicester vs Aston Villa","First Goalscorer","Home","Jamie Vardy",1,3.3
+"F.0821","Control","Leeds vs Wolves","Correct Score","Home","2--0",1,12
+"F.0821","Control","Tottenham vs West Ham","Correct Score","Home","3--0",1,12
+"F.0821","Control","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.1140","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.1140","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1140","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0388","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",3,22.5
+"F.0948","Control","Newcastle vs Man Utd","Correct Score","Draw","1--1",0.5,3.25
+"F.0868","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1249","Control","Everton vs Liverpool","Correct Score","Away","1--2",0.5,4
+"F.1249","Control","Everton vs Liverpool","Correct Score","Away","2--4",0.5,17
+"F.1249","Control","Everton vs Liverpool","Correct Score","Away","0--2",0.5,5
+"F.1249","Control","Everton vs Liverpool","First Goalscorer","Away","Sadio Mane",0.5,2.5
+"F.1249","Control","Everton vs Liverpool","Correct Score","Away","1--3",0.5,6
+"F.1249","Control","Everton vs Liverpool","Correct Score","Away","2--3",0.5,9.5
+"F.0599","Control","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0599","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",2,7.8
+"F.1279","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1.5,2.25
+"F.1279","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1.5,2.36
+"F.0877","Control","Leicester vs Aston Villa","Correct Score","Home","2--0",1,9.5
+"F.0877","Control","Leicester vs Aston Villa","Correct Score","Home","3--0",1,15
+"F.0877","Control","Leicester vs Aston Villa","Correct Score","Home","2--0",1,9.5
+"F.1208","Control","Leicester vs Aston Villa","Correct Score","Home","2--1",0.1,0.8
+"F.1208","Control","Leeds vs Wolves","Correct Score","Away","0--1",0.1,0.8
+"F.0032","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.1305","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1163","Treatment","Tottenham vs West Ham","Correct Score","Home","1--0",3,22.5
+"F.0824","Control","West Brom vs Burnley","90 Minutes","Home","West Brom",3,7.5
+"F.0842","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0469","Control","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0969","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0969","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",2,3
+"F.0254","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0223","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",3,8.1
+"F.0177","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0177","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.5,0.83
+"F.0177","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1079","Control","Man City vs Arsenal","First Goalscorer","Away","Pierre-Emerick Aubameyang",3,19.5
+"F.0036","Treatment","Everton vs Liverpool","First Goalscorer","Home","Dominic Calvert-Lewin",1,5.5
+"F.0036","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0630","Treatment","West Brom vs Burnley","Correct Score","Draw","2--2",0.1,1.5
+"F.0630","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","2--1",0.1,0.9
+"F.0630","Treatment","Leeds vs Wolves","Correct Score","Draw","2--2",0.1,1.5
+"F.0630","Treatment","Tottenham vs West Ham","Correct Score","Draw","1--1",0.1,0.7
+"F.0630","Treatment","Everton vs Liverpool","Correct Score","Draw","2--2",0.1,1.1
+"F.0779","Treatment","Newcastle vs Man Utd","Correct Score","Away","1--3",3,36
+"F.0002","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",3,17.4
+"F.0511","Control","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0511","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0925","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0925","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0925","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0701","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",1,5
+"F.0324","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.0626","Control","Chelsea vs Southampton","90 Minutes","Draw","Draw",0.1,0.44
+"F.0626","Control","Leeds vs Wolves","Correct Score","Home","3--0",0.1,2.6
+"F.0626","Control","Tottenham vs West Ham","First Goalscorer","Away","Andriy Yarmolenko",0.1,0.95
+"F.0626","Control","Everton vs Liverpool","First Goalscorer","Draw","No Goalscorer",0.1,1.3
+"F.0626","Control","Everton vs Liverpool","First Goalscorer","Away","Thiago Alcantara",0.1,1.9
+"F.0626","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.1,0.75
+"F.0626","Control","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",0.1,0.43
+"F.0626","Control","Newcastle vs Man Utd","Correct Score","Home","3--0",0.1,6.1
+"F.0626","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",0.1,0.39
+"F.0626","Control","Everton vs Liverpool","Correct Score","Away","3--4",0.1,6.1
+"F.0319","Control","Leeds vs Wolves","Correct Score","Draw","3--3",1,56
+"F.0319","Control","Tottenham vs West Ham","Correct Score","Home","2--1",1,8
+"F.0319","Control","Everton vs Liverpool","Correct Score","Away","0--3",1,15
+"F.0794","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1287","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.0132","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0678","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0243","Control","Leeds vs Wolves","90 Minutes","Draw","Draw",1.5,4.88
+"F.1165","Treatment","Newcastle vs Man Utd","Correct Score","Away","1--3",1,12
+"F.0161","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0161","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0161","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0301","Treatment","Newcastle vs Man Utd","Correct Score","Home","2--1",1.5,22.5
+"F.0301","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",1,3.8
+"F.0301","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",0.5,4
+"F.0471","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",2,8.67
+"F.0471","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0136","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0895","Control","Everton vs Liverpool","First Goalscorer","Home","Dominic Calvert-Lewin",1,5.5
+"F.0895","Control","Leeds vs Wolves","Correct Score","Home","2--1",1,9.5
+"F.0895","Control","Leeds vs Wolves","First Goalscorer","Home","Patrick Bamford",1,6
+"F.0457","Control","Man City vs Arsenal","Correct Score","Away","0--2",1,41
+"F.0457","Control","Man City vs Arsenal","Correct Score","Draw","1--1",1,9.5
+"F.0457","Control","Man City vs Arsenal","Correct Score","Home","1--0",1,10
+"F.0066","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0066","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.5,1.35
+"F.0963","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.2,1.5
+"F.0963","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.2,0.54
+"F.0963","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0963","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",0.3,1.3
+"F.0963","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.3,0.45
+"F.1069","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.1314","Treatment","Tottenham vs West Ham","Correct Score","Home","1--0",1,7.5
+"F.1314","Treatment","Everton vs Liverpool","Correct Score","Away","0--1",2,20
+"F.0673","Control","Newcastle vs Man Utd","Correct Score","Draw","0--0",0.2,2.4
+"F.0673","Control","Newcastle vs Man Utd","Correct Score","Away","0--2",0.1,0.75
+"F.0999","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0999","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","1--0",0.5,3
+"F.0999","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",0.5,2.5
+"F.0999","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0999","Treatment","Leeds vs Wolves","Correct Score","Home","2--1",0.25,2.38
+"F.0999","Treatment","Tottenham vs West Ham","First Goalscorer","Home","Gareth Bale",0.25,1.25
+"F.1057","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.1261","Control","Tottenham vs West Ham","Correct Score","Home","4--0",1,23
+"F.1261","Control","Tottenham vs West Ham","Correct Score","Home","3--1",2,24
+"F.0468","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0468","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0468","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.5,0.7
+"F.0468","Control","Everton vs Liverpool","First Goalscorer","Away","Mohamed Salah",1,4.2
+"F.0643","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1029","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1063","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0501","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1.5,2.78
+"F.0501","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",1.5,5.7
+"F.0473","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.25,1.63
+"F.0473","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.75,3.75
+"F.0473","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0473","Control","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.1226","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0299","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1067","Control","Man City vs Arsenal","Correct Score","Home","2--1",0.75,6
+"F.1067","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.75,3.75
+"F.1067","Control","Everton vs Liverpool","Correct Score","Draw","2--2",0.5,5.5
+"F.1067","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",1,3.9
+"F.0297","Treatment","Sheffield Utd vs Fulham","90 Minutes","Away","Fulham",1,3.75
+"F.0297","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",1,8
+"F.0297","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0005","Treatment","Everton vs Liverpool","Correct Score","Home","2--0",0.5,11.5
+"F.1272","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.5,0.9
+"F.1272","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1272","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.1272","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1070","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",3,17.4
+"F.0904","Control","Tottenham vs West Ham","Correct Score","Home","1--0",0.5,3.75
+"F.0604","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",1,3.8
+"F.0604","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",2,8.67
+"F.0919","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1194","Treatment","Man City vs Arsenal","Correct Score","Home","1--0",3,30
+"F.1271","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1,2.7
+"F.1271","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1271","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0519","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0519","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1257","Treatment","Chelsea vs Southampton","Correct Score","Home","3--1",3,33
+"F.1242","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",2,3.7
+"F.0070","Treatment","Leicester vs Aston Villa","First Goalscorer","Home","Harvey Barnes",0.5,4
+"F.0070","Treatment","Chelsea vs Southampton","First Goalscorer","Home","Christian Pulisic",0.5,2.5
+"F.0070","Treatment","Leicester vs Aston Villa","Correct Score","Home","3--2",0.5,9.5
+"F.0070","Treatment","Newcastle vs Man Utd","Correct Score","Away","1--3",0.5,6
+"F.0070","Treatment","Chelsea vs Southampton","Correct Score","Home","2--1",0.5,3.75
+"F.0070","Treatment","Newcastle vs Man Utd","Correct Score","Draw","2--2",0.5,7.5
+"F.0993","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",0.5,1.9
+"F.0572","Control","Everton vs Liverpool","Correct Score","Home","2--0",2,46
+"F.0320","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",0.25,0.35
+"F.0320","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.25,0.38
+"F.0320","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0311","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1.5,2.78
+"F.0543","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0533","Treatment","Man City vs Arsenal","Correct Score","Away","2--3",0.5,20.5
+"F.0533","Treatment","Man City vs Arsenal","First Goalscorer","Away","Alexandre Lacazette",0.5,4.5
+"F.0533","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.75,5.63
+"F.0533","Treatment","Everton vs Liverpool","First Goalscorer","Away","Sadio Mane",0.25,1.25
+"F.0533","Treatment","Everton vs Liverpool","First Goalscorer","Home","James Rodriguez",0.25,2.5
+"F.0533","Treatment","Everton vs Liverpool","Correct Score","Draw","3--3",0.25,8.5
+"F.0533","Treatment","Everton vs Liverpool","Correct Score","Draw","2--2",0.25,2.75
+"F.0533","Treatment","Everton vs Liverpool","First Goalscorer","Home","Dominic Calvert-Lewin",0.25,1.38
+"F.0795","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0675","Treatment","Tottenham vs West Ham","Correct Score","Home","3--1",1,12
+"F.0675","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0675","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.1158","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",3,11.7
+"F.0554","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.0800","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1004","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1.5,2.25
+"F.1004","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1.5,2.36
+"F.0558","Control","Everton vs Liverpool","90 Minutes","Home","Everton",1.5,5.85
+"F.0558","Control","Leeds vs Wolves","90 Minutes","Away","Wolves",1.5,4.31
+"F.0882","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.0488","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0381","Control","Crystal Palace vs Brighton","Correct Score","Home","3--1",1,21
+"F.0046","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0840","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",2,3.33
+"F.0840","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0305","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0216","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0366","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1176","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0527","Treatment","Leeds vs Wolves","90 Minutes","Away","Wolves",1,2.88
+"F.0261","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.0236","Treatment","Everton vs Liverpool","Correct Score","Home","2--1",3,39
+"F.0970","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",2,5.2
+"F.0970","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0249","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0249","Control","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0197","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0253","Control","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0143","Control","Leeds vs Wolves","Correct Score","Home","1--0",0.15,1.05
+"F.0143","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",0.15,0.39
+"F.0143","Control","Tottenham vs West Ham","Correct Score","Draw","1--1",0.15,1.05
+"F.0143","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",0.15,0.87
+"F.0143","Control","Crystal Palace vs Brighton","Correct Score","Home","1--0",0.15,1.05
+"F.0143","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.15,0.41
+"F.0143","Control","Man City vs Arsenal","Correct Score","Home","2--1",0.15,1.2
+"F.0143","Control","Man City vs Arsenal","90 Minutes","Draw","Draw",0.15,0.75
+"F.0143","Control","West Brom vs Burnley","Correct Score","Home","1--0",0.15,1.05
+"F.0143","Control","West Brom vs Burnley","90 Minutes","Home","West Brom",0.15,0.38
+"F.0143","Control","Sheffield Utd vs Fulham","Correct Score","Home","1--0",0.15,0.9
+"F.0143","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.15,0.32
+"F.0143","Control","Newcastle vs Man Utd","Correct Score","Away","0--1",0.15,1.05
+"F.0143","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.15,0.25
+"F.0143","Control","Leicester vs Aston Villa","Correct Score","Home","2--1",0.15,1.2
+"F.0143","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.15,0.27
+"F.0143","Control","Chelsea vs Southampton","Correct Score","Home","2--0",0.15,1.2
+"F.0143","Control","Chelsea vs Southampton","Correct Score","Home","1--0",0.15,1.35
+"F.0143","Control","Everton vs Liverpool","Correct Score","Draw","1--1",0.15,1.05
+"F.0143","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.15,0.28
+"F.0490","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1.5,2.78
+"F.1022","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",2,3.14
+"F.1022","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0306","Control","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.0306","Control","Everton vs Liverpool","Correct Score","Away","0--2",1,10
+"F.0564","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0149","Control","Leeds vs Wolves","First Goalscorer","Away","Raul Jimenez",3,13.5
+"F.0004","Control","Leeds vs Wolves","90 Minutes","Draw","Draw",0.5,1.63
+"F.0004","Control","Leeds vs Wolves","90 Minutes","Away","Wolves",1,2.88
+"F.0004","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0004","Control","Chelsea vs Southampton","Correct Score","Home","2--1",0.5,3.75
+"F.1006","Treatment","Leicester vs Aston Villa","Correct Score","Draw","0--0",1,15
+"F.0112","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.0028","Control","Sheffield Utd vs Fulham","Correct Score","Home","2--1",3,27
+"F.0880","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",3,22.5
+"F.0953","Treatment","Newcastle vs Man Utd","90 Minutes","Draw","Draw",3,12
+"F.0863","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1308","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",0.5,0.7
+"F.0027","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0027","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0027","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.5,0.7
+"F.0027","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1013","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",3,4.2
+"F.0362","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0362","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",1,5.8
+"F.0362","Control","Everton vs Liverpool","Correct Score","Away","0--1",1,10
+"F.0314","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0614","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.0614","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",1,3.8
+"F.0614","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0386","Treatment","Newcastle vs Man Utd","Correct Score","Home","2--0",3,78
+"F.0785","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.2,0.54
+"F.0785","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.2,0.42
+"F.0785","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.2,0.33
+"F.0785","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.2,0.36
+"F.0785","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.2,0.3
+"F.0642","Treatment","Leeds vs Wolves","Correct Score","Home","1--0",3,21
+"F.0646","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.2,0.28
+"F.0646","Control","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",0.2,0.54
+"F.0646","Control","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",0.2,0.64
+"F.0646","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.2,0.54
+"F.0646","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0646","Control","Man City vs Arsenal","First Goalscorer","Away","Pierre-Emerick Aubameyang",0.1,0.65
+"F.0646","Control","Man City vs Arsenal","First Goalscorer","Home","Kevin De Bruyne",0.2,1.1
+"F.0646","Control","Man City vs Arsenal","First Goalscorer","Home","Raheem Sterling",0.2,0.9
+"F.0646","Control","Everton vs Liverpool","First Goalscorer","Away","Sadio Mane",0.5,2.5
+"F.0646","Control","Everton vs Liverpool","First Goalscorer","Away","Trent Alexander-Arnold",0.4,8.4
+"F.0646","Control","Tottenham vs West Ham","First Goalscorer","Home","Giovani Lo Celso",0.1,1.5
+"F.0646","Control","Tottenham vs West Ham","First Goalscorer","Home","Tanguy NDombele",0.1,1.9
+"F.0646","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.1,0.21
+"F.0422","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0647","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1.5,2.36
+"F.0733","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",1,8
+"F.0769","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0896","Control","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",1.5,4.05
+"F.0896","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1.5,2.25
+"F.1283","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0406","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0224","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.1089","Control","Newcastle vs Man Utd","First Goalscorer","Home","Fabian Schar",1,34
+"F.0983","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0693","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0316","Treatment","Tottenham vs West Ham","Correct Score","Home","4--2",0.5,20.5
+"F.0316","Treatment","Leeds vs Wolves","Correct Score","Away","2--3",0.5,17
+"F.0316","Treatment","Crystal Palace vs Brighton","First Goalscorer","Away","Tariq Lamptey",0.5,14.5
+"F.0316","Treatment","Sheffield Utd vs Fulham","First Goalscorer","Away","Aleksandar Mitrovic",0.5,2.5
+"F.0316","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.0998","Control","Man City vs Arsenal","Correct Score","Home","3--2",0.3,5.7
+"F.0998","Control","Leicester vs Aston Villa","First Goalscorer","Home","Jamie Vardy",0.2,0.66
+"F.0998","Control","Newcastle vs Man Utd","Correct Score","Away","1--3",0.2,2.4
+"F.0998","Control","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0126","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0151","Treatment","Tottenham vs West Ham","Correct Score","Home","2--1",3,24
+"F.1248","Treatment","Everton vs Liverpool","Correct Score","Home","2--0",3,69
+"F.0141","Treatment","Leeds vs Wolves","90 Minutes","Draw","Draw",0.25,0.81
+"F.0141","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.25,0.39
+"F.0141","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.25,1.88
+"F.0141","Treatment","West Brom vs Burnley","90 Minutes","Draw","Draw",0.25,0.83
+"F.0141","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.25,0.53
+"F.0141","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.25,0.42
+"F.0141","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",0.25,0.95
+"F.0141","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.25,0.38
+"F.0141","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.25,0.98
+"F.0141","Treatment","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",0.25,0.68
+"F.0067","Treatment","Leicester vs Aston Villa","Correct Score","Home","3--2",0.5,9.5
+"F.0067","Treatment","Crystal Palace vs Brighton","Correct Score","Home","2--1",0.5,5
+"F.0067","Treatment","Everton vs Liverpool","Correct Score","Away","1--3",1,12
+"F.0067","Treatment","Chelsea vs Southampton","Correct Score","Draw","1--1",0.5,4.25
+"F.0067","Treatment","Tottenham vs West Ham","Correct Score","Home","2--1",0.5,4
+"F.0588","Control","Leeds vs Wolves","Correct Score","Away","3--4",0.5,50.5
+"F.0588","Control","Leeds vs Wolves","Correct Score","Away","2--3",0.5,17
+"F.0588","Control","Newcastle vs Man Utd","First Goalscorer","Home","Jamal Lewis",0.5,63
+"F.0588","Control","Newcastle vs Man Utd","First Goalscorer","Home","Emil Krafth",0.5,50.5
+"F.0588","Control","Newcastle vs Man Utd","First Goalscorer","Draw","No Goalscorer",0.5,5.5
+"F.0588","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.5,2.5
+"F.0615","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0791","Control","Sheffield Utd vs Fulham","90 Minutes","Away","Fulham",0.5,1.88
+"F.0791","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.5,3.25
+"F.0791","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",0.5,2.9
+"F.0022","Treatment","Newcastle vs Man Utd","Correct Score","Draw","4--4",0.5,63
+"F.0022","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",0.5,4
+"F.0022","Treatment","Leeds vs Wolves","Correct Score","Home","3--2",1,34
+"F.0022","Treatment","Leeds vs Wolves","Correct Score","Home","2--1",1,9.5
+"F.0980","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",3,11.7
+"F.0008","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",0.25,0.63
+"F.0008","Treatment","Sheffield Utd vs Fulham","90 Minutes","Draw","Draw",0.25,0.81
+"F.0008","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.25,0.98
+"F.0008","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",0.25,0.65
+"F.1012","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.1012","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1012","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1045","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.1,0.27
+"F.0978","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.25,0.38
+"F.0978","Treatment","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.75,4.88
+"F.0978","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0978","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0206","Control","Everton vs Liverpool","Correct Score","Draw","1--1",0.01,0.07
+"F.0291","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0865","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0656","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",3,15
+"F.1168","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.25,1.88
+"F.1168","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",0.5,1.3
+"F.1168","Control","Newcastle vs Man Utd","First Goalscorer","Away","Bruno Fernandes",0.5,2.5
+"F.1168","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.25,0.98
+"F.1288","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1020","Treatment","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.2,1.3
+"F.1020","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.2,1.5
+"F.1020","Treatment","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",0.2,0.64
+"F.1020","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",0.2,0.87
+"F.1020","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.2,1
+"F.0624","Treatment","Everton vs Liverpool","Correct Score","Home","1--0",1,15
+"F.0055","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.1142","Treatment","Leeds vs Wolves","90 Minutes","Away","Wolves",0.5,1.44
+"F.1142","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",0.5,1.25
+"F.1142","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",0.5,2.17
+"F.1142","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0221","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",2,3.33
+"F.0221","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0640","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",3,4.2
+"F.0507","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0581","Treatment","Tottenham vs West Ham","90 Minutes","Away","West Ham",3,17.4
+"F.1167","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1167","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",2,3.7
+"F.0405","Control","Crystal Palace vs Brighton","Correct Score","Draw","1--1",0.5,2.75
+"F.0405","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1.5,2.25
+"F.0405","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.1084","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",3,8.1
+"F.0862","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1.5,4.05
+"F.0862","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.0862","Treatment","Man City vs Arsenal","First Goalscorer","Home","Raheem Sterling",0.5,2.25
+"F.0348","Treatment","Everton vs Liverpool","Correct Score","Home","3--1",1,26
+"F.0348","Treatment","Everton vs Liverpool","Correct Score","Home","2--0",1,23
+"F.0348","Treatment","Everton vs Liverpool","Correct Score","Draw","0--0",1,17
+"F.1173","Control","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",1,3.2
+"F.1173","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1173","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.0345","Treatment","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",1,2.7
+"F.0345","Treatment","Everton vs Liverpool","First Goalscorer","Away","Sadio Mane",0.5,2.5
+"F.0345","Treatment","Newcastle vs Man Utd","First Goalscorer","Away","Mason Greenwood",0.5,3.5
+"F.0345","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0361","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.2,1.3
+"F.0361","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.8,1.2
+"F.0361","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.0361","Control","Sheffield Utd vs Fulham","90 Minutes","Away","Fulham",1,3.75
+"F.1026","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",0.5,1.3
+"F.1026","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0352","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0654","Treatment","Crystal Palace vs Brighton","Correct Score","Away","1--2",1,11
+"F.0654","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.0654","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","3--1",1,19
+"F.0238","Treatment","Man City vs Arsenal","First Goalscorer","Home","Sergio Aguero",0.5,1.9
+"F.0238","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",0.1,0.14
+"F.0238","Treatment","Man City vs Arsenal","Correct Score","Home","3--1",0.2,2
+"F.0677","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.0677","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0677","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0491","Treatment","Everton vs Liverpool","Correct Score","Draw","2--2",3,33
+"F.1240","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1240","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0965","Control","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0144","Control","Sheffield Utd vs Fulham","Correct Score","Home","2--0",1.1,9.35
+"F.0144","Control","Newcastle vs Man Utd","Correct Score","Away","0--3",1,12
+"F.0144","Control","Chelsea vs Southampton","Correct Score","Away","0--1",0.3,5.7
+"F.0144","Control","Chelsea vs Southampton","Correct Score","Home","3--0",0.3,3.3
+"F.0144","Control","Everton vs Liverpool","Correct Score","Away","1--2",0.3,2.4
+"F.0357","Control","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",0.3,0.81
+"F.0357","Control","West Brom vs Burnley","90 Minutes","Away","Burnley",0.5,1.44
+"F.0176","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","1--0",3,18
+"F.1046","Control","Leeds vs Wolves","Correct Score","Home","3--1",3,63
+"F.0417","Treatment","Newcastle vs Man Utd","Correct Score","Home","2--1",3,45
+"F.1253","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",3,22.5
+"F.0787","Control","Newcastle vs Man Utd","Correct Score","Away","0--1",0.5,3.5
+"F.0530","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.4,0.6
+"F.0530","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.1,0.16
+"F.0368","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.5,2.5
+"F.0368","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0269","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.0409","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0409","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.25,0.42
+"F.0409","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.1064","Treatment","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",0.25,0.68
+"F.1064","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.1064","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",0.25,0.65
+"F.1064","Treatment","West Brom vs Burnley","90 Minutes","Away","Burnley",0.25,0.72
+"F.1064","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.1064","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.25,0.42
+"F.1064","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1064","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.25,0.46
+"F.1064","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.25,0.45
+"F.0166","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.1281","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1281","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0705","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",2,7.8
+"F.0705","Control","Sheffield Utd vs Fulham","Correct Score","Home","2--0",1,8.5
+"F.0638","Control","Crystal Palace vs Brighton","First Goalscorer","Draw","No Goalscorer",1,7.5
+"F.0638","Control","West Brom vs Burnley","Correct Score","Home","1--0",1,7
+"F.0638","Control","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0461","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0461","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",1,5.8
+"F.0461","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1,2.7
+"F.0461","Control","Leeds vs Wolves","90 Minutes","Away","Wolves",0.5,1.44
+"F.1055","Control","Newcastle vs Man Utd","90 Minutes","Draw","Draw",0.5,2
+"F.1055","Control","West Brom vs Burnley","90 Minutes","Home","West Brom",1,2.5
+"F.0374","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0374","Treatment","Tottenham vs West Ham","90 Minutes","Draw","Draw",0.5,2.1
+"F.0374","Treatment","Tottenham vs West Ham","90 Minutes","Away","West Ham",0.5,2.9
+"F.0374","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0374","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",0.5,1.95
+"F.0374","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0007","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1,2.7
+"F.0007","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.5,0.83
+"F.0007","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0007","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",0.5,1.95
+"F.1179","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",3,13
+"F.0988","Treatment","Leeds vs Wolves","90 Minutes","Away","Wolves",1,2.88
+"F.0202","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",2,3
+"F.0202","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0492","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",2,2.8
+"F.0492","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0932","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0470","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.0150","Treatment","Everton vs Liverpool","Correct Score","Draw","2--2",0.05,0.55
+"F.0150","Treatment","Everton vs Liverpool","First Goalscorer","Home","Dominic Calvert-Lewin",0.2,1.1
+"F.0150","Treatment","Leicester vs Aston Villa","Correct Score","Home","3--1",0.25,3
+"F.0150","Treatment","Leicester vs Aston Villa","First Goalscorer","Away","Ollie Watkins",0.25,1.75
+"F.0150","Treatment","Leicester vs Aston Villa","First Goalscorer","Away","Ollie Watkins",0.25,1.75
+"F.0300","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",1,5
+"F.0973","Treatment","Newcastle vs Man Utd","Correct Score","Draw","1--1",0.5,3.25
+"F.0973","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.0973","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0973","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0703","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",3,22.5
+"F.0172","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0172","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0172","Control","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.1269","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",1,5
+"F.1269","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.1269","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0200","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0200","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.5,0.83
+"F.0200","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",0.25,2
+"F.0023","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0540","Control","Chelsea vs Southampton","Correct Score","Home","1--0",3,27
+"F.1074","Treatment","Tottenham vs West Ham","Correct Score","Home","3--1",3,36
+"F.1039","Treatment","West Brom vs Burnley","Correct Score","Away","0--1",0.2,1.6
+"F.1039","Treatment","Leeds vs Wolves","Correct Score","Away","0--1",0.2,1.6
+"F.1039","Treatment","Tottenham vs West Ham","Correct Score","Home","3--0",0.2,2.4
+"F.1039","Treatment","Man City vs Arsenal","Correct Score","Home","3--1",0.2,2
+"F.1039","Treatment","Newcastle vs Man Utd","90 Minutes","Draw","Draw",0.2,0.8
+"F.1039","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",0.2,1.6
+"F.1039","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",0.2,1.6
+"F.0256","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.1291","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.1292","Control","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.1292","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1292","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0472","Treatment","Everton vs Liverpool","Correct Score","Home","2--0",3,69
+"F.0869","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0089","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1.5,2.78
+"F.0089","Control","Everton vs Liverpool","90 Minutes","Home","Everton",1.5,5.85
+"F.0819","Treatment","Leeds vs Wolves","90 Minutes","Draw","Draw",0.3,0.98
+"F.0819","Treatment","Tottenham vs West Ham","90 Minutes","Draw","Draw",0.3,1.26
+"F.0819","Treatment","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",0.3,0.96
+"F.0819","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",0.3,1.5
+"F.0819","Treatment","West Brom vs Burnley","90 Minutes","Draw","Draw",0.3,0.99
+"F.0819","Treatment","Sheffield Utd vs Fulham","90 Minutes","Draw","Draw",0.3,0.98
+"F.0819","Treatment","Newcastle vs Man Utd","90 Minutes","Draw","Draw",0.3,1.2
+"F.0819","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",0.3,1.14
+"F.0819","Treatment","Chelsea vs Southampton","90 Minutes","Draw","Draw",0.3,1.32
+"F.0819","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",0.3,1.17
+"F.0088","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0883","Treatment","Chelsea vs Southampton","Correct Score","Draw","0--0",1,17
+"F.0883","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","2--0",1,8.5
+"F.0883","Treatment","Leeds vs Wolves","Correct Score","Draw","1--1",1,5.5
+"F.0910","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.54,1
+"F.0910","Treatment","Everton vs Liverpool","First Goalscorer","Away","Mohamed Salah",1,4.2
+"F.0780","Control","Sheffield Utd vs Fulham","90 Minutes","Away","Fulham",0.5,1.88
+"F.0780","Control","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",0.5,1.6
+"F.0780","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0780","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0986","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0442","Control","Leeds vs Wolves","Correct Score","Away","1--2",0.1,1
+"F.0442","Control","Tottenham vs West Ham","Correct Score","Home","3--0",0.1,1.2
+"F.0442","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.1,0.27
+"F.0442","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.1,0.14
+"F.0442","Control","Man City vs Arsenal","Correct Score","Home","6--0",0.1,5.6
+"F.0442","Control","West Brom vs Burnley","Correct Score","Away","0--2",0.1,1.3
+"F.0442","Control","West Brom vs Burnley","90 Minutes","Draw","Draw",0.1,0.33
+"F.0442","Control","Sheffield Utd vs Fulham","Correct Score","Home","1--0",0.1,0.6
+"F.0442","Control","Sheffield Utd vs Fulham","90 Minutes","Draw","Draw",0.1,0.33
+"F.0442","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.1,0.17
+"F.0442","Control","Newcastle vs Man Utd","Correct Score","Home","4--3",0.1,10.1
+"F.0442","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.1,0.18
+"F.0442","Control","Chelsea vs Southampton","Correct Score","Home","3--0",0.1,1.1
+"F.0442","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",0.1,0.39
+"F.0442","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",0.1,0.39
+"F.0432","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1111","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0960","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.1,0.5
+"F.0960","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",0.48,1.25
+"F.0960","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.48,0.72
+"F.0960","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.48,0.75
+"F.0960","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",0.48,2.08
+"F.0960","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.48,1.87
+"F.1030","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0629","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0629","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",2,5.2
+"F.0586","Treatment","Leeds vs Wolves","Correct Score","Home","2--1",0.2,1.9
+"F.0586","Treatment","Crystal Palace vs Brighton","Correct Score","Home","3--0",0.2,4.6
+"F.0586","Treatment","Leicester vs Aston Villa","Correct Score","Home","1--0",0.2,1.8
+"F.0586","Treatment","Everton vs Liverpool","Correct Score","Home","2--0",0.2,4.6
+"F.1041","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.0266","Control","Crystal Palace vs Brighton","First Goalscorer","Draw","No Goalscorer",0.5,3.75
+"F.0266","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.5,1.35
+"F.0142","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0892","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0674","Control","Chelsea vs Southampton","Correct Score","Home","1--0",3,27
+"F.1060","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.1066","Control","Leicester vs Aston Villa","Correct Score","Home","3--0",1,15
+"F.1066","Control","Everton vs Liverpool","Correct Score","Home","3--1",1,26
+"F.1066","Control","Chelsea vs Southampton","Correct Score","Home","4--2",0.5,17
+"F.1066","Control","Sheffield Utd vs Fulham","Correct Score","Home","4--1",0.5,20.5
+"F.1146","Control","Everton vs Liverpool","Correct Score","Home","1--0",3,45
+"F.0694","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0635","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.0553","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0682","Control","Crystal Palace vs Brighton","Correct Score","Draw","1--1",1,5.5
+"F.0682","Control","Man City vs Arsenal","Correct Score","Home","2--0",1,8.5
+"F.0682","Control","Everton vs Liverpool","Correct Score","Away","0--3",1,15
+"F.1229","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1095","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1.5,2.36
+"F.1095","Treatment","Leeds vs Wolves","First Goalscorer","Home","Patrick Bamford",1,6
+"F.1095","Treatment","Chelsea vs Southampton","Correct Score","Home","4--0",0.5,8.5
+"F.1119","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",1,3.8
+"F.1119","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.1119","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",1,8
+"F.0116","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1216","Treatment","Everton vs Liverpool","Correct Score","Away","1--4",3,69
+"F.0549","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.1007","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",0.25,0.65
+"F.1007","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.25,1.25
+"F.1007","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.25,0.38
+"F.1007","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.25,0.98
+"F.0128","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",3,4.2
+"F.0494","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0957","Treatment","Leeds vs Wolves","Correct Score","Home","2--0",2,24
+"F.0957","Treatment","Leeds vs Wolves","First Goalscorer","Home","Mateusz Klich",1,10
+"F.0644","Control","Tottenham vs West Ham","Correct Score","Home","2--1",1,8
+"F.0644","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0644","Control","Everton vs Liverpool","Correct Score","Draw","1--1",1,7
+"F.0169","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1107","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1027","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",2,15
+"F.1193","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",1.5,2.1
+"F.0871","Control","Everton vs Liverpool","Correct Score","Home","3--0",0.5,20.5
+"F.0871","Control","Chelsea vs Southampton","Correct Score","Away","0--3",0.5,35.5
+"F.0871","Control","Newcastle vs Man Utd","Correct Score","Home","3--0",0.5,30.5
+"F.0871","Control","Crystal Palace vs Brighton","Correct Score","Away","2--3",0.5,18
+"F.0871","Control","Man City vs Arsenal","Correct Score","Away","2--3",0.5,20.5
+"F.0871","Control","Leeds vs Wolves","Correct Score","Home","3--0",0.5,13
+"F.1204","Treatment","Leeds vs Wolves","90 Minutes","Draw","Draw",1,3.25
+"F.1204","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.1204","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.1148","Treatment","Chelsea vs Southampton","Correct Score","Home","3--1",0.3,3.3
+"F.1148","Treatment","Leeds vs Wolves","Correct Score","Home","2--1",0.3,2.85
+"F.1148","Treatment","West Brom vs Burnley","90 Minutes","Draw","Draw",0.2,0.66
+"F.1148","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.1,0.39
+"F.1148","Treatment","Everton vs Liverpool","Correct Score","Away","2--3",0.2,3.8
+"F.1148","Treatment","Newcastle vs Man Utd","Correct Score","Away","1--2",0.2,1.6
+"F.1148","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.4,1.08
+"F.1148","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.3,0.47
+"F.1148","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.2,0.36
+"F.1148","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.3,0.63
+"F.1148","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.1023","Treatment","Man City vs Arsenal","First Goalscorer","Home","Kevin De Bruyne",1,5.5
+"F.1023","Treatment","Man City vs Arsenal","Correct Score","Away","1--3",1.5,69
+"F.1023","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0436","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.5,0.9
+"F.0436","Control","Newcastle vs Man Utd","Correct Score","Away","0--1",0.2,1.4
+"F.0436","Control","Sheffield Utd vs Fulham","Correct Score","Home","1--0",0.2,1.2
+"F.0436","Control","Leeds vs Wolves","Correct Score","Home","2--1",0.2,1.9
+"F.0436","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.45,0.71
+"F.0436","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.3,0.45
+"F.1082","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.1082","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1082","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0039","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0039","Control","Crystal Palace vs Brighton","Correct Score","Draw","0--0",0.5,3.75
+"F.0039","Control","Tottenham vs West Ham","First Goalscorer","Home","Son Heung-min",0.5,2.5
+"F.0039","Control","Man City vs Arsenal","90 Minutes","Draw","Draw",0.2,1
+"F.0039","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.55,3.58
+"F.0039","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.25,0.98
+"F.0290","Control","Man City vs Arsenal","Correct Score","Home","2--0",1,8.5
+"F.0290","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",2,3
+"F.0602","Control","Everton vs Liverpool","Correct Score","Away","0--3",3,45
+"F.0529","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0087","Control","Crystal Palace vs Brighton","90 Minutes","Draw","Draw",3,9.6
+"F.1160","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.0810","Treatment","Tottenham vs West Ham","Correct Score","Home","3--1",0.5,6
+"F.0810","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","2--0",0.5,4.25
+"F.0810","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0810","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0045","Control","Everton vs Liverpool","Correct Score","Away","1--2",3,24
+"F.0057","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1134","Control","Man City vs Arsenal","Correct Score","Draw","2--2",1,15
+"F.1134","Control","Man City vs Arsenal","Correct Score","Home","2--0",1,8.5
+"F.1134","Control","Man City vs Arsenal","Correct Score","Home","2--1",1,8
+"F.1115","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.1115","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0061","Control","Man City vs Arsenal","Correct Score","Home","2--1",3,24
+"F.0065","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0569","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.0350","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0593","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",3,5.4
+"F.0477","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",2,3
+"F.0567","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.1246","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0049","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1.5,2.5
+"F.0049","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",0.5,1.95
+"F.0049","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0542","Control","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0788","Control","Sheffield Utd vs Fulham","First Goalscorer","Home","John Fleck",1,7.5
+"F.0788","Control","Sheffield Utd vs Fulham","Correct Score","Away","0--1",1,9
+"F.0788","Control","Sheffield Utd vs Fulham","Correct Score","Home","2--1",1,9
+"F.0768","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1191","Treatment","Leeds vs Wolves","Correct Score","Draw","2--2",0.5,7.5
+"F.1191","Treatment","Everton vs Liverpool","First Goalscorer","Home","James Rodriguez",0.5,5
+"F.0451","Control","Leicester vs Aston Villa","Correct Score","Draw","1--1",1,6.5
+"F.0451","Control","Leeds vs Wolves","Correct Score","Home","3--1",1,21
+"F.1172","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0598","Treatment","Tottenham vs West Ham","First Goalscorer","Home","Harry Kane",3,11.4
+"F.0702","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",3,17.4
+"F.0237","Treatment","Leicester vs Aston Villa","First Goalscorer","Away","Jack Grealish",0.1,1
+"F.0237","Treatment","Leeds vs Wolves","First Goalscorer","Home","Mateusz Klich",0.1,1
+"F.0237","Treatment","Newcastle vs Man Utd","First Goalscorer","Home","Allan Saint-Maximin",0.1,1.3
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","5--2",0.1,7.1
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","4--2",0.1,4.1
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","5--1",0.1,4.6
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","5--0",0.1,4.6
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","4--1",0.1,2.3
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","4--0",0.1,2.3
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","3--2",0.1,2.3
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","3--1",0.1,1.2
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","3--0",0.1,1.2
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","2--1",0.1,0.8
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","2--0",0.1,0.75
+"F.0237","Treatment","Tottenham vs West Ham","Correct Score","Home","1--0",0.1,0.75
+"F.0237","Treatment","Everton vs Liverpool","First Goalscorer","Home","James Rodriguez",0.25,2.5
+"F.0237","Treatment","Everton vs Liverpool","First Goalscorer","Away","Virgil van Dijk",0.25,3.75
+"F.1210","Control","Chelsea vs Southampton","Correct Score","Home","3--0",3,33
+"F.1262","Control","Chelsea vs Southampton","First Goalscorer","Home","Jorginho",2,22
+"F.1262","Control","Chelsea vs Southampton","First Goalscorer","Home","Thiago Silva",1,34
+"F.0762","Treatment","Tottenham vs West Ham","Correct Score","Away","1--2",1,17
+"F.0762","Treatment","Newcastle vs Man Utd","Correct Score","Away","0--2",1,7.5
+"F.0762","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.1015","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",3,22.5
+"F.1133","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.1133","Treatment","Everton vs Liverpool","First Goalscorer","Away","Mohamed Salah",1,4.2
+"F.1133","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0120","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1.5,2.5
+"F.0120","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.5,2.5
+"F.0120","Control","Leeds vs Wolves","Correct Score","Away","0--1",0.5,4
+"F.0120","Control","Leeds vs Wolves","Correct Score","Home","1--0",0.5,3.5
+"F.0369","Treatment","Newcastle vs Man Utd","Correct Score","Away","0--3",0.3,3.6
+"F.0369","Treatment","Everton vs Liverpool","First Goalscorer","Away","Virgil van Dijk",0.2,3
+"F.0369","Treatment","Everton vs Liverpool","Correct Score","Away","0--2",0.5,5
+"F.1040","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0918","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0174","Treatment","Tottenham vs West Ham","Correct Score","Home","2--1",3,24
+"F.0498","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.1299","Control","Newcastle vs Man Utd","Correct Score","Draw","0--0",0.5,6
+"F.1299","Control","Man City vs Arsenal","Correct Score","Home","1--0",0.5,5
+"F.0505","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",3,5.4
+"F.0402","Control","Newcastle vs Man Utd","90 Minutes","Draw","Draw",0.25,1
+"F.0402","Control","Leicester vs Aston Villa","90 Minutes","Draw","Draw",0.25,0.95
+"F.0402","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0029","Control","Leeds vs Wolves","Correct Score","Draw","2--2",1,15
+"F.0029","Control","Sheffield Utd vs Fulham","Correct Score","Home","2--1",1,9
+"F.0029","Control","Chelsea vs Southampton","Correct Score","Home","3--1",1,11
+"F.1017","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.1232","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",1,2.5
+"F.0379","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",2,3.14
+"F.0379","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1050","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.1050","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1,2.7
+"F.1050","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0465","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",2,3.7
+"F.0465","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0982","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0555","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",2,3.33
+"F.0555","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0831","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",2,3
+"F.0831","Control","Tottenham vs West Ham","First Goalscorer","Home","Harry Kane",1,3.8
+"F.0858","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0580","Control","Newcastle vs Man Utd","Correct Score","Away","1--2",0.1,0.8
+"F.0580","Control","Newcastle vs Man Utd","Correct Score","Draw","2--2",0.1,1.5
+"F.0580","Control","Newcastle vs Man Utd","Correct Score","Home","2--1",0.1,1.5
+"F.0580","Control","Newcastle vs Man Utd","Correct Score","Away","2--3",0.1,2.3
+"F.0580","Control","Newcastle vs Man Utd","First Goalscorer","Draw","No Goalscorer",0.1,1.1
+"F.0580","Control","Newcastle vs Man Utd","Correct Score","Away","1--3",0.1,1.2
+"F.0580","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.6,3
+"F.0580","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1.8,3
+"F.0329","Control","Newcastle vs Man Utd","90 Minutes","Draw","Draw",1.5,6
+"F.0979","Control","Chelsea vs Southampton","Correct Score","Home","2--0",0.5,4
+"F.0979","Control","Everton vs Liverpool","Correct Score","Draw","1--1",0.5,3.5
+"F.0742","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.0931","Treatment","Tottenham vs West Ham","First Goalscorer","Home","Son Heung-min",1,5
+"F.0931","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0059","Treatment","Tottenham vs West Ham","Correct Score","Draw","1--1",0.1,0.7
+"F.0059","Treatment","Tottenham vs West Ham","Correct Score","Away","1--2",0.2,3.4
+"F.0059","Treatment","Tottenham vs West Ham","Correct Score","Away","0--1",0.2,3
+"F.0059","Treatment","Tottenham vs West Ham","Correct Score","Home","2--0",0.3,2.25
+"F.0059","Treatment","Tottenham vs West Ham","Correct Score","Home","3--0",0.3,3.6
+"F.0059","Treatment","Man City vs Arsenal","Correct Score","Away","1--2",0.1,1.9
+"F.0059","Treatment","Man City vs Arsenal","Correct Score","Home","2--1",0.3,2.4
+"F.0059","Treatment","Man City vs Arsenal","Correct Score","Home","3--2",0.2,3.8
+"F.0059","Treatment","Leicester vs Aston Villa","Correct Score","Home","2--0",0.4,3.8
+"F.0059","Treatment","Chelsea vs Southampton","Correct Score","Home","2--1",0.3,2.25
+"F.0059","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.3,0.45
+"F.0059","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",0.3,1.17
+"F.0661","Control","Leicester vs Aston Villa","Correct Score","Draw","1--1",0.1,0.65
+"F.0661","Control","Leicester vs Aston Villa","Correct Score","Away","0--1",0.1,1.5
+"F.0661","Control","Leicester vs Aston Villa","Correct Score","Home","1--0",0.1,0.9
+"F.0661","Control","Leicester vs Aston Villa","Correct Score","Draw","0--0",0.1,1.5
+"F.0220","Control","Chelsea vs Southampton","Correct Score","Home","4--2",1,34
+"F.0220","Control","Chelsea vs Southampton","Correct Score","Home","2--0",1,8
+"F.0220","Control","Chelsea vs Southampton","Correct Score","Home","3--1",1,11
+"F.0147","Control","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.0147","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0231","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1.5,11.25
+"F.0452","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",3,15
+"F.0463","Treatment","Everton vs Liverpool","Correct Score","Draw","1--1",3,21
+"F.0105","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1071","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.1274","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.1274","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1274","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0535","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",2,10
+"F.0397","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",0.2,1
+"F.0397","Treatment","Newcastle vs Man Utd","90 Minutes","Draw","Draw",0.2,0.8
+"F.0397","Treatment","Leicester vs Aston Villa","Correct Score","Home","1--0",0.2,1.8
+"F.0397","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",0.2,1.6
+"F.0397","Treatment","Everton vs Liverpool","Correct Score","Draw","2--2",0.2,2.2
+"F.0991","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0188","Control","West Brom vs Burnley","Correct Score","Draw","1--1",0.5,2.75
+"F.0188","Control","Sheffield Utd vs Fulham","Correct Score","Draw","0--0",0.5,3.75
+"F.0188","Control","Newcastle vs Man Utd","Correct Score","Away","0--2",0.5,3.75
+"F.0188","Control","Chelsea vs Southampton","Correct Score","Home","2--1",0.5,3.75
+"F.0188","Control","Everton vs Liverpool","Correct Score","Away","0--2",0.5,5
+"F.0188","Control","Leicester vs Aston Villa","Correct Score","Home","2--0",0.5,4.75
+"F.1102","Treatment","Leeds vs Wolves","First Goalscorer","Home","Liam Cooper",1,41
+"F.1102","Treatment","Leeds vs Wolves","First Goalscorer","Home","Luke Ayling",1,34
+"F.1102","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.1230","Treatment","Man City vs Arsenal","Correct Score","Away","1--2",3,57
+"F.1100","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.1103","Control","Everton vs Liverpool","Correct Score","Home","3--2",3,78
+"F.0914","Treatment","Everton vs Liverpool","Correct Score","Home","3--2",0.5,13
+"F.0078","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0078","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0078","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.1028","Treatment","Everton vs Liverpool","Correct Score","Away","0--2",1,10
+"F.0098","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.0098","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0098","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0168","Treatment","Everton vs Liverpool","Correct Score","Away","0--2",3,30
+"F.1183","Control","Man City vs Arsenal","First Goalscorer","Home","Kevin De Bruyne",0.1,0.55
+"F.1183","Control","Man City vs Arsenal","Correct Score","Home","3--0",0.15,1.5
+"F.1183","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.0717","Control","Everton vs Liverpool","First Goalscorer","Home","Michael Keane",3,102
+"F.0159","Treatment","Everton vs Liverpool","Correct Score","Away","1--3",1,12
+"F.0159","Treatment","Man City vs Arsenal","Correct Score","Away","1--3",2,92
+"F.0499","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0499","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",2,3.14
+"F.0410","Treatment","Newcastle vs Man Utd","Correct Score","Draw","3--3",0.5,25.5
+"F.0410","Treatment","Newcastle vs Man Utd","Correct Score","Home","3--2",0.5,20.5
+"F.0410","Treatment","Crystal Palace vs Brighton","Correct Score","Draw","3--3",0.5,30.5
+"F.0410","Treatment","Crystal Palace vs Brighton","Correct Score","Away","2--3",0.5,18
+"F.0410","Treatment","Tottenham vs West Ham","Correct Score","Away","0--2",0.5,14.5
+"F.0410","Treatment","Everton vs Liverpool","Correct Score","Draw","2--2",0.5,5.5
+"F.1149","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","2--0",1,8.5
+"F.1149","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","2--1",1,9
+"F.1149","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","3--0",1,17
+"F.1318","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.1318","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.1318","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0230","Treatment","Leicester vs Aston Villa","Correct Score","Home","2--1",1,8
+"F.0130","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",0.2,0.5
+"F.0130","Treatment","Sheffield Utd vs Fulham","90 Minutes","Away","Fulham",0.2,0.75
+"F.0130","Treatment","Everton vs Liverpool","Correct Score","Away","0--2",0.1,1
+"F.0130","Treatment","Leeds vs Wolves","90 Minutes","Away","Wolves",0.3,0.86
+"F.0130","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",0.2,0.87
+"F.0130","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.3,0.81
+"F.0130","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.5,0.83
+"F.0130","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",0.2,1
+"F.0130","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0130","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0608","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.5,1.35
+"F.0608","Control","Tottenham vs West Ham","90 Minutes","Draw","Draw",0.5,2.1
+"F.0608","Control","Everton vs Liverpool","First Goalscorer","Home","Dominic Calvert-Lewin",0.5,2.75
+"F.0258","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",1.5,5.85
+"F.0258","Treatment","Man City vs Arsenal","Correct Score","Draw","1--1",1.5,14.25
+"F.0338","Control","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0338","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.0338","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0752","Treatment","Chelsea vs Southampton","90 Minutes","Away","Southampton",3,19.5
+"F.1117","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1.5,2.25
+"F.1169","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",3,15
+"F.0304","Treatment","Newcastle vs Man Utd","Correct Score","Away","0--2",1,7.5
+"F.0906","Control","Leeds vs Wolves","Correct Score","Home","2--1",3,28.5
+"F.0091","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0091","Control","Newcastle vs Man Utd","Correct Score","Away","1--2",1,8
+"F.0091","Control","Newcastle vs Man Utd","Correct Score","Draw","1--1",1,6.5
+"F.0399","Treatment","Man City vs Arsenal","Correct Score","Home","3--2",1,19
+"F.1159","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.0293","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0279","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0186","Treatment","Newcastle vs Man Utd","Correct Score","Home","2--1",3,45
+"F.0739","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",3,17.4
+"F.0222","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0621","Treatment","Tottenham vs West Ham","Correct Score","Home","2--1",1,8
+"F.1081","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1081","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.0650","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0746","Treatment","Leeds vs Wolves","90 Minutes","Away","Wolves",3,8.63
+"F.0509","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0509","Treatment","Leicester vs Aston Villa","90 Minutes","Draw","Draw",1,3.8
+"F.0509","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0711","Control","Everton vs Liverpool","Correct Score","Away","2--3",1,19
+"F.0711","Control","Crystal Palace vs Brighton","Correct Score","Home","4--1",1,51
+"F.0711","Control","Crystal Palace vs Brighton","Correct Score","Draw","1--1",1,5.5
+"F.0340","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1098","Treatment","Tottenham vs West Ham","90 Minutes","Away","West Ham",3,17.4
+"F.0545","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0500","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0500","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.0500","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1275","Treatment","Tottenham vs West Ham","Correct Score","Draw","2--2",1,15
+"F.1275","Treatment","West Brom vs Burnley","Correct Score","Draw","1--1",1,5.5
+"F.1275","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","1--0",1,6
+"F.1221","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.1221","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1221","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0944","Treatment","Tottenham vs West Ham","Correct Score","Home","2--0",1,7.5
+"F.0944","Treatment","Man City vs Arsenal","Correct Score","Home","2--1",1,8
+"F.0944","Treatment","Chelsea vs Southampton","Correct Score","Home","2--1",1,7.5
+"F.0181","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0832","Control","Man City vs Arsenal","Correct Score","Home","3--2",1.5,28.5
+"F.1093","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.1093","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.1181","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",3,11.7
+"F.0548","Control","Tottenham vs West Ham","Correct Score","Home","3--1",1,12
+"F.0548","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",1,3.9
+"F.0315","Treatment","Leeds vs Wolves","90 Minutes","Away","Wolves",1,2.88
+"F.0315","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",2,10
+"F.0670","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.1136","Control","Chelsea vs Southampton","Correct Score","Home","3--1",1,11
+"F.1136","Control","Newcastle vs Man Utd","Correct Score","Draw","2--2",1,15
+"F.1136","Control","Tottenham vs West Ham","Correct Score","Home","3--1",1,12
+"F.0312","Treatment","Leeds vs Wolves","Correct Score","Home","2--0",3,36
+"F.0899","Treatment","Tottenham vs West Ham","Correct Score","Home","4--0",0.5,11.5
+"F.0899","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",1,5
+"F.0899","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.5,3.75
+"F.0899","Treatment","Leicester vs Aston Villa","Correct Score","Home","3--2",0.5,9.5
+"F.0899","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",0.5,1.95
+"F.0610","Treatment","Leicester vs Aston Villa","Correct Score","Home","2--0",1,9.5
+"F.0610","Treatment","Leeds vs Wolves","Correct Score","Home","1--0",1,7
+"F.0610","Treatment","West Brom vs Burnley","Correct Score","Home","2--0",1,11
+"F.0582","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0828","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",3,5.4
+"F.0891","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",3,5.4
+"F.0460","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.0926","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0384","Control","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0153","Control","Man City vs Arsenal","90 Minutes","Draw","Draw",0.75,3.75
+"F.0153","Control","Chelsea vs Southampton","First Goalscorer","Home","Christian Pulisic",0.5,2.5
+"F.0153","Control","Chelsea vs Southampton","Correct Score","Home","2--0",1,8
+"F.0153","Control","Everton vs Liverpool","First Goalscorer","Away","Sadio Mane",0.25,1.25
+"F.0153","Control","Everton vs Liverpool","Correct Score","Away","1--2",0.5,4
+"F.1296","Control","Newcastle vs Man Utd","Correct Score","Draw","0--0",3,36
+"F.1301","Treatment","Everton vs Liverpool","First Goalscorer","Away","Sadio Mane",1,5
+"F.1301","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",2,16
+"F.0447","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0447","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0447","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0719","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0044","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",3,11.7
+"F.1228","Control","Tottenham vs West Ham","Correct Score","Home","1--0",1,7.5
+"F.0382","Treatment","Leicester vs Aston Villa","Correct Score","Draw","2--2",3,36
+"F.0690","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",3,13
+"F.1005","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.1005","Treatment","Newcastle vs Man Utd","90 Minutes","Draw","Draw",1,4
+"F.1005","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.0148","Treatment","Everton vs Liverpool","Correct Score","Away","1--3",3,36
+"F.0407","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0407","Control","Chelsea vs Southampton","Correct Score","Home","3--0",1,11
+"F.0407","Control","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.1001","Control","Everton vs Liverpool","90 Minutes","Home","Everton",2,7.8
+"F.0404","Treatment","Newcastle vs Man Utd","Correct Score","Home","1--0",0.75,11.25
+"F.0404","Treatment","Crystal Palace vs Brighton","Correct Score","Home","2--1",0.75,7.5
+"F.0404","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.0404","Treatment","Chelsea vs Southampton","90 Minutes","Draw","Draw",0.5,2.2
+"F.0905","Treatment","Tottenham vs West Ham","90 Minutes","Away","West Ham",0.25,1.45
+"F.0905","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.25,1.25
+"F.0905","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",0.25,1.25
+"F.0905","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",0.26,1.01
+"F.0334","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0104","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.5,0.9
+"F.0104","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.5,1.35
+"F.0104","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",0.5,1.3
+"F.0104","Control","Tottenham vs West Ham","90 Minutes","Away","West Ham",0.5,2.9
+"F.0139","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.2,0.78
+"F.0139","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",0.4,1.04
+"F.0139","Control","Newcastle vs Man Utd","First Goalscorer","Home","Allan Saint-Maximin",0.2,2.6
+"F.0139","Control","Chelsea vs Southampton","Correct Score","Home","3--0",0.2,2.2
+"F.0274","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0274","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1,2.7
+"F.0274","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0058","Treatment","Newcastle vs Man Utd","Correct Score","Away","1--3",3,36
+"F.0278","Treatment","Crystal Palace vs Brighton","90 Minutes","Away","Brighton",1,2.7
+"F.0278","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",1,2.7
+"F.0278","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.7,1.26
+"F.0278","Treatment","Man City vs Arsenal","First Goalscorer","Away","Alexandre Lacazette",0.1,0.9
+"F.0278","Treatment","Leeds vs Wolves","First Goalscorer","Away","Raul Jimenez",0.1,0.45
+"F.0278","Treatment","Leeds vs Wolves","First Goalscorer","Home","Patrick Bamford",0.1,0.6
+"F.0062","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",1.5,3.75
+"F.0062","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1.5,3.15
+"F.0272","Control","Leeds vs Wolves","Correct Score","Home","2--1",1,9.5
+"F.0272","Control","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.0272","Control","Sheffield Utd vs Fulham","Correct Score","Home","2--1",1,9
+"F.1086","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0631","Control","Man City vs Arsenal","Correct Score","Away","0--1",3,69
+"F.1120","Treatment","Man City vs Arsenal","Correct Score","Home","2--1",0.5,4
+"F.1120","Treatment","Crystal Palace vs Brighton","Correct Score","Away","0--1",0.25,2
+"F.1120","Treatment","Leicester vs Aston Villa","Correct Score","Away","0--2",0.25,5.75
+"F.0939","Control","Chelsea vs Southampton","Correct Score","Draw","0--0",0.5,8.5
+"F.0939","Control","Man City vs Arsenal","Correct Score","Draw","2--2",0.5,7.5
+"F.0111","Treatment","Newcastle vs Man Utd","90 Minutes","Draw","Draw",1,4
+"F.0111","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0111","Treatment","Man City vs Arsenal","90 Minutes","Draw","Draw",1,5
+"F.0302","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0063","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0806","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1244","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.0539","Control","Everton vs Liverpool","90 Minutes","Home","Everton",1,3.9
+"F.0539","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0539","Control","Leeds vs Wolves","90 Minutes","Away","Wolves",1,2.88
+"F.1044","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.5,0.83
+"F.1044","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.1044","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0778","Treatment","Chelsea vs Southampton","90 Minutes","Draw","Draw",0.4,1.76
+"F.0778","Treatment","Chelsea vs Southampton","Correct Score","Home","3--1",0.2,2.2
+"F.0778","Treatment","Man City vs Arsenal","First Goalscorer","Home","Kevin De Bruyne",0.3,1.65
+"F.0778","Treatment","Man City vs Arsenal","First Goalscorer","Home","Raheem Sterling",2,9
+"F.0778","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.1,0.19
+"F.0526","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.0421","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.0421","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",1,2.5
+"F.0421","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.1157","Control","Sheffield Utd vs Fulham","Correct Score","Home","1--0",1,6
+"F.1073","Treatment","Man City vs Arsenal","Correct Score","Home","2--1",3,24
+"F.0163","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1252","Treatment","Chelsea vs Southampton","90 Minutes","Draw","Draw",1,4.4
+"F.1252","Treatment","Chelsea vs Southampton","90 Minutes","Away","Southampton",1,6.5
+"F.1252","Treatment","Chelsea vs Southampton","Correct Score","Home","1--0",1,9
+"F.0837","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.1031","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1.5,2.25
+"F.1031","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1.5,2.78
+"F.0393","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",1,5
+"F.0393","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1255","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0321","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0209","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0209","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0209","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0020","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0020","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1,2.1
+"F.0020","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.1186","Control","Everton vs Liverpool","Correct Score","Away","1--4",0.25,5.75
+"F.1186","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.25,0.98
+"F.1186","Control","Leeds vs Wolves","90 Minutes","Away","Wolves",0.5,1.44
+"F.1186","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.5,3.75
+"F.1186","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.1186","Control","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.0064","Control","Tottenham vs West Ham","First Goalscorer","Home","Son Heung-min",3,15
+"F.0426","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0663","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.1010","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.0524","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0360","Control","Leicester vs Aston Villa","Correct Score","Draw","1--1",1,6.5
+"F.0360","Control","Leeds vs Wolves","Correct Score","Draw","1--1",1,5.5
+"F.0360","Control","Everton vs Liverpool","Correct Score","Draw","1--1",1,7
+"F.0184","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0184","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.0922","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0292","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0292","Treatment","Everton vs Liverpool","90 Minutes","Draw","Draw",0.5,1.95
+"F.1144","Control","Everton vs Liverpool","First Goalscorer","Away","Thiago Alcantara",1,19
+"F.1144","Control","Everton vs Liverpool","First Goalscorer","Away","Virgil van Dijk",1,15
+"F.1144","Control","Everton vs Liverpool","Correct Score","Draw","0--0",1,17
+"F.0307","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.0037","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0037","Treatment","Tottenham vs West Ham","First Goalscorer","Home","Dele Alli",0.5,3.5
+"F.0037","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0037","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0685","Treatment","Crystal Palace vs Brighton","Correct Score","Draw","1--1",0.5,2.75
+"F.0685","Treatment","Crystal Palace vs Brighton","Correct Score","Away","0--1",0.5,4
+"F.0685","Treatment","Crystal Palace vs Brighton","Correct Score","Home","1--0",0.5,3.5
+"F.0685","Treatment","Chelsea vs Southampton","Correct Score","Draw","0--0",0.5,8.5
+"F.0685","Treatment","Chelsea vs Southampton","Correct Score","Home","1--0",0.5,4.5
+"F.0685","Treatment","Everton vs Liverpool","Correct Score","Home","2--0",0.5,11.5
+"F.0943","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1025","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",0.5,1.35
+"F.1025","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.5,0.7
+"F.1025","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.5,0.83
+"F.1025","Control","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",0.5,2.17
+"F.1025","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.1025","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.1259","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.1259","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",1,1.67
+"F.1259","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1259","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0546","Treatment","Sheffield Utd vs Fulham","Correct Score","Home","2--0",3,25.5
+"F.0412","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0412","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0972","Treatment","Leeds vs Wolves","90 Minutes","Away","Wolves",0.5,1.44
+"F.0972","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",1.5,5.85
+"F.0972","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0771","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1175","Control","Everton vs Liverpool","90 Minutes","Draw","Draw",3,11.7
+"F.1256","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.0525","Control","Everton vs Liverpool","First Goalscorer","Away","Sadio Mane",3,15
+"F.0761","Control","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.1124","Control","Newcastle vs Man Utd","Correct Score","Away","0--1",0.1,0.7
+"F.1124","Control","Leicester vs Aston Villa","Correct Score","Home","2--0",0.2,1.9
+"F.1124","Control","Everton vs Liverpool","Correct Score","Home","1--0",0.1,1.5
+"F.1124","Control","Everton vs Liverpool","Correct Score","Away","1--2",0.1,0.8
+"F.1124","Control","Everton vs Liverpool","Correct Score","Away","0--3",0.1,1.5
+"F.1124","Control","Everton vs Liverpool","Correct Score","Away","0--2",0.1,1
+"F.1124","Control","Newcastle vs Man Utd","Correct Score","Home","2--0",0.2,5.2
+"F.0377","Control","Leicester vs Aston Villa","First Goalscorer","Home","Timothy Castagne",1.5,25.5
+"F.0377","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1.5,2.7
+"F.1078","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1078","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0940","Control","Leeds vs Wolves","90 Minutes","Draw","Draw",1.5,4.88
+"F.0940","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1.5,11.25
+"F.0114","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",2,7.8
+"F.0114","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0887","Treatment","Man City vs Arsenal","Correct Score","Home","2--0",0.25,2.13
+"F.0434","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",3,19.5
+"F.0721","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.1235","Treatment","Everton vs Liverpool","Correct Score","Home","4--3",3,243
+"F.0204","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0095","Control","West Brom vs Burnley","Correct Score","Home","2--0",1,11
+"F.0095","Control","Leicester vs Aston Villa","Correct Score","Home","1--0",1,9
+"F.0095","Control","Man City vs Arsenal","Correct Score","Away","0--2",1,41
+"F.0079","Control","Man City vs Arsenal","Correct Score","Away","0--2",1,41
+"F.0079","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0079","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0493","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.0439","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0448","Control","Leeds vs Wolves","Correct Score","Away","3--4",0.1,10.1
+"F.0448","Control","Leeds vs Wolves","Correct Score","Home","4--3",0.1,10.1
+"F.0448","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0448","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",0.5,3.75
+"F.0094","Treatment","Everton vs Liverpool","Correct Score","Away","1--3",1,12
+"F.0094","Treatment","Leicester vs Aston Villa","Correct Score","Draw","3--3",1,36
+"F.0094","Treatment","Tottenham vs West Ham","Correct Score","Home","3--0",1,12
+"F.1231","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1171","Treatment","Man City vs Arsenal","Correct Score","Draw","1--1",3,28.5
+"F.0976","Control","Tottenham vs West Ham","Correct Score","Home","2--0",1,7.5
+"F.0976","Control","Leeds vs Wolves","Correct Score","Home","2--0",1,12
+"F.0976","Control","Leicester vs Aston Villa","Correct Score","Away","1--2",1,13
+"F.0834","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.0834","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0834","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0792","Treatment","Sheffield Utd vs Fulham","90 Minutes","Away","Fulham",0.5,1.88
+"F.0792","Treatment","Sheffield Utd vs Fulham","90 Minutes","Draw","Draw",0.5,1.63
+"F.0792","Treatment","Sheffield Utd vs Fulham","Correct Score","Away","0--1",0.5,4.5
+"F.0792","Treatment","Sheffield Utd vs Fulham","Correct Score","Draw","1--1",0.5,2.9
+"F.0257","Treatment","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",2,5.4
+"F.0263","Control","Everton vs Liverpool","Correct Score","Away","0--1",1,10
+"F.0263","Control","Sheffield Utd vs Fulham","Correct Score","Draw","0--0",1,7.5
+"F.0263","Control","Newcastle vs Man Utd","Correct Score","Away","1--2",1,8
+"F.1052","Treatment","Tottenham vs West Ham","Correct Score","Home","3--1",3,36
+"F.0600","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",3,7.8
+"F.0294","Treatment","Tottenham vs West Ham","90 Minutes","Home","Tottenham",3,4.71
+"F.0907","Control","Man City vs Arsenal","Correct Score","Home","3--2",1,19
+"F.0907","Control","West Brom vs Burnley","90 Minutes","Away","Burnley",1,2.88
+"F.0907","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1035","Control","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0964","Treatment","Chelsea vs Southampton","Correct Score","Home","3--0",3,33
+"F.0618","Control","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0618","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1,1.85
+"F.1260","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",2,3.7
+"F.1024","Treatment","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.4,2.6
+"F.1024","Treatment","Chelsea vs Southampton","90 Minutes","Draw","Draw",0.5,2.2
+"F.1024","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.1024","Treatment","Chelsea vs Southampton","Correct Score","Away","0--2",0.1,3.4
+"F.1024","Treatment","Chelsea vs Southampton","Correct Score","Draw","0--0",0.5,8.5
+"F.1024","Treatment","Chelsea vs Southampton","Correct Score","Home","3--0",0.5,5.5
+"F.1270","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",0.5,4
+"F.1270","Treatment","West Brom vs Burnley","90 Minutes","Home","West Brom",0.75,1.88
+"F.1270","Treatment","Leicester vs Aston Villa","Correct Score","Home","2--1",0.5,4
+"F.1270","Treatment","Tottenham vs West Ham","Correct Score","Home","2--0",0.5,3.75
+"F.1270","Treatment","Crystal Palace vs Brighton","Correct Score","Draw","1--1",0.5,2.75
+"F.1270","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",0.25,2
+"F.0731","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.1008","Treatment","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.1008","Treatment","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.0445","Control","Chelsea vs Southampton","Correct Score","Home","4--3",1.5,99
+"F.0445","Control","Everton vs Liverpool","Correct Score","Draw","3--3",1.5,51
+"F.0565","Treatment","Chelsea vs Southampton","First Goalscorer","Home","Jorginho",3,33
+"F.0031","Control","Crystal Palace vs Brighton","90 Minutes","Home","Crystal Palace",3,8.1
+"F.0077","Treatment","Tottenham vs West Ham","Correct Score","Draw","1--1",0.2,1.4
+"F.0077","Treatment","Man City vs Arsenal","Correct Score","Away","1--2",0.5,9.5
+"F.0077","Treatment","Newcastle vs Man Utd","Correct Score","Away","0--2",0.25,1.88
+"F.0077","Treatment","Everton vs Liverpool","Correct Score","Away","0--1",0.5,5
+"F.1154","Control","Man City vs Arsenal","90 Minutes","Home","Man City",3,4.2
+"F.0669","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0440","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.0440","Control","Newcastle vs Man Utd","Correct Score","Home","3--1",0.5,20.5
+"F.0440","Control","Leicester vs Aston Villa","Correct Score","Away","1--2",1,13
+"F.0440","Control","Newcastle vs Man Utd","90 Minutes","Draw","Draw",0.5,2
+"F.0440","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",0.5,1.3
+"F.1009","Treatment","Man City vs Arsenal","Correct Score","Away","1--4",3,273
+"F.0271","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",1,1.57
+"F.0271","Control","Newcastle vs Man Utd","First Goalscorer","Draw","No Goalscorer",0.5,5.5
+"F.0271","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.1162","Treatment","Everton vs Liverpool","Correct Score","Draw","2--2",1,11
+"F.1178","Treatment","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.1266","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.5,1.05
+"F.1266","Control","Chelsea vs Southampton","Correct Score","Home","2--1",0.5,3.75
+"F.1266","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.25,0.35
+"F.1266","Control","Man City vs Arsenal","Correct Score","Home","1--0",0.25,2.5
+"F.1180","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",3,5.4
+"F.0984","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0606","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.1075","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",3,19.5
+"F.0232","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",3,6.3
+"F.1085","Treatment","West Brom vs Burnley","90 Minutes","Draw","Draw",0.25,0.83
+"F.1085","Treatment","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",0.25,0.53
+"F.1085","Treatment","Newcastle vs Man Utd","90 Minutes","Home","Newcastle",0.25,1.25
+"F.1085","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.25,0.45
+"F.1085","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.25,0.38
+"F.1085","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",0.25,0.98
+"F.0913","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",3,24
+"F.0758","Control","Chelsea vs Southampton","90 Minutes","Away","Southampton",0.5,3.25
+"F.0587","Treatment","Everton vs Liverpool","Correct Score","Home","1--0",3,45
+"F.0622","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0923","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0522","Treatment","Everton vs Liverpool","90 Minutes","Away","Liverpool",3,5.55
+"F.0897","Control","Newcastle vs Man Utd","Correct Score","Away","0--1",1,7
+"F.0897","Control","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.0897","Control","Chelsea vs Southampton","Correct Score","Home","2--0",1,8
+"F.0801","Control","Tottenham vs West Ham","90 Minutes","Home","Tottenham",0.5,0.79
+"F.0801","Control","Man City vs Arsenal","90 Minutes","Home","Man City",0.5,0.7
+"F.0801","Control","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",0.5,0.83
+"F.0801","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",0.5,0.75
+"F.0801","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",0.5,0.9
+"F.0801","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",0.5,0.93
+"F.1206","Control","Everton vs Liverpool","90 Minutes","Away","Liverpool",1.5,2.78
+"F.1206","Control","Sheffield Utd vs Fulham","90 Minutes","Home","Sheffield Utd",1.5,3.15
+"F.0262","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.0989","Control","Tottenham vs West Ham","Correct Score","Home","1--0",3,22.5
+"F.0938","Control","Chelsea vs Southampton","90 Minutes","Home","Chelsea",3,4.5
+"F.0106","Control","Everton vs Liverpool","90 Minutes","Home","Everton",0.5,1.95
+"F.0483","Treatment","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0483","Treatment","Man City vs Arsenal","90 Minutes","Home","Man City",1,1.4
+"F.0483","Treatment","Chelsea vs Southampton","90 Minutes","Home","Chelsea",1,1.5
+"F.0577","Treatment","Newcastle vs Man Utd","90 Minutes","Away","Man Utd",3,5
+"F.0718","Treatment","Crystal Palace vs Brighton","Correct Score","Home","1--0",1,7
+"F.0718","Treatment","Tottenham vs West Ham","90 Minutes","Away","West Ham",1,5.8
+"F.0718","Treatment","Chelsea vs Southampton","Correct Score","Home","3--0",1,11
+"F.0277","Control","Everton vs Liverpool","Correct Score","Away","1--2",1,8
+"F.0259","Control","Man City vs Arsenal","90 Minutes","Away","Arsenal",1,7.5
+"F.0671","Control","Leeds vs Wolves","90 Minutes","Home","Leeds",1,2.6
+"F.0157","Treatment","Everton vs Liverpool","90 Minutes","Home","Everton",3,11.7
+"F.1315","Control","Leicester vs Aston Villa","90 Minutes","Away","Aston Villa",1,4.33
+"F.1315","Control","Leicester vs Aston Villa","90 Minutes","Draw","Draw",1,3.8
+"F.1315","Control","Leicester vs Aston Villa","90 Minutes","Home","Leicester",1,1.8
+"F.0075","Treatment","Everton vs Liverpool","Correct Score","Away","0--3",3,45
+"F.0133","Treatment","Everton vs Liverpool","Correct Score","Away","1--2",3,24
+"F.0995","Treatment","Leeds vs Wolves","Correct Score","Home","3--0",1,26
+"F.0995","Treatment","Newcastle vs Man Utd","Correct Score","Home","2--1",1,15
+"F.0995","Treatment","Chelsea vs Southampton","Correct Score","Home","2--0",1,8
+"F.0313","Control","","","Endowment","Unspent",3,3
+"F.0617","Control","","","Endowment","Unspent",3,3
+"F.1014","Control","","","Endowment","Unspent",0,0
+"F.0489","Treatment","","","Endowment","Unspent",3,3
+"F.1217","Control","","","Endowment","Unspent",0,0
+"F.0726","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.0579","Control","","","Endowment","Unspent",1.5,1.5
+"F.0641","Treatment","","","Endowment","Unspent",3,3
+"F.0513","Control","","","Endowment","Unspent",2.5,2.5
+"F.0574","Control","","","Endowment","Unspent",3,3
+"F.0657","Control","","","Endowment","Unspent",3,3
+"F.0053","Treatment","","","Endowment","Unspent",3,3
+"F.0594","Treatment","","","Endowment","Unspent",0,0
+"F.1125","Control","","","Endowment","Unspent",3,3
+"F.0757","Treatment","","","Endowment","Unspent",0,0
+"F.1278","Control","","","Endowment","Unspent",1,1
+"F.1099","Control","","","Endowment","Unspent",3,3
+"F.1174","Control","","","Endowment","Unspent",3,3
+"F.1059","Control","","","Endowment","Unspent",0,0
+"F.0411","Treatment","","","Endowment","Unspent",0,0
+"F.1218","Control","","","Endowment","Unspent",3,3
+"F.1094","Control","","","Endowment","Unspent",3,3
+"F.0532","Control","","","Endowment","Unspent",3,3
+"F.0268","Control","","","Endowment","Unspent",2.5,2.5
+"F.1189","Treatment","","","Endowment","Unspent",3,3
+"F.1197","Control","","","Endowment","Unspent",3,3
+"F.1306","Treatment","","","Endowment","Unspent",0,0
+"F.0538","Treatment","","","Endowment","Unspent",0.5,0.5
+"F.0566","Treatment","","","Endowment","Unspent",0,0
+"F.0187","Treatment","","","Endowment","Unspent",3,3
+"F.0672","Treatment","","","Endowment","Unspent",3,3
+"F.0809","Control","","","Endowment","Unspent",3,3
+"F.0659","Control","","","Endowment","Unspent",0,0
+"F.0084","Control","","","Endowment","Unspent",3,3
+"F.0443","Control","","","Endowment","Unspent",2,2
+"F.0235","Treatment","","","Endowment","Unspent",3,3
+"F.0737","Control","","","Endowment","Unspent",3,3
+"F.1285","Control","","","Endowment","Unspent",0,0
+"F.0697","Treatment","","","Endowment","Unspent",3,3
+"F.1034","Control","","","Endowment","Unspent",3,3
+"F.0504","Control","","","Endowment","Unspent",0,0
+"F.0665","Control","","","Endowment","Unspent",0,0
+"F.1072","Control","","","Endowment","Unspent",3,3
+"F.0994","Treatment","","","Endowment","Unspent",1,1
+"F.1236","Treatment","","","Endowment","Unspent",0,0
+"F.0047","Treatment","","","Endowment","Unspent",2,2
+"F.0342","Control","","","Endowment","Unspent",0,0
+"F.0813","Treatment","","","Endowment","Unspent",0,0
+"F.0528","Control","","","Endowment","Unspent",3,3
+"F.1106","Control","","","Endowment","Unspent",3,3
+"F.1177","Treatment","","","Endowment","Unspent",3,3
+"F.0482","Treatment","","","Endowment","Unspent",0,0
+"F.0071","Treatment","","","Endowment","Unspent",1.95,1.95
+"F.0781","Control","","","Endowment","Unspent",3,3
+"F.1156","Treatment","","","Endowment","Unspent",3,3
+"F.1166","Control","","","Endowment","Unspent",2.5,2.5
+"F.0218","Treatment","","","Endowment","Unspent",0,0
+"F.0025","Control","","","Endowment","Unspent",0,0
+"F.0438","Treatment","","","Endowment","Unspent",3,3
+"F.1043","Control","","","Endowment","Unspent",3,3
+"F.1295","Control","","","Endowment","Unspent",3,3
+"F.0354","Treatment","","","Endowment","Unspent",2,2
+"F.0585","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.1241","Control","","","Endowment","Unspent",3,3
+"F.0933","Control","","","Endowment","Unspent",0,0
+"F.0134","Control","","","Endowment","Unspent",0,0
+"F.0326","Treatment","","","Endowment","Unspent",0,0
+"F.1153","Control","","","Endowment","Unspent",0,0
+"F.0704","Control","","","Endowment","Unspent",3,3
+"F.0337","Treatment","","","Endowment","Unspent",3,3
+"F.0568","Control","","","Endowment","Unspent",3,3
+"F.0917","Control","","","Endowment","Unspent",3,3
+"F.0893","Treatment","","","Endowment","Unspent",0,0
+"F.0822","Control","","","Endowment","Unspent",2,2
+"F.0408","Control","","","Endowment","Unspent",3,3
+"F.0135","Control","","","Endowment","Unspent",0,0
+"F.0521","Control","","","Endowment","Unspent",3,3
+"F.0556","Treatment","","","Endowment","Unspent",3,3
+"F.0275","Control","","","Endowment","Unspent",3,3
+"F.0213","Control","","","Endowment","Unspent",0,0
+"F.0537","Control","","","Endowment","Unspent",0.5,0.5
+"F.0902","Treatment","","","Endowment","Unspent",0,0
+"F.0433","Treatment","","","Endowment","Unspent",3,3
+"F.0327","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.1083","Treatment","","","Endowment","Unspent",0,0
+"F.0234","Treatment","","","Endowment","Unspent",3,3
+"F.0776","Control","","","Endowment","Unspent",3,3
+"F.0734","Control","","","Endowment","Unspent",2,2
+"F.0912","Treatment","","","Endowment","Unspent",3,3
+"F.0365","Control","","","Endowment","Unspent",3,3
+"F.0122","Control","","","Endowment","Unspent",3,3
+"F.0364","Control","","","Endowment","Unspent",3,3
+"F.0308","Treatment","","","Endowment","Unspent",3,3
+"F.0924","Control","","","Endowment","Unspent",3,3
+"F.0596","Treatment","","","Endowment","Unspent",0,0
+"F.0751","Control","","","Endowment","Unspent",3,3
+"F.0850","Treatment","","","Endowment","Unspent",3,3
+"F.0247","Control","","","Endowment","Unspent",3,3
+"F.0194","Control","","","Endowment","Unspent",1.5,1.5
+"F.0430","Control","","","Endowment","Unspent",1.5,1.5
+"F.1277","Treatment","","","Endowment","Unspent",3,3
+"F.0708","Treatment","","","Endowment","Unspent",0,0
+"F.1203","Control","","","Endowment","Unspent",3,3
+"F.0165","Treatment","","","Endowment","Unspent",3,3
+"F.0131","Control","","","Endowment","Unspent",0,0
+"F.0476","Treatment","","","Endowment","Unspent",2.8,2.8
+"F.0210","Control","","","Endowment","Unspent",0,0
+"F.0051","Control","","","Endowment","Unspent",3,3
+"F.0392","Treatment","","","Endowment","Unspent",3,3
+"F.0826","Control","","","Endowment","Unspent",2,2
+"F.0082","Treatment","","","Endowment","Unspent",0,0
+"F.0113","Treatment","","","Endowment","Unspent",3,3
+"F.0395","Control","","","Endowment","Unspent",2,2
+"F.0821","Control","","","Endowment","Unspent",0,0
+"F.0901","Treatment","","","Endowment","Unspent",3,3
+"F.0855","Treatment","","","Endowment","Unspent",3,3
+"F.1184","Treatment","","","Endowment","Unspent",3,3
+"F.1140","Treatment","","","Endowment","Unspent",0,0
+"F.0560","Treatment","","","Endowment","Unspent",3,3
+"F.0388","Treatment","","","Endowment","Unspent",0,0
+"F.0948","Control","","","Endowment","Unspent",2.5,2.5
+"F.0868","Control","","","Endowment","Unspent",0,0
+"F.1249","Control","","","Endowment","Unspent",0,0
+"F.0599","Control","","","Endowment","Unspent",0,0
+"F.0115","Control","","","Endowment","Unspent",3,3
+"F.0019","Treatment","","","Endowment","Unspent",3,3
+"F.1279","Control","","","Endowment","Unspent",0,0
+"F.0877","Control","","","Endowment","Unspent",0,0
+"F.0927","Control","","","Endowment","Unspent",3,3
+"F.1208","Control","","","Endowment","Unspent",2.8,2.8
+"F.0032","Treatment","","","Endowment","Unspent",0,0
+"F.1305","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.1163","Treatment","","","Endowment","Unspent",0,0
+"F.0444","Treatment","","","Endowment","Unspent",3,3
+"F.0838","Treatment","","","Endowment","Unspent",3,3
+"F.0824","Control","","","Endowment","Unspent",0,0
+"F.0842","Control","","","Endowment","Unspent",0,0
+"F.0469","Control","","","Endowment","Unspent",2,2
+"F.1215","Control","","","Endowment","Unspent",3,3
+"F.0950","Control","","","Endowment","Unspent",3,3
+"F.0969","Control","","","Endowment","Unspent",0,0
+"F.0254","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.0223","Treatment","","","Endowment","Unspent",0,0
+"F.0001","Control","","","Endowment","Unspent",3,3
+"F.0559","Treatment","","","Endowment","Unspent",3,3
+"F.1297","Control","","","Endowment","Unspent",3,3
+"F.0177","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.1079","Control","","","Endowment","Unspent",0,0
+"F.0036","Treatment","","","Endowment","Unspent",1,1
+"F.0630","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.0779","Treatment","","","Endowment","Unspent",0,0
+"F.0716","Control","","","Endowment","Unspent",3,3
+"F.0002","Control","","","Endowment","Unspent",0,0
+"F.0511","Control","","","Endowment","Unspent",1,1
+"F.0925","Control","","","Endowment","Unspent",0,0
+"F.0475","Control","","","Endowment","Unspent",3,3
+"F.0701","Treatment","","","Endowment","Unspent",2,2
+"F.0324","Treatment","","","Endowment","Unspent",2,2
+"F.0626","Control","","","Endowment","Unspent",2,2
+"F.1258","Control","","","Endowment","Unspent",3,3
+"F.0127","Treatment","","","Endowment","Unspent",3,3
+"F.0319","Control","","","Endowment","Unspent",0,0
+"F.0794","Control","","","Endowment","Unspent",0,0
+"F.0487","Control","","","Endowment","Unspent",3,3
+"F.0244","Treatment","","","Endowment","Unspent",3,3
+"F.1287","Treatment","","","Endowment","Unspent",0,0
+"F.0185","Treatment","","","Endowment","Unspent",3,3
+"F.0132","Treatment","","","Endowment","Unspent",0,0
+"F.1037","Treatment","","","Endowment","Unspent",3,3
+"F.0561","Treatment","","","Endowment","Unspent",3,3
+"F.0678","Treatment","","","Endowment","Unspent",2,2
+"F.0243","Control","","","Endowment","Unspent",1.5,1.5
+"F.1165","Treatment","","","Endowment","Unspent",2,2
+"F.0161","Treatment","","","Endowment","Unspent",0,0
+"F.0889","Treatment","","","Endowment","Unspent",3,3
+"F.0301","Treatment","","","Endowment","Unspent",0,0
+"F.1233","Treatment","","","Endowment","Unspent",3,3
+"F.0808","Treatment","","","Endowment","Unspent",3,3
+"F.1170","Control","","","Endowment","Unspent",3,3
+"F.0471","Treatment","","","Endowment","Unspent",0,0
+"F.1311","Control","","","Endowment","Unspent",3,3
+"F.0136","Treatment","","","Endowment","Unspent",0,0
+"F.0250","Treatment","","","Endowment","Unspent",3,3
+"F.0895","Control","","","Endowment","Unspent",0,0
+"F.0260","Treatment","","","Endowment","Unspent",3,3
+"F.0050","Control","","","Endowment","Unspent",3,3
+"F.0890","Treatment","","","Endowment","Unspent",3,3
+"F.0457","Control","","","Endowment","Unspent",0,0
+"F.0066","Treatment","","","Endowment","Unspent",2,2
+"F.0955","Treatment","","","Endowment","Unspent",3,3
+"F.0963","Treatment","","","Endowment","Unspent",1,1
+"F.0119","Control","","","Endowment","Unspent",3,3
+"F.0041","Treatment","","","Endowment","Unspent",3,3
+"F.1069","Treatment","","","Endowment","Unspent",0,0
+"F.0684","Control","","","Endowment","Unspent",3,3
+"F.1314","Treatment","","","Endowment","Unspent",0,0
+"F.0673","Control","","","Endowment","Unspent",2.7,2.7
+"F.0575","Treatment","","","Endowment","Unspent",3,3
+"F.0999","Treatment","","","Endowment","Unspent",0,0
+"F.0508","Treatment","","","Endowment","Unspent",3,3
+"F.1057","Treatment","","","Endowment","Unspent",0,0
+"F.1261","Control","","","Endowment","Unspent",0,0
+"F.0468","Control","","","Endowment","Unspent",0,0
+"F.0643","Control","","","Endowment","Unspent",2,2
+"F.1029","Control","","","Endowment","Unspent",2.5,2.5
+"F.1063","Treatment","","","Endowment","Unspent",2,2
+"F.1190","Treatment","","","Endowment","Unspent",3,3
+"F.0637","Treatment","","","Endowment","Unspent",3,3
+"F.0501","Treatment","","","Endowment","Unspent",0,0
+"F.0298","Treatment","","","Endowment","Unspent",3,3
+"F.0473","Control","","","Endowment","Unspent",0,0
+"F.0097","Control","","","Endowment","Unspent",3,3
+"F.1226","Treatment","","","Endowment","Unspent",0,0
+"F.0371","Control","","","Endowment","Unspent",3,3
+"F.0299","Treatment","","","Endowment","Unspent",0,0
+"F.1067","Control","","","Endowment","Unspent",0,0
+"F.1268","Treatment","","","Endowment","Unspent",3,3
+"F.0297","Treatment","","","Endowment","Unspent",0,0
+"F.0005","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.1234","Treatment","","","Endowment","Unspent",3,3
+"F.0551","Control","","","Endowment","Unspent",3,3
+"F.1272","Control","","","Endowment","Unspent",0,0
+"F.1070","Control","","","Endowment","Unspent",0,0
+"F.0904","Control","","","Endowment","Unspent",2.5,2.5
+"F.0604","Treatment","","","Endowment","Unspent",0,0
+"F.0280","Control","","","Endowment","Unspent",3,3
+"F.0919","Control","","","Endowment","Unspent",0,0
+"F.0947","Control","","","Endowment","Unspent",3,3
+"F.1194","Treatment","","","Endowment","Unspent",0,0
+"F.1271","Control","","","Endowment","Unspent",0,0
+"F.0519","Control","","","Endowment","Unspent",1,1
+"F.1257","Treatment","","","Endowment","Unspent",0,0
+"F.1242","Control","","","Endowment","Unspent",1,1
+"F.0836","Treatment","","","Endowment","Unspent",3,3
+"F.1110","Control","","","Endowment","Unspent",3,3
+"F.0070","Treatment","","","Endowment","Unspent",0,0
+"F.0993","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.0241","Treatment","","","Endowment","Unspent",3,3
+"F.0572","Control","","","Endowment","Unspent",1,1
+"F.0320","Treatment","","","Endowment","Unspent",2,2
+"F.0311","Control","","","Endowment","Unspent",1.5,1.5
+"F.0543","Treatment","","","Endowment","Unspent",0,0
+"F.0502","Control","","","Endowment","Unspent",3,3
+"F.0812","Control","","","Endowment","Unspent",3,3
+"F.0845","Control","","","Endowment","Unspent",3,3
+"F.0533","Treatment","","","Endowment","Unspent",0,0
+"F.0795","Control","","","Endowment","Unspent",2,2
+"F.0675","Treatment","","","Endowment","Unspent",0,0
+"F.1158","Treatment","","","Endowment","Unspent",0,0
+"F.1155","Treatment","","","Endowment","Unspent",3,3
+"F.0554","Control","","","Endowment","Unspent",0,0
+"F.0800","Control","","","Endowment","Unspent",0,0
+"F.0915","Control","","","Endowment","Unspent",3,3
+"F.0014","Control","","","Endowment","Unspent",3,3
+"F.1309","Control","","","Endowment","Unspent",3,3
+"F.1004","Treatment","","","Endowment","Unspent",0,0
+"F.0558","Control","","","Endowment","Unspent",0,0
+"F.0732","Treatment","","","Endowment","Unspent",3,3
+"F.0882","Control","","","Endowment","Unspent",0,0
+"F.0052","Control","","","Endowment","Unspent",3,3
+"F.0488","Control","","","Endowment","Unspent",2,2
+"F.1164","Control","","","Endowment","Unspent",3,3
+"F.0381","Control","","","Endowment","Unspent",2,2
+"F.0214","Control","","","Endowment","Unspent",3,3
+"F.0046","Control","","","Endowment","Unspent",0,0
+"F.0331","Control","","","Endowment","Unspent",3,3
+"F.0840","Treatment","","","Endowment","Unspent",0,0
+"F.0435","Control","","","Endowment","Unspent",3,3
+"F.0390","Treatment","","","Endowment","Unspent",3,3
+"F.0349","Treatment","","","Endowment","Unspent",3,3
+"F.0305","Treatment","","","Endowment","Unspent",0,0
+"F.1128","Treatment","","","Endowment","Unspent",3,3
+"F.0216","Treatment","","","Endowment","Unspent",0,0
+"F.0366","Control","","","Endowment","Unspent",0,0
+"F.0367","Control","","","Endowment","Unspent",3,3
+"F.1176","Control","","","Endowment","Unspent",0,0
+"F.0527","Treatment","","","Endowment","Unspent",2,2
+"F.0784","Control","","","Endowment","Unspent",3,3
+"F.0261","Treatment","","","Endowment","Unspent",2,2
+"F.0236","Treatment","","","Endowment","Unspent",0,0
+"F.0970","Control","","","Endowment","Unspent",0,0
+"F.0796","Control","","","Endowment","Unspent",3,3
+"F.0249","Control","","","Endowment","Unspent",1,1
+"F.0074","Treatment","","","Endowment","Unspent",3,3
+"F.0197","Treatment","","","Endowment","Unspent",0,0
+"F.0531","Treatment","","","Endowment","Unspent",3,3
+"F.0253","Control","","","Endowment","Unspent",0,0
+"F.0662","Control","","","Endowment","Unspent",3,3
+"F.1139","Control","","","Endowment","Unspent",3,3
+"F.0707","Control","","","Endowment","Unspent",3,3
+"F.0143","Control","","","Endowment","Unspent",0,0
+"F.0336","Treatment","","","Endowment","Unspent",3,3
+"F.0490","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.1022","Treatment","","","Endowment","Unspent",0,0
+"F.0306","Control","","","Endowment","Unspent",1,1
+"F.1101","Control","","","Endowment","Unspent",3,3
+"F.1123","Treatment","","","Endowment","Unspent",3,3
+"F.0564","Control","","","Endowment","Unspent",0,0
+"F.0149","Control","","","Endowment","Unspent",0,0
+"F.0355","Treatment","","","Endowment","Unspent",3,3
+"F.0004","Control","","","Endowment","Unspent",0,0
+"F.1006","Treatment","","","Endowment","Unspent",2,2
+"F.0112","Treatment","","","Endowment","Unspent",0,0
+"F.0028","Control","","","Endowment","Unspent",0,0
+"F.0880","Control","","","Endowment","Unspent",0,0
+"F.0953","Treatment","","","Endowment","Unspent",0,0
+"F.0863","Control","","","Endowment","Unspent",0,0
+"F.1308","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.0027","Control","","","Endowment","Unspent",1,1
+"F.1227","Control","","","Endowment","Unspent",3,3
+"F.1138","Treatment","","","Endowment","Unspent",3,3
+"F.1196","Treatment","","","Endowment","Unspent",3,3
+"F.1013","Treatment","","","Endowment","Unspent",0,0
+"F.0362","Control","","","Endowment","Unspent",0,0
+"F.0252","Treatment","","","Endowment","Unspent",3,3
+"F.0314","Control","","","Endowment","Unspent",0,0
+"F.0614","Treatment","","","Endowment","Unspent",0,0
+"F.0386","Treatment","","","Endowment","Unspent",0,0
+"F.0785","Treatment","","","Endowment","Unspent",2,2
+"F.0380","Treatment","","","Endowment","Unspent",3,3
+"F.0642","Treatment","","","Endowment","Unspent",0,0
+"F.0646","Control","","","Endowment","Unspent",0,0
+"F.0977","Treatment","","","Endowment","Unspent",3,3
+"F.0422","Treatment","","","Endowment","Unspent",0,0
+"F.0647","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.0073","Control","","","Endowment","Unspent",3,3
+"F.0733","Treatment","","","Endowment","Unspent",2,2
+"F.0769","Control","","","Endowment","Unspent",0,0
+"F.0896","Control","","","Endowment","Unspent",0,0
+"F.1265","Treatment","","","Endowment","Unspent",3,3
+"F.1283","Control","","","Endowment","Unspent",2.5,2.5
+"F.0607","Treatment","","","Endowment","Unspent",3,3
+"F.0406","Control","","","Endowment","Unspent",0,0
+"F.0224","Control","","","Endowment","Unspent",0,0
+"F.1089","Control","","","Endowment","Unspent",2,2
+"F.0983","Treatment","","","Endowment","Unspent",0,0
+"F.1051","Treatment","","","Endowment","Unspent",3,3
+"F.0942","Treatment","","","Endowment","Unspent",3,3
+"F.0462","Treatment","","","Endowment","Unspent",3,3
+"F.0693","Control","","","Endowment","Unspent",0,0
+"F.0512","Treatment","","","Endowment","Unspent",3,3
+"F.0514","Treatment","","","Endowment","Unspent",3,3
+"F.0316","Treatment","","","Endowment","Unspent",0,0
+"F.0755","Treatment","","","Endowment","Unspent",3,3
+"F.0155","Control","","","Endowment","Unspent",3,3
+"F.0998","Control","","","Endowment","Unspent",1.3,1.3
+"F.0126","Control","","","Endowment","Unspent",0,0
+"F.0921","Treatment","","","Endowment","Unspent",3,3
+"F.0151","Treatment","","","Endowment","Unspent",0,0
+"F.1248","Treatment","","","Endowment","Unspent",0,0
+"F.0517","Control","","","Endowment","Unspent",3,3
+"F.0141","Treatment","","","Endowment","Unspent",0.5,0.5
+"F.0067","Treatment","","","Endowment","Unspent",0,0
+"F.0588","Control","","","Endowment","Unspent",0,0
+"F.0615","Control","","","Endowment","Unspent",0,0
+"F.0544","Control","","","Endowment","Unspent",3,3
+"F.0323","Control","","","Endowment","Unspent",3,3
+"F.0550","Treatment","","","Endowment","Unspent",3,3
+"F.0791","Control","","","Endowment","Unspent",1.5,1.5
+"F.0022","Treatment","","","Endowment","Unspent",0,0
+"F.0980","Treatment","","","Endowment","Unspent",0,0
+"F.0008","Treatment","","","Endowment","Unspent",2,2
+"F.1012","Treatment","","","Endowment","Unspent",0,0
+"F.1045","Treatment","","","Endowment","Unspent",2.9,2.9
+"F.1219","Treatment","","","Endowment","Unspent",3,3
+"F.0978","Treatment","","","Endowment","Unspent",0,0
+"F.0573","Treatment","","","Endowment","Unspent",3,3
+"F.0206","Control","","","Endowment","Unspent",2.99,2.99
+"F.0291","Treatment","","","Endowment","Unspent",0,0
+"F.0865","Treatment","","","Endowment","Unspent",0,0
+"F.0656","Treatment","","","Endowment","Unspent",0,0
+"F.1168","Control","","","Endowment","Unspent",1.5,1.5
+"F.0458","Control","","","Endowment","Unspent",3,3
+"F.1288","Treatment","","","Endowment","Unspent",0,0
+"F.1020","Treatment","","","Endowment","Unspent",2,2
+"F.0624","Treatment","","","Endowment","Unspent",2,2
+"F.0055","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.1142","Treatment","","","Endowment","Unspent",1,1
+"F.0221","Control","","","Endowment","Unspent",0,0
+"F.0713","Treatment","","","Endowment","Unspent",3,3
+"F.1223","Treatment","","","Endowment","Unspent",3,3
+"F.0285","Control","","","Endowment","Unspent",3,3
+"F.0640","Treatment","","","Endowment","Unspent",0,0
+"F.0507","Control","","","Endowment","Unspent",0,0
+"F.0581","Treatment","","","Endowment","Unspent",0,0
+"F.0060","Treatment","","","Endowment","Unspent",3,3
+"F.0911","Control","","","Endowment","Unspent",3,3
+"F.1167","Treatment","","","Endowment","Unspent",0,0
+"F.0405","Control","","","Endowment","Unspent",0,0
+"F.1084","Treatment","","","Endowment","Unspent",0,0
+"F.0985","Control","","","Endowment","Unspent",3,3
+"F.0862","Treatment","","","Endowment","Unspent",0,0
+"F.0348","Treatment","","","Endowment","Unspent",0,0
+"F.0698","Treatment","","","Endowment","Unspent",3,3
+"F.1173","Control","","","Endowment","Unspent",0,0
+"F.0741","Treatment","","","Endowment","Unspent",3,3
+"F.0345","Treatment","","","Endowment","Unspent",0,0
+"F.0033","Treatment","","","Endowment","Unspent",3,3
+"F.0361","Control","","","Endowment","Unspent",0,0
+"F.0909","Treatment","","","Endowment","Unspent",3,3
+"F.0199","Control","","","Endowment","Unspent",3,3
+"F.1026","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.0428","Control","","","Endowment","Unspent",3,3
+"F.0352","Treatment","","","Endowment","Unspent",0,0
+"F.1317","Control","","","Endowment","Unspent",3,3
+"F.0654","Treatment","","","Endowment","Unspent",0,0
+"F.0238","Treatment","","","Endowment","Unspent",2.2,2.2
+"F.0677","Treatment","","","Endowment","Unspent",0,0
+"F.0491","Treatment","","","Endowment","Unspent",0,0
+"F.1250","Treatment","","","Endowment","Unspent",3,3
+"F.1240","Control","","","Endowment","Unspent",1.5,1.5
+"F.0965","Control","","","Endowment","Unspent",0,0
+"F.0205","Treatment","","","Endowment","Unspent",3,3
+"F.0710","Control","","","Endowment","Unspent",3,3
+"F.0144","Control","","","Endowment","Unspent",0,0
+"F.0217","Treatment","","","Endowment","Unspent",3,3
+"F.1225","Treatment","","","Endowment","Unspent",3,3
+"F.0357","Control","","","Endowment","Unspent",2.2,2.2
+"F.0176","Treatment","","","Endowment","Unspent",0,0
+"F.1046","Control","","","Endowment","Unspent",0,0
+"F.0935","Treatment","","","Endowment","Unspent",3,3
+"F.0417","Treatment","","","Endowment","Unspent",0,0
+"F.1253","Treatment","","","Endowment","Unspent",0,0
+"F.0787","Control","","","Endowment","Unspent",2.5,2.5
+"F.0530","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.0368","Control","","","Endowment","Unspent",1.5,1.5
+"F.0269","Treatment","","","Endowment","Unspent",0,0
+"F.0030","Treatment","","","Endowment","Unspent",3,3
+"F.0310","Treatment","","","Endowment","Unspent",3,3
+"F.0409","Treatment","","","Endowment","Unspent",1.25,1.25
+"F.1064","Treatment","","","Endowment","Unspent",0,0
+"F.0166","Control","","","Endowment","Unspent",0,0
+"F.1281","Control","","","Endowment","Unspent",2,2
+"F.0705","Control","","","Endowment","Unspent",0,0
+"F.0638","Control","","","Endowment","Unspent",0,0
+"F.0461","Control","","","Endowment","Unspent",0,0
+"F.1055","Control","","","Endowment","Unspent",1.5,1.5
+"F.0374","Treatment","","","Endowment","Unspent",0,0
+"F.0007","Treatment","","","Endowment","Unspent",0,0
+"F.1179","Treatment","","","Endowment","Unspent",0,0
+"F.0988","Treatment","","","Endowment","Unspent",2,2
+"F.0467","Treatment","","","Endowment","Unspent",3,3
+"F.1207","Treatment","","","Endowment","Unspent",3,3
+"F.0202","Control","","","Endowment","Unspent",0,0
+"F.0959","Treatment","","","Endowment","Unspent",3,3
+"F.0196","Control","","","Endowment","Unspent",3,3
+"F.0492","Treatment","","","Endowment","Unspent",0,0
+"F.0652","Treatment","","","Endowment","Unspent",3,3
+"F.0932","Treatment","","","Endowment","Unspent",0,0
+"F.0783","Control","","","Endowment","Unspent",3,3
+"F.0756","Control","","","Endowment","Unspent",3,3
+"F.0811","Control","","","Endowment","Unspent",3,3
+"F.0190","Control","","","Endowment","Unspent",3,3
+"F.0470","Control","","","Endowment","Unspent",0,0
+"F.0150","Treatment","","","Endowment","Unspent",2,2
+"F.0300","Treatment","","","Endowment","Unspent",2,2
+"F.0973","Treatment","","","Endowment","Unspent",1,1
+"F.0703","Control","","","Endowment","Unspent",0,0
+"F.0738","Control","","","Endowment","Unspent",3,3
+"F.0172","Control","","","Endowment","Unspent",0,0
+"F.0866","Control","","","Endowment","Unspent",3,3
+"F.1269","Treatment","","","Endowment","Unspent",0,0
+"F.1293","Control","","","Endowment","Unspent",3,3
+"F.0459","Treatment","","","Endowment","Unspent",3,3
+"F.1132","Control","","","Endowment","Unspent",3,3
+"F.0200","Treatment","","","Endowment","Unspent",1.75,1.75
+"F.0023","Treatment","","","Endowment","Unspent",0,0
+"F.0540","Control","","","Endowment","Unspent",0,0
+"F.1074","Treatment","","","Endowment","Unspent",0,0
+"F.1039","Treatment","","","Endowment","Unspent",1.6,1.6
+"F.1245","Control","","","Endowment","Unspent",3,3
+"F.0256","Control","","","Endowment","Unspent",0,0
+"F.1291","Control","","","Endowment","Unspent",0,0
+"F.0903","Treatment","","","Endowment","Unspent",3,3
+"F.1292","Control","","","Endowment","Unspent",0,0
+"F.0472","Treatment","","","Endowment","Unspent",0,0
+"F.0869","Treatment","","","Endowment","Unspent",2,2
+"F.0089","Control","","","Endowment","Unspent",0,0
+"F.0819","Treatment","","","Endowment","Unspent",0,0
+"F.0709","Treatment","","","Endowment","Unspent",3,3
+"F.0088","Control","","","Endowment","Unspent",0,0
+"F.0827","Treatment","","","Endowment","Unspent",3,3
+"F.0146","Treatment","","","Endowment","Unspent",3,3
+"F.0883","Treatment","","","Endowment","Unspent",0,0
+"F.0818","Treatment","","","Endowment","Unspent",3,3
+"F.0093","Treatment","","","Endowment","Unspent",3,3
+"F.0590","Treatment","","","Endowment","Unspent",3,3
+"F.1284","Control","","","Endowment","Unspent",3,3
+"F.0632","Treatment","","","Endowment","Unspent",3,3
+"F.0910","Treatment","","","Endowment","Unspent",1.46,1.46
+"F.0780","Control","","","Endowment","Unspent",0,0
+"F.0894","Control","","","Endowment","Unspent",3,3
+"F.0689","Control","","","Endowment","Unspent",3,3
+"F.0534","Treatment","","","Endowment","Unspent",3,3
+"F.0986","Treatment","","","Endowment","Unspent",0,0
+"F.0442","Control","","","Endowment","Unspent",1.5,1.5
+"F.0432","Treatment","","","Endowment","Unspent",0,0
+"F.0518","Treatment","","","Endowment","Unspent",3,3
+"F.0987","Treatment","","","Endowment","Unspent",3,3
+"F.0603","Treatment","","","Endowment","Unspent",3,3
+"F.0541","Control","","","Endowment","Unspent",3,3
+"F.0851","Treatment","","","Endowment","Unspent",3,3
+"F.1111","Treatment","","","Endowment","Unspent",0,0
+"F.0960","Treatment","","","Endowment","Unspent",0.5,0.5
+"F.1030","Control","","","Endowment","Unspent",0,0
+"F.0852","Treatment","","","Endowment","Unspent",3,3
+"F.0629","Treatment","","","Endowment","Unspent",0,0
+"F.0586","Treatment","","","Endowment","Unspent",2.2,2.2
+"F.0359","Control","","","Endowment","Unspent",3,3
+"F.0636","Treatment","","","Endowment","Unspent",3,3
+"F.1122","Treatment","","","Endowment","Unspent",3,3
+"F.1041","Control","","","Endowment","Unspent",0,0
+"F.0266","Control","","","Endowment","Unspent",2,2
+"F.0142","Control","","","Endowment","Unspent",0,0
+"F.0892","Control","","","Endowment","Unspent",0,0
+"F.0674","Control","","","Endowment","Unspent",0,0
+"F.1060","Control","","","Endowment","Unspent",2,2
+"F.1066","Control","","","Endowment","Unspent",0,0
+"F.0481","Treatment","","","Endowment","Unspent",3,3
+"F.1188","Control","","","Endowment","Unspent",3,3
+"F.0353","Control","","","Endowment","Unspent",3,3
+"F.0723","Control","","","Endowment","Unspent",3,3
+"F.1146","Control","","","Endowment","Unspent",0,0
+"F.0694","Control","","","Endowment","Unspent",0,0
+"F.0584","Treatment","","","Endowment","Unspent",3,3
+"F.0635","Treatment","","","Endowment","Unspent",0,0
+"F.0553","Control","","","Endowment","Unspent",0,0
+"F.0682","Control","","","Endowment","Unspent",0,0
+"F.1229","Control","","","Endowment","Unspent",2,2
+"F.0971","Treatment","","","Endowment","Unspent",3,3
+"F.1095","Treatment","","","Endowment","Unspent",0,0
+"F.0358","Control","","","Endowment","Unspent",3,3
+"F.0478","Control","","","Endowment","Unspent",3,3
+"F.1119","Treatment","","","Endowment","Unspent",0,0
+"F.0116","Treatment","","","Endowment","Unspent",0,0
+"F.1216","Treatment","","","Endowment","Unspent",0,0
+"F.0549","Treatment","","","Endowment","Unspent",0,0
+"F.0017","Control","","","Endowment","Unspent",3,3
+"F.0595","Control","","","Endowment","Unspent",3,3
+"F.1007","Control","","","Endowment","Unspent",2,2
+"F.0968","Treatment","","","Endowment","Unspent",3,3
+"F.0128","Treatment","","","Endowment","Unspent",0,0
+"F.0773","Treatment","","","Endowment","Unspent",3,3
+"F.0494","Treatment","","","Endowment","Unspent",0,0
+"F.0957","Treatment","","","Endowment","Unspent",0,0
+"F.0644","Control","","","Endowment","Unspent",0,0
+"F.0169","Control","","","Endowment","Unspent",0,0
+"F.1107","Control","","","Endowment","Unspent",0,0
+"F.1027","Control","","","Endowment","Unspent",1,1
+"F.0333","Treatment","","","Endowment","Unspent",3,3
+"F.1193","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.0592","Treatment","","","Endowment","Unspent",3,3
+"F.0871","Control","","","Endowment","Unspent",0,0
+"F.1204","Treatment","","","Endowment","Unspent",0,0
+"F.1148","Treatment","","","Endowment","Unspent",0,0
+"F.1023","Treatment","","","Endowment","Unspent",0,0
+"F.0449","Treatment","","","Endowment","Unspent",3,3
+"F.0436","Control","","","Endowment","Unspent",1.15,1.15
+"F.1082","Control","","","Endowment","Unspent",0,0
+"F.0797","Treatment","","","Endowment","Unspent",3,3
+"F.0730","Control","","","Endowment","Unspent",3,3
+"F.0039","Control","","","Endowment","Unspent",0,0
+"F.0290","Control","","","Endowment","Unspent",0,0
+"F.0602","Control","","","Endowment","Unspent",0,0
+"F.0699","Treatment","","","Endowment","Unspent",3,3
+"F.0145","Treatment","","","Endowment","Unspent",3,3
+"F.0874","Treatment","","","Endowment","Unspent",3,3
+"F.0529","Treatment","","","Endowment","Unspent",0,0
+"F.0087","Control","","","Endowment","Unspent",0,0
+"F.1160","Treatment","","","Endowment","Unspent",0,0
+"F.1201","Control","","","Endowment","Unspent",3,3
+"F.0239","Control","","","Endowment","Unspent",3,3
+"F.0810","Treatment","","","Endowment","Unspent",0,0
+"F.1116","Treatment","","","Endowment","Unspent",3,3
+"F.0045","Control","","","Endowment","Unspent",0,0
+"F.0057","Treatment","","","Endowment","Unspent",0,0
+"F.1134","Control","","","Endowment","Unspent",0,0
+"F.0820","Treatment","","","Endowment","Unspent",3,3
+"F.1280","Control","","","Endowment","Unspent",3,3
+"F.1115","Treatment","","","Endowment","Unspent",1,1
+"F.0061","Control","","","Endowment","Unspent",0,0
+"F.0065","Control","","","Endowment","Unspent",0,0
+"F.0441","Treatment","","","Endowment","Unspent",3,3
+"F.0749","Control","","","Endowment","Unspent",3,3
+"F.0569","Control","","","Endowment","Unspent",0,0
+"F.0350","Control","","","Endowment","Unspent",2,2
+"F.0437","Treatment","","","Endowment","Unspent",3,3
+"F.0593","Control","","","Endowment","Unspent",0,0
+"F.0849","Control","","","Endowment","Unspent",3,3
+"F.0961","Control","","","Endowment","Unspent",3,3
+"F.0477","Control","","","Endowment","Unspent",1,1
+"F.0567","Control","","","Endowment","Unspent",2.5,2.5
+"F.1246","Control","","","Endowment","Unspent",2,2
+"F.0049","Control","","","Endowment","Unspent",0,0
+"F.0335","Control","","","Endowment","Unspent",3,3
+"F.0006","Control","","","Endowment","Unspent",3,3
+"F.1304","Treatment","","","Endowment","Unspent",3,3
+"F.0542","Control","","","Endowment","Unspent",0,0
+"F.0788","Control","","","Endowment","Unspent",0,0
+"F.0768","Control","","","Endowment","Unspent",0,0
+"F.1191","Treatment","","","Endowment","Unspent",2,2
+"F.0649","Treatment","","","Endowment","Unspent",3,3
+"F.0975","Control","","","Endowment","Unspent",3,3
+"F.0451","Control","","","Endowment","Unspent",1,1
+"F.0068","Control","","","Endowment","Unspent",3,3
+"F.0171","Control","","","Endowment","Unspent",3,3
+"F.1172","Treatment","","","Endowment","Unspent",2,2
+"F.0598","Treatment","","","Endowment","Unspent",0,0
+"F.0702","Control","","","Endowment","Unspent",0,0
+"F.0237","Treatment","","","Endowment","Unspent",1,1
+"F.1210","Control","","","Endowment","Unspent",0,0
+"F.1262","Control","","","Endowment","Unspent",0,0
+"F.0762","Treatment","","","Endowment","Unspent",0,0
+"F.1015","Control","","","Endowment","Unspent",0,0
+"F.1303","Control","","","Endowment","Unspent",3,3
+"F.0138","Control","","","Endowment","Unspent",3,3
+"F.1133","Treatment","","","Endowment","Unspent",0,0
+"F.1289","Control","","","Endowment","Unspent",3,3
+"F.0120","Control","","","Endowment","Unspent",0,0
+"F.1076","Control","","","Endowment","Unspent",3,3
+"F.0369","Treatment","","","Endowment","Unspent",2,2
+"F.1040","Treatment","","","Endowment","Unspent",0,0
+"F.0918","Control","","","Endowment","Unspent",2,2
+"F.0853","Control","","","Endowment","Unspent",3,3
+"F.0174","Treatment","","","Endowment","Unspent",0,0
+"F.0498","Treatment","","","Endowment","Unspent",0,0
+"F.1299","Control","","","Endowment","Unspent",2,2
+"F.0505","Treatment","","","Endowment","Unspent",0,0
+"F.0402","Control","","","Endowment","Unspent",2,2
+"F.0029","Control","","","Endowment","Unspent",0,0
+"F.1017","Treatment","","","Endowment","Unspent",0,0
+"F.1232","Treatment","","","Endowment","Unspent",2,2
+"F.0379","Control","","","Endowment","Unspent",0,0
+"F.0100","Treatment","","","Endowment","Unspent",3,3
+"F.0764","Control","","","Endowment","Unspent",3,3
+"F.1224","Control","","","Endowment","Unspent",3,3
+"F.1050","Control","","","Endowment","Unspent",0,0
+"F.0465","Treatment","","","Endowment","Unspent",0,0
+"F.0211","Control","","","Endowment","Unspent",3,3
+"F.1047","Control","","","Endowment","Unspent",3,3
+"F.0255","Control","","","Endowment","Unspent",3,3
+"F.0982","Control","","","Endowment","Unspent",0,0
+"F.0510","Control","","","Endowment","Unspent",3,3
+"F.0555","Control","","","Endowment","Unspent",0,0
+"F.0831","Control","","","Endowment","Unspent",0,0
+"F.0383","Control","","","Endowment","Unspent",3,3
+"F.0858","Treatment","","","Endowment","Unspent",0,0
+"F.0580","Control","","","Endowment","Unspent",0,0
+"F.0765","Control","","","Endowment","Unspent",3,3
+"F.0523","Control","","","Endowment","Unspent",3,3
+"F.1267","Treatment","","","Endowment","Unspent",3,3
+"F.0273","Control","","","Endowment","Unspent",3,3
+"F.0329","Control","","","Endowment","Unspent",1.5,1.5
+"F.0979","Control","","","Endowment","Unspent",2,2
+"F.0742","Treatment","","","Endowment","Unspent",2,2
+"F.0931","Treatment","","","Endowment","Unspent",1,1
+"F.0370","Treatment","","","Endowment","Unspent",3,3
+"F.1247","Treatment","","","Endowment","Unspent",3,3
+"F.0059","Treatment","","","Endowment","Unspent",0,0
+"F.0661","Control","","","Endowment","Unspent",2.6,2.6
+"F.1199","Treatment","","","Endowment","Unspent",3,3
+"F.0220","Control","","","Endowment","Unspent",0,0
+"F.0147","Control","","","Endowment","Unspent",1,1
+"F.0231","Control","","","Endowment","Unspent",1.5,1.5
+"F.0735","Treatment","","","Endowment","Unspent",3,3
+"F.0450","Treatment","","","Endowment","Unspent",3,3
+"F.0452","Control","","","Endowment","Unspent",0,0
+"F.1068","Treatment","","","Endowment","Unspent",3,3
+"F.0463","Treatment","","","Endowment","Unspent",0,0
+"F.0105","Treatment","","","Endowment","Unspent",0,0
+"F.0158","Treatment","","","Endowment","Unspent",3,3
+"F.1071","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.1274","Control","","","Endowment","Unspent",0,0
+"F.0535","Control","","","Endowment","Unspent",1,1
+"F.0397","Treatment","","","Endowment","Unspent",2,2
+"F.0991","Control","","","Endowment","Unspent",0,0
+"F.0188","Control","","","Endowment","Unspent",0,0
+"F.1102","Treatment","","","Endowment","Unspent",0,0
+"F.1230","Treatment","","","Endowment","Unspent",0,0
+"F.1100","Control","","","Endowment","Unspent",2,2
+"F.1103","Control","","","Endowment","Unspent",0,0
+"F.0914","Treatment","","","Endowment","Unspent",2.5,2.5
+"F.0078","Treatment","","","Endowment","Unspent",0,0
+"F.1028","Treatment","","","Endowment","Unspent",2,2
+"F.0552","Treatment","","","Endowment","Unspent",3,3
+"F.0347","Control","","","Endowment","Unspent",3,3
+"F.0098","Treatment","","","Endowment","Unspent",0,0
+"F.0168","Treatment","","","Endowment","Unspent",0,0
+"F.0103","Treatment","","","Endowment","Unspent",3,3
+"F.1183","Control","","","Endowment","Unspent",2.25,2.25
+"F.0717","Control","","","Endowment","Unspent",0,0
+"F.0159","Treatment","","","Endowment","Unspent",0,0
+"F.1087","Control","","","Endowment","Unspent",3,3
+"F.0499","Treatment","","","Endowment","Unspent",0,0
+"F.0410","Treatment","","","Endowment","Unspent",0,0
+"F.0083","Treatment","","","Endowment","Unspent",3,3
+"F.1149","Treatment","","","Endowment","Unspent",0,0
+"F.1318","Treatment","","","Endowment","Unspent",0,0
+"F.1220","Treatment","","","Endowment","Unspent",3,3
+"F.0182","Control","","","Endowment","Unspent",3,3
+"F.0173","Treatment","","","Endowment","Unspent",3,3
+"F.0219","Control","","","Endowment","Unspent",3,3
+"F.0230","Treatment","","","Endowment","Unspent",2,2
+"F.0130","Treatment","","","Endowment","Unspent",0,0
+"F.0608","Control","","","Endowment","Unspent",1.5,1.5
+"F.0258","Treatment","","","Endowment","Unspent",0,0
+"F.0296","Control","","","Endowment","Unspent",3,3
+"F.0338","Control","","","Endowment","Unspent",0,0
+"F.0752","Treatment","","","Endowment","Unspent",0,0
+"F.1117","Control","","","Endowment","Unspent",1.5,1.5
+"F.1169","Control","","","Endowment","Unspent",0,0
+"F.0304","Treatment","","","Endowment","Unspent",2,2
+"F.0054","Treatment","","","Endowment","Unspent",3,3
+"F.0906","Control","","","Endowment","Unspent",0,0
+"F.0091","Control","","","Endowment","Unspent",0,0
+"F.0399","Treatment","","","Endowment","Unspent",2,2
+"F.1159","Treatment","","","Endowment","Unspent",0,0
+"F.0080","Treatment","","","Endowment","Unspent",3,3
+"F.0293","Control","","","Endowment","Unspent",2,2
+"F.0279","Control","","","Endowment","Unspent",0,0
+"F.0186","Treatment","","","Endowment","Unspent",0,0
+"F.0739","Control","","","Endowment","Unspent",0,0
+"F.0222","Control","","","Endowment","Unspent",2,2
+"F.0621","Treatment","","","Endowment","Unspent",2,2
+"F.0974","Control","","","Endowment","Unspent",3,3
+"F.1081","Control","","","Endowment","Unspent",1,1
+"F.0650","Control","","","Endowment","Unspent",2.5,2.5
+"F.0746","Treatment","","","Endowment","Unspent",0,0
+"F.0509","Treatment","","","Endowment","Unspent",0,0
+"F.0711","Control","","","Endowment","Unspent",0,0
+"F.0283","Treatment","","","Endowment","Unspent",3,3
+"F.1042","Control","","","Endowment","Unspent",3,3
+"F.0340","Control","","","Endowment","Unspent",0,0
+"F.1098","Treatment","","","Endowment","Unspent",0,0
+"F.0545","Treatment","","","Endowment","Unspent",0,0
+"F.0500","Treatment","","","Endowment","Unspent",0,0
+"F.1275","Treatment","","","Endowment","Unspent",0,0
+"F.1221","Control","","","Endowment","Unspent",0,0
+"F.0944","Treatment","","","Endowment","Unspent",0,0
+"F.0591","Control","","","Endowment","Unspent",3,3
+"F.0181","Control","","","Endowment","Unspent",0,0
+"F.0774","Control","","","Endowment","Unspent",3,3
+"F.0832","Control","","","Endowment","Unspent",1.5,1.5
+"F.1093","Treatment","","","Endowment","Unspent",1,1
+"F.1181","Treatment","","","Endowment","Unspent",0,0
+"F.0548","Control","","","Endowment","Unspent",1,1
+"F.0315","Treatment","","","Endowment","Unspent",0,0
+"F.0670","Treatment","","","Endowment","Unspent",0,0
+"F.0753","Control","","","Endowment","Unspent",3,3
+"F.1136","Control","","","Endowment","Unspent",0,0
+"F.0312","Treatment","","","Endowment","Unspent",0,0
+"F.0899","Treatment","","","Endowment","Unspent",0,0
+"F.0295","Control","","","Endowment","Unspent",3,3
+"F.0610","Treatment","","","Endowment","Unspent",0,0
+"F.0582","Control","","","Endowment","Unspent",2,2
+"F.0828","Control","","","Endowment","Unspent",0,0
+"F.0891","Treatment","","","Endowment","Unspent",0,0
+"F.0418","Treatment","","","Endowment","Unspent",3,3
+"F.0760","Treatment","","","Endowment","Unspent",3,3
+"F.0460","Control","","","Endowment","Unspent",0,0
+"F.0926","Treatment","","","Endowment","Unspent",0,0
+"F.0745","Treatment","","","Endowment","Unspent",3,3
+"F.0384","Control","","","Endowment","Unspent",0,0
+"F.0153","Control","","","Endowment","Unspent",0,0
+"F.0351","Control","","","Endowment","Unspent",3,3
+"F.1296","Control","","","Endowment","Unspent",0,0
+"F.0763","Control","","","Endowment","Unspent",3,3
+"F.1301","Treatment","","","Endowment","Unspent",0,0
+"F.1032","Treatment","","","Endowment","Unspent",3,3
+"F.0447","Control","","","Endowment","Unspent",0,0
+"F.0639","Treatment","","","Endowment","Unspent",3,3
+"F.1282","Treatment","","","Endowment","Unspent",3,3
+"F.1049","Control","","","Endowment","Unspent",3,3
+"F.1127","Control","","","Endowment","Unspent",3,3
+"F.0719","Treatment","","","Endowment","Unspent",2,2
+"F.0044","Control","","","Endowment","Unspent",0,0
+"F.1228","Control","","","Endowment","Unspent",2,2
+"F.0382","Treatment","","","Endowment","Unspent",0,0
+"F.0951","Treatment","","","Endowment","Unspent",3,3
+"F.0690","Treatment","","","Endowment","Unspent",0,0
+"F.1088","Control","","","Endowment","Unspent",3,3
+"F.1019","Control","","","Endowment","Unspent",3,3
+"F.1005","Treatment","","","Endowment","Unspent",0,0
+"F.1239","Treatment","","","Endowment","Unspent",3,3
+"F.0148","Treatment","","","Endowment","Unspent",0,0
+"F.0407","Control","","","Endowment","Unspent",0,0
+"F.0012","Treatment","","","Endowment","Unspent",3,3
+"F.0495","Control","","","Endowment","Unspent",3,3
+"F.0403","Control","","","Endowment","Unspent",3,3
+"F.1001","Control","","","Endowment","Unspent",1,1
+"F.0404","Treatment","","","Endowment","Unspent",0,0
+"F.0318","Treatment","","","Endowment","Unspent",3,3
+"F.0227","Control","","","Endowment","Unspent",3,3
+"F.0815","Control","","","Endowment","Unspent",3,3
+"F.0396","Treatment","","","Endowment","Unspent",3,3
+"F.0905","Treatment","","","Endowment","Unspent",1.99,1.99
+"F.0589","Control","","","Endowment","Unspent",3,3
+"F.0081","Control","","","Endowment","Unspent",3,3
+"F.0334","Treatment","","","Endowment","Unspent",0,0
+"F.0104","Control","","","Endowment","Unspent",1,1
+"F.0282","Treatment","","","Endowment","Unspent",3,3
+"F.0139","Control","","","Endowment","Unspent",2,2
+"F.0804","Control","","","Endowment","Unspent",3,3
+"F.0274","Control","","","Endowment","Unspent",0,0
+"F.0058","Treatment","","","Endowment","Unspent",0,0
+"F.0278","Treatment","","","Endowment","Unspent",0,0
+"F.0667","Control","","","Endowment","Unspent",3,3
+"F.0062","Treatment","","","Endowment","Unspent",0,0
+"F.0676","Control","","","Endowment","Unspent",3,3
+"F.0272","Control","","","Endowment","Unspent",0,0
+"F.1086","Control","","","Endowment","Unspent",0,0
+"F.0631","Control","","","Endowment","Unspent",0,0
+"F.0720","Control","","","Endowment","Unspent",3,3
+"F.1120","Treatment","","","Endowment","Unspent",2,2
+"F.0939","Control","","","Endowment","Unspent",2,2
+"F.1097","Treatment","","","Endowment","Unspent",3,3
+"F.0111","Treatment","","","Endowment","Unspent",0,0
+"F.0302","Treatment","","","Endowment","Unspent",0,0
+"F.0063","Treatment","","","Endowment","Unspent",0,0
+"F.0806","Control","","","Endowment","Unspent",0,0
+"F.1244","Control","","","Endowment","Unspent",0,0
+"F.0539","Control","","","Endowment","Unspent",0,0
+"F.0861","Treatment","","","Endowment","Unspent",3,3
+"F.0496","Treatment","","","Endowment","Unspent",3,3
+"F.1044","Control","","","Endowment","Unspent",1.5,1.5
+"F.0778","Treatment","","","Endowment","Unspent",0,0
+"F.0526","Treatment","","","Endowment","Unspent",0,0
+"F.0421","Treatment","","","Endowment","Unspent",0,0
+"F.1157","Control","","","Endowment","Unspent",2,2
+"F.1073","Treatment","","","Endowment","Unspent",0,0
+"F.0163","Treatment","","","Endowment","Unspent",0,0
+"F.0099","Treatment","","","Endowment","Unspent",3,3
+"F.0946","Treatment","","","Endowment","Unspent",3,3
+"F.1252","Treatment","","","Endowment","Unspent",0,0
+"F.0837","Control","","","Endowment","Unspent",2,2
+"F.0728","Control","","","Endowment","Unspent",3,3
+"F.1031","Control","","","Endowment","Unspent",0,0
+"F.0393","Treatment","","","Endowment","Unspent",1,1
+"F.0547","Control","","","Endowment","Unspent",3,3
+"F.1255","Control","","","Endowment","Unspent",0,0
+"F.0233","Control","","","Endowment","Unspent",3,3
+"F.0321","Control","","","Endowment","Unspent",2.5,2.5
+"F.0209","Treatment","","","Endowment","Unspent",0,0
+"F.0020","Treatment","","","Endowment","Unspent",0,0
+"F.1187","Treatment","","","Endowment","Unspent",3,3
+"F.1131","Control","","","Endowment","Unspent",3,3
+"F.1186","Control","","","Endowment","Unspent",0,0
+"F.0839","Control","","","Endowment","Unspent",3,3
+"F.0064","Control","","","Endowment","Unspent",0,0
+"F.0121","Control","","","Endowment","Unspent",3,3
+"F.0426","Control","","","Endowment","Unspent",0,0
+"F.0663","Treatment","","","Endowment","Unspent",2,2
+"F.1010","Treatment","","","Endowment","Unspent",0,0
+"F.0524","Treatment","","","Endowment","Unspent",0,0
+"F.0360","Control","","","Endowment","Unspent",0,0
+"F.0184","Control","","","Endowment","Unspent",2,2
+"F.0922","Control","","","Endowment","Unspent",0,0
+"F.0485","Treatment","","","Endowment","Unspent",3,3
+"F.1147","Control","","","Endowment","Unspent",3,3
+"F.0292","Treatment","","","Endowment","Unspent",2,2
+"F.1144","Control","","","Endowment","Unspent",0,0
+"F.0307","Treatment","","","Endowment","Unspent",0,0
+"F.0037","Treatment","","","Endowment","Unspent",0,0
+"F.0685","Treatment","","","Endowment","Unspent",0,0
+"F.0943","Control","","","Endowment","Unspent",0,0
+"F.1025","Control","","","Endowment","Unspent",0,0
+"F.1259","Control","","","Endowment","Unspent",0,0
+"F.0546","Treatment","","","Endowment","Unspent",0,0
+"F.0412","Control","","","Endowment","Unspent",1,1
+"F.0972","Treatment","","","Endowment","Unspent",0,0
+"F.0945","Treatment","","","Endowment","Unspent",3,3
+"F.1276","Control","","","Endowment","Unspent",3,3
+"F.0771","Treatment","","","Endowment","Unspent",0,0
+"F.1175","Control","","","Endowment","Unspent",0,0
+"F.0281","Control","","","Endowment","Unspent",3,3
+"F.1256","Control","","","Endowment","Unspent",0,0
+"F.0712","Control","","","Endowment","Unspent",3,3
+"F.0525","Control","","","Endowment","Unspent",0,0
+"F.0761","Control","","","Endowment","Unspent",2,2
+"F.1124","Control","","","Endowment","Unspent",2.1,2.1
+"F.1105","Control","","","Endowment","Unspent",3,3
+"F.0377","Control","","","Endowment","Unspent",0,0
+"F.1078","Control","","","Endowment","Unspent",1,1
+"F.0940","Control","","","Endowment","Unspent",0,0
+"F.1056","Treatment","","","Endowment","Unspent",3,3
+"F.0114","Treatment","","","Endowment","Unspent",0,0
+"F.0887","Treatment","","","Endowment","Unspent",2.75,2.75
+"F.0786","Control","","","Endowment","Unspent",3,3
+"F.0434","Control","","","Endowment","Unspent",0,0
+"F.0721","Treatment","","","Endowment","Unspent",0,0
+"F.0456","Treatment","","","Endowment","Unspent",3,3
+"F.0724","Treatment","","","Endowment","Unspent",3,3
+"F.1235","Treatment","","","Endowment","Unspent",0,0
+"F.0419","Treatment","","","Endowment","Unspent",3,3
+"F.0204","Treatment","","","Endowment","Unspent",0,0
+"F.0095","Control","","","Endowment","Unspent",0,0
+"F.0079","Control","","","Endowment","Unspent",0,0
+"F.0375","Treatment","","","Endowment","Unspent",3,3
+"F.0493","Treatment","","","Endowment","Unspent",0,0
+"F.0003","Control","","","Endowment","Unspent",3,3
+"F.0439","Control","","","Endowment","Unspent",2,2
+"F.0908","Treatment","","","Endowment","Unspent",3,3
+"F.0619","Treatment","","","Endowment","Unspent",3,3
+"F.0026","Control","","","Endowment","Unspent",3,3
+"F.0816","Treatment","","","Endowment","Unspent",3,3
+"F.0448","Control","","","Endowment","Unspent",1.8,1.8
+"F.0094","Treatment","","","Endowment","Unspent",0,0
+"F.0198","Treatment","","","Endowment","Unspent",3,3
+"F.1231","Control","","","Endowment","Unspent",0,0
+"F.1171","Treatment","","","Endowment","Unspent",0,0
+"F.0976","Control","","","Endowment","Unspent",0,0
+"F.0834","Treatment","","","Endowment","Unspent",0,0
+"F.0251","Control","","","Endowment","Unspent",3,3
+"F.0792","Treatment","","","Endowment","Unspent",1,1
+"F.1313","Treatment","","","Endowment","Unspent",3,3
+"F.0257","Treatment","","","Endowment","Unspent",1,1
+"F.0263","Control","","","Endowment","Unspent",0,0
+"F.1052","Treatment","","","Endowment","Unspent",0,0
+"F.0600","Treatment","","","Endowment","Unspent",0,0
+"F.0294","Treatment","","","Endowment","Unspent",0,0
+"F.0907","Control","","","Endowment","Unspent",0,0
+"F.1035","Control","","","Endowment","Unspent",0,0
+"F.0010","Control","","","Endowment","Unspent",3,3
+"F.0373","Control","","","Endowment","Unspent",3,3
+"F.0748","Control","","","Endowment","Unspent",3,3
+"F.0016","Treatment","","","Endowment","Unspent",3,3
+"F.0964","Treatment","","","Endowment","Unspent",0,0
+"F.0423","Control","","","Endowment","Unspent",3,3
+"F.0618","Control","","","Endowment","Unspent",1,1
+"F.1260","Treatment","","","Endowment","Unspent",1,1
+"F.0625","Control","","","Endowment","Unspent",3,3
+"F.1024","Treatment","","","Endowment","Unspent",0,0
+"F.0175","Treatment","","","Endowment","Unspent",3,3
+"F.0085","Treatment","","","Endowment","Unspent",3,3
+"F.1270","Treatment","","","Endowment","Unspent",0,0
+"F.0731","Treatment","","","Endowment","Unspent",0,0
+"F.0992","Control","","","Endowment","Unspent",3,3
+"F.1008","Treatment","","","Endowment","Unspent",1,1
+"F.0445","Control","","","Endowment","Unspent",0,0
+"F.0803","Control","","","Endowment","Unspent",3,3
+"F.0246","Control","","","Endowment","Unspent",3,3
+"F.0565","Treatment","","","Endowment","Unspent",0,0
+"F.0391","Treatment","","","Endowment","Unspent",3,3
+"F.0031","Control","","","Endowment","Unspent",0,0
+"F.0077","Treatment","","","Endowment","Unspent",1.55,1.55
+"F.1143","Control","","","Endowment","Unspent",3,3
+"F.1154","Control","","","Endowment","Unspent",0,0
+"F.0180","Control","","","Endowment","Unspent",3,3
+"F.0018","Treatment","","","Endowment","Unspent",3,3
+"F.0583","Treatment","","","Endowment","Unspent",3,3
+"F.0715","Treatment","","","Endowment","Unspent",3,3
+"F.0669","Treatment","","","Endowment","Unspent",0,0
+"F.0440","Control","","","Endowment","Unspent",0,0
+"F.0245","Treatment","","","Endowment","Unspent",3,3
+"F.1009","Treatment","","","Endowment","Unspent",0,0
+"F.0271","Control","","","Endowment","Unspent",1,1
+"F.0228","Control","","","Endowment","Unspent",3,3
+"F.1162","Treatment","","","Endowment","Unspent",2,2
+"F.1178","Treatment","","","Endowment","Unspent",2,2
+"F.1185","Treatment","","","Endowment","Unspent",3,3
+"F.1266","Control","","","Endowment","Unspent",1.5,1.5
+"F.1180","Treatment","","","Endowment","Unspent",0,0
+"F.0687","Control","","","Endowment","Unspent",3,3
+"F.0984","Treatment","","","Endowment","Unspent",0,0
+"F.0830","Control","","","Endowment","Unspent",3,3
+"F.0288","Treatment","","","Endowment","Unspent",3,3
+"F.0606","Control","","","Endowment","Unspent",0,0
+"F.1075","Control","","","Endowment","Unspent",0,0
+"F.0232","Control","","","Endowment","Unspent",0,0
+"F.1085","Treatment","","","Endowment","Unspent",1.5,1.5
+"F.0805","Control","","","Endowment","Unspent",3,3
+"F.0913","Treatment","","","Endowment","Unspent",0,0
+"F.0758","Control","","","Endowment","Unspent",2.5,2.5
+"F.0587","Treatment","","","Endowment","Unspent",0,0
+"F.1112","Treatment","","","Endowment","Unspent",3,3
+"F.0622","Control","","","Endowment","Unspent",2,2
+"F.0923","Control","","","Endowment","Unspent",0,0
+"F.0522","Treatment","","","Endowment","Unspent",0,0
+"F.0897","Control","","","Endowment","Unspent",0,0
+"F.0801","Control","","","Endowment","Unspent",0,0
+"F.1206","Control","","","Endowment","Unspent",0,0
+"F.0262","Treatment","","","Endowment","Unspent",0,0
+"F.0414","Control","","","Endowment","Unspent",3,3
+"F.0680","Treatment","","","Endowment","Unspent",3,3
+"F.0759","Control","","","Endowment","Unspent",3,3
+"F.0817","Treatment","","","Endowment","Unspent",3,3
+"F.0989","Control","","","Endowment","Unspent",0,0
+"F.0938","Control","","","Endowment","Unspent",0,0
+"F.0106","Control","","","Endowment","Unspent",2.5,2.5
+"F.0483","Treatment","","","Endowment","Unspent",0,0
+"F.0577","Treatment","","","Endowment","Unspent",0,0
+"F.0718","Treatment","","","Endowment","Unspent",0,0
+"F.0309","Treatment","","","Endowment","Unspent",3,3
+"F.0277","Control","","","Endowment","Unspent",2,2
+"F.0259","Control","","","Endowment","Unspent",2,2
+"F.0671","Control","","","Endowment","Unspent",2,2
+"F.0937","Treatment","","","Endowment","Unspent",3,3
+"F.0807","Control","","","Endowment","Unspent",3,3
+"F.1212","Control","","","Endowment","Unspent",3,3
+"F.0157","Treatment","","","Endowment","Unspent",0,0
+"F.0520","Control","","","Endowment","Unspent",3,3
+"F.1315","Control","","","Endowment","Unspent",0,0
+"F.0075","Treatment","","","Endowment","Unspent",0,0
+"F.0133","Treatment","","","Endowment","Unspent",0,0
+"F.0995","Treatment","","","Endowment","Unspent",0,0
+"F.0322","Treatment","","","Endowment","Unspent",3,3
+"F.1312","Treatment","","","Endowment","Unspent",3,3
+"F.0692","Control","","","Endowment","Unspent",3,3
