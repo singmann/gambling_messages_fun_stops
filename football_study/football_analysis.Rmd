@@ -1,5 +1,5 @@
 ---
-title: "Analysis Roulette Gambling Study"
+title: "Analysis Football Gambling Study"
 author: "Henrik"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
@@ -33,7 +33,7 @@ library("binom")
 par_labels <- c("Gamble at all?", 
                 "Gamble everything?", 
                "Proportion bet?")
-cond_labels <- c("None", "White", "Yellow")
+cond_labels <- c("None", "Yellow")
 ylabel <- "Gambling message"
 
 ids_exclude <- c("F.0460", "F.0539", "F.0282", "F.0026", "F.0447")  
@@ -42,7 +42,7 @@ ids_exclude <- c("F.0460", "F.0539", "F.0282", "F.0026", "F.0447")
 
 ## Load & Prepare Data
 
-We first load in the data from all participants and transform variables into correct type. We also perform some checks on the data to confirm that it mateches our expectations (i.e., in size and structure).
+We first load in the data from all participants and transform variables into correct type. We also perform some checks on the data to confirm that it matches our expectations (i.e., in size and structure).
 
 ```{r, message=FALSE, warning=FALSE}
 
@@ -170,7 +170,7 @@ Where $g$ is the zero inflation probability (`zipp`) and reflects the probabilit
 
 We fit this model and add experimental condition as a factor to the three main model parameters (i.e., only the precision parameter is fixed across conditions). The following table provides the overview of the model and all model parameters and show good convergence.
 
-```{r, eval=FALSE}
+```{r, eval=TRUE, include=FALSE}
 zoib2 <- custom_family(
   "zoib2", dpars = c("mu", "phi", "zipp", "coi"),
   links = c("logit", "log", "logit", "logit"), lb = c(NA, 0, NA, NA),
@@ -234,7 +234,7 @@ if (file.exists(tmp_model_filename)) {
 
 
 ```{r}
-load("fits/model_zoib.rda")
+#load("fits/model_zoib.rda")
 summary(mzoib)
 ```
 
@@ -285,7 +285,7 @@ pp1 <- pp_check(mzoib, type = "hist", binwidth = 0.025, nsamples = 11) +
   coord_cartesian(ylim = c(0, 460)) +
   theme(legend.position = "none")
 pp1
-ggsave(plot = pp1, filename = "ppp.png", width = 8, height = 6)
+ggsave(plot = pp1, filename = "figures/ppp.png", width = 8, height = 6)
 
 ```
 
@@ -351,7 +351,7 @@ tmp <- tmp %>%
 pr1 <- condpars %>% 
   ggplot(aes(x = estimate, y = condition)) +
   #stat_histintervalh(breaks = 40) +
-  geom_halfeyeh() +
+  stat_halfeye() +
   facet_wrap("parameter", scales = "free_x") +
   xlab("Probability/Proportion") + ylab(ylabel) +
   scale_x_continuous(labels = scales::percent_format(1))
@@ -378,15 +378,15 @@ pr1 <- pr1 +
   geom_blank(data = tmpl)
 
 pr1 + theme_bw(base_size = 17)
-ggsave(pr1  + theme_bw(base_size = 17), filename = "res_e1a.png", 
+ggsave(pr1  + theme_bw(base_size = 17), filename = "figures/res_e1a.png", 
        width = 9.5, height = 4.5)
 ggsave(pr1  + theme_bw(base_size = 17) + theme(panel.grid.minor.x = element_blank()), 
-       filename = "res_e1b.png", 
+       filename = "figures/res_e1b.png", 
        width = 9.5, height = 4.5)
 ggsave(pr1  + theme_bw(base_size = 17) + theme(
   panel.grid.minor.x = element_blank(), 
   panel.grid.major.x = element_blank()), 
-       filename = "res_e1c.png", 
+       filename = "figures/res_e1c.png", 
        width = 9.5, height = 4.5)
 pr1use <- pr1  + theme_bw(base_size = 17) + theme(
   panel.grid.minor.x = element_blank(), 
@@ -404,7 +404,7 @@ pr1 <- condpars %>%
   xlab("Probability/Proportion") + ylab(ylabel) +
   scale_x_continuous(labels = scales::percent_format(1))
 pr1 + theme_bw(base_size = 17)
-ggsave(pr1  + theme_bw(base_size = 17), filename = "res_e1.png", 
+ggsave(pr1  + theme_bw(base_size = 17), filename = "figures/res_e1.png", 
        width = 9.5, height = 4.5)
 ```
 
@@ -432,7 +432,7 @@ Same as a figure.
 pr2 <- comppars %>% 
   ggplot(aes(x = estimate, y = condition)) +
   geom_vline(xintercept = 0, color = "grey", size = 0.6) +
-  geom_halfeyeh() +
+  stat_halfeye() +
   facet_wrap("parameter", scales = "free_x") +
   xlab("Difference from no message condition (on probability/proportion scale)") + 
   ylab("") +
@@ -482,7 +482,7 @@ pr2use <- pr2  + theme_bw(base_size = 17) + theme(
 ```{r}
 ggsave(plot = cowplot::plot_grid(pr1use, pr2use, ncol = 1, 
                                  rel_heights = c(4.5, 4)), 
-       filename = "res_both.png", 
+       filename = "figures/res_both.png", 
        width = 9.5, height = 8.5)
 
 ```
@@ -506,13 +506,13 @@ comppars %>%
              cols = vars(parameter), scales = "free_x") 
 ```
 
-We see that even with an extremely small prior with SD = 0.05 we still see evidence for no difference (i.e., black density estimate above the prior at 0) for all but the lower right plot. Note that a prior with SD of .05 means that we expect with 95% that the largest effect we observe is `r scales::percent(plogis(0.05 *2) - 0.5, accuracy = 0.01)` on the response scale.
+We see that even with an extremely small prior with SD = 0.05 we still see evidence for no difference (i.e., black density estimate above the prior at 0) for all but "gamble evewrything" for which we see some evidence for a backfire effect. Note that a prior with SD of .05 means that we expect with 95% probability that the largest effect we observe is `r scales::percent(plogis(0.05 *2) - 0.5, accuracy = 0.01)` on the response scale.
 
 
 
 # Model With Covariates
 
-The covariates do not differ between conditions (strong BF evidence for the null).
+The covariates do not differ between conditions (BF provide evidence for the null).
 
 ```{r, warning=FALSE}
 1/anovaBF(pgsi ~ condition, part2, progress = FALSE)
@@ -545,18 +545,22 @@ if (file.exists(tmp_model_filename)) {
 summary(mzoib2)
 ```
 
-As a visual convergence check, we plot the density and trace plots for the four intercept pasrameters representing the no message condition or the overall mean (for `phi`).
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
 
 ```{r, fig.asp=1.2}
 plot(mzoib2, pars = "Intercept")
 ```
 
-We can also plot the three parameters showing the difference distribution of the message condition from the no messafe condition. These differences are given on the logit scale.
+We can also plot the three parameters showing the difference distribution of the message condition from the no message condition. These differences are given on the logit scale.
 
 ```{r, fig.asp=1.0}
 plot(mzoib2, pars = "conditionTreatment")
 ```
-
+We also check the chains for the PGSI and motives scales.
+```{r, fig.asp=1.0}
+plot(mzoib2, pars = "pgsi")
+plot(mzoib2, pars = "motives")
+```
 
 
 ```{r, include=FALSE}
@@ -578,8 +582,7 @@ lpars <- mzoib2 %>%
   filter(!str_detect(.variable, "pgsi|motives")) %>% 
   mutate(type = case_when(
     str_detect(.variable, "Intercept") ~ "Intercept",
-    str_detect(.variable, "condyellow") ~ "yellow",
-    str_detect(.variable, "condwhite") ~ "white"
+    str_detect(.variable, "conditionTreatment") ~ "effect"
   )) %>%  
   mutate(parameter = case_when(
     str_detect(.variable, "zipp") ~ "g",
@@ -592,10 +595,9 @@ condpars <- lpars %>%
   pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
               names_from = type, values_from = .value) %>% 
   mutate(control = Intercept, 
-         white = Intercept + white,
-         yellow = Intercept + yellow) %>% 
-  select(-Intercept) %>% 
-  pivot_longer(cols = c(control, white, yellow), 
+         treatment = Intercept + effect) %>% 
+  select(-Intercept, -effect) %>% 
+  pivot_longer(cols = c(control, treatment), 
                names_to = "condition", values_to = "estimate") %>% 
   mutate(estimate = plogis(estimate)) %>% 
   mutate(parameter = factor(
@@ -609,7 +611,7 @@ condpars <- lpars %>%
 condpars %>% 
   ggplot(aes(x = estimate, y = condition)) +
   #stat_histintervalh(breaks = 40) +
-  geom_halfeyeh() +
+  stat_halfeye() +
   facet_wrap("parameter", scales = "free_x") +
   xlab("Probability/Proportion") +
   scale_x_continuous(labels = scales::percent_format(1))
@@ -622,20 +624,20 @@ comppars <- condpars %>%
   compare_levels(estimate, by = condition) %>% 
   mutate(condition = factor(
     x = condition, 
-    levels = c("yellow - white", "white - control", "yellow - control")))
+    labels = c("difference")))
 comppars %>% 
   ggplot(aes(x = estimate, y = condition)) +
   geom_vline(xintercept = 0, color = "grey") +
-  geom_halfeyeh() +
+  stat_halfeye() +
   facet_wrap("parameter", scales = "free_x") +
     xlab("Difference from no message condition (on proportion/probability scale)") + 
-  ylab("No message vs.") +
+  ylab("") +
   scale_x_continuous(labels = scales::percent_format(1))
 ```
 
 ### Plot of Relationships and BANOVA
 
-The figure below provides an alternative visualisation of the relationships between covariates and betting behaviour. In particular, participants were categorized into one of three experimental betting behavior groups: participants who did not bet at all (“none”, 14% of participants), participants who bet some of their money (68% of participants), and participants who bet “all” of their money (18%). For both gambling scales we see a positive relationship between the betting behavior group and the gambling score. Participants who bet more have on average higher scores on the two gambling scales. 
+The figure below provides an alternative visualisation of the relationships between covariates and betting behaviour. In particular, participants were categorized into one of three experimental betting behavior groups: participants who did not bet at all (“none”, 39% of participants), participants who bet some of their money (19% of participants), and participants who bet “all” of their money (42%). For both gambling scales we see a positive relationship between the betting behavior group and the gambling score. Participants who bet more have on average higher scores on the two gambling scales. 
 
 
 ```{r, eval=FALSE}
@@ -707,25 +709,27 @@ cvp2 <- part2 %>%
     panel.grid.major.x = element_blank()
   )
 cvp <- cowplot::plot_grid(cvp2, cvp1)
-ggsave(filename = "cov_plot.png", plot = cvp, width = 6.5, height = 4)
+ggsave(filename = "figures/cov_plot.png", plot = cvp, width = 6.5, height = 4)
 
 cvp
 
 ```
 
-This is supported by Bayesian ANOVAs with Bayes factors of over 400,000 for the effect of betting behavior group on the gambing scale scores. However, this effect was not moderated by gambling message condition. In particular, there was evidence for the absence of both a main effect of gambling message condition and an interaction of gambling message condition with betting behaviour group for both gambling scale scores (Bayes factors for the null > 25).
+This is supported by Bayesian ANOVAs for the enhancement motives scale, with a Bayes factor of over 700,000 for the effect of betting behavior group on motives score. However, there was evidence for a null effect (BF around 50 for the null) for the PGSI effect even though it showed descriptively the same pattern. 
+
+Furthermore, the effect on the motive score was not moderated by gambling message condition. The evidence for the absence of a main effect of condition was ambigous (around 1), but there was substantial evidence for the absence of the interaction (BF > 30).
 
 ```{r, eval=FALSE}
-anovaBF(pgsi ~ gamble_cat, part2, progress = FALSE)
-anovaBF(motives ~ gamble_cat, part2, progress = FALSE)
+anovaBF(pgsi ~ gamble_cat, as.data.frame(part2), progress = FALSE)
+anovaBF(motives ~ gamble_cat, as.data.frame(part2), progress = FALSE)
 ```
 
 ```{r, warning=FALSE}
-bfa1 <- anovaBF(pgsi ~ gamble_cat*exp_cond, part2, progress = FALSE)
+bfa1 <- anovaBF(pgsi ~ gamble_cat*condition, as.data.frame(part2), progress = FALSE)
 bfa1
 bfa1[2]/bfa1
 
-bfa2 <- anovaBF(motives ~ gamble_cat*exp_cond, part2, progress = FALSE)
+bfa2 <- anovaBF(motives ~ gamble_cat*condition, as.data.frame(part2), progress = FALSE)
 bfa2
 bfa2[2]/bfa2
 ```
@@ -733,12 +737,12 @@ bfa2[2]/bfa2
 
 ## Model With Interactions
 
-```{r, eval=FALSE}
+```{r, eval=TRUE, include=FALSE}
 zoib_model3 <- bf(
-  new_prop ~ exp_cond * (pgsi_c + motives_c),
+  new_prop ~ condition * (pgsi_c + motives_c),
   phi ~ 1,
-  zipp ~ exp_cond * (pgsi_c + motives_c),
-  coi ~ exp_cond * (pgsi_c + motives_c), 
+  zipp ~ condition * (pgsi_c + motives_c),
+  coi ~ condition * (pgsi_c + motives_c), 
   family = zoib2
 )
 
@@ -747,13 +751,20 @@ zoib_model3 <- bf(
 # str(tmp)
 # tmp$Y
 
-mzoib3 <- brm(formula = zoib_model3, data = part2, stanvars = stanvars, prior = np)
-save(mzoib3, file = "model_zoib3.rda", compress = "xz")
+tmp_model_filename <- "model_fits/model_zoib3.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib3 <- brm(formula = zoib_model3, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib3, file = tmp_model_filename, compress = "xz")
+}
 ```
 
 
+
 ```{r}
-load("model_zoib3.rda")
 summary(mzoib3)
 ```
 
@@ -766,16 +777,8 @@ plot(mzoib3, pars = "Intercept")
 We can also plot the three parameters showing the difference distribution of the yellow message condition from the no messafe condition. These differences are given on the logit scale.
 
 ```{r, fig.asp=1.0}
-plot(mzoib3, pars = "_condyellow$")
+plot(mzoib3, pars = "conditionTreatment$")
 ```
-
-Likewise, we can plot the three parameters showing the difference distribution of the white message condition from the no messafe condition. These differences are given on the logit scale.
-
-```{r, fig.asp=1.0}
-plot(mzoib3, pars = "_condwhite$")
-```
-
-
 
 ```{r, include=FALSE}
 get_variables(mzoib2)
@@ -791,13 +794,12 @@ pp_check(mzoib3, type = "hist", binwidth = 0.025, nsamples = 11) +
 ```{r}
 
 lpars <- mzoib3 %>% 
-  gather_draws(`b_.*`, regex = TRUE) %>% 
+gather_draws(`b_.*`, regex = TRUE) %>% 
   filter(!(.variable %in% c("b_phi_Intercept"))) %>%
   filter(!str_detect(.variable, "pgsi|motives")) %>% 
   mutate(type = case_when(
     str_detect(.variable, "Intercept") ~ "Intercept",
-    str_detect(.variable, "condyellow") ~ "yellow",
-    str_detect(.variable, "condwhite") ~ "white"
+    str_detect(.variable, "conditionTreatment") ~ "effect"
   )) %>%  
   mutate(parameter = case_when(
     str_detect(.variable, "zipp") ~ "g",
@@ -810,10 +812,9 @@ condpars <- lpars %>%
   pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
               names_from = type, values_from = .value) %>% 
   mutate(control = Intercept, 
-         white = Intercept + white,
-         yellow = Intercept + yellow) %>% 
-  select(-Intercept) %>% 
-  pivot_longer(cols = c(control, white, yellow), 
+         treatment = Intercept + effect) %>% 
+  select(-Intercept, -effect) %>% 
+  pivot_longer(cols = c(control, treatment), 
                names_to = "condition", values_to = "estimate") %>% 
   mutate(estimate = plogis(estimate)) %>% 
   mutate(parameter = factor(
@@ -827,7 +828,7 @@ condpars <- lpars %>%
 condpars %>% 
   ggplot(aes(x = estimate, y = condition)) +
   #stat_histintervalh(breaks = 40) +
-  geom_halfeyeh() +
+  stat_halfeye() +
   facet_wrap("parameter", scales = "free_x") +
   xlab("Probability/Proportion") +
   scale_x_continuous(labels = scales::percent_format(1))
@@ -840,236 +841,13 @@ comppars <- condpars %>%
   compare_levels(estimate, by = condition) %>% 
   mutate(condition = factor(
     x = condition, 
-    levels = c("yellow - white", "white - control", "yellow - control")))
+    labels = c("difference")))
 comppars %>% 
   ggplot(aes(x = estimate, y = condition)) +
   geom_vline(xintercept = 0, color = "grey") +
-  geom_halfeyeh() +
+  stat_halfeye() +
   facet_wrap("parameter", scales = "free_x") +
     xlab("Difference from no message condition (on proportion/probability scale)") + 
-  ylab("No message vs.") +
+  ylab("") +
   scale_x_continuous(labels = scales::percent_format(1))
 ```
-
-# Riskiness of Bets
-
-Do either of the warning labels affect the riskiness of bets chosen in the roulette? Different bets come with different potential payoffs in roulette. If £1 is bet, then this can provide a total payoff of between £2 (e.g., bets on red or black) and £36 (bets on a single number). These numbers, 2 and 36, are the decimal odds for these two bets, representing the total potential payoff Additionally, gamblers can place multiple bets per spin, (e.g., betting £0.50 on red and £0.50 on 7). Since the number 7 is a red colour, the bet on 7 can only win if the first bet on red also wins. Multiple bets per spin can either be placed in a way that accentuates risk, as in this example, or in a way that hedges risk (for example, a bet on black added to the bet on 7, or betting on reds and blacks together). The purpose of this exploratory analysis is to see if either warning label affects risk taking.
- 
-Following our pre-registration we have measures the amount of risk taken by looking at the variance of the decimal odds for each number in the roulette table. It will measure the concentration of the bet, with more risk represented by more concentrated bets (e.g., betting on a single number), and lower risk represented by more spread bets (e.g., betting on reds, betting on evens). For example, if a participant places a bet on number 7, the decimal odds for that number is 36 (36 times the amount bet if the roulette stops on the number 7). If a participant places a bet on red, then every red number on the table gets a decimal odd of 2 (the participant will win twice the amount bet if the roulette stops on any red number). In order to calculate the proposed risk variable, we will also assign decimal odds of zero for the numbers in which participants did not bet (since they win zero times the amount bet if the roulette stops on those numbers). In the two examples above, every number except 7 will be assigned zero, and every non-red number will be assigned zero, respectively. The risk variable will be the variance of the array of decimal odds for every number on the roulette table, taking into account the bets the participant has placed, and including zeroes for non-winning numbers. The value of this risk variable can range between 0.03 and 35.03. The value cannot be zero in our task because participants are not able to bet the same amount across all numbers including the zero due to the limitations in the values of the available tokens and total bet amounts. Higher numbers indicate more risk taking (with the highest, 35.03, associated with concentrating the bet on a single number). Lower numbers indicate lower risk taking (with the lowest, 0.03, associated with spreading the bet across every red and black number, excluding zero).
-
-The following plot shows the distribution of this variable after aggregating within participants. The left plot shows the original variable on the scale from 0.03 to 35.03. The middle plot shows the variable after dividing by 36 so that the variable ranges from just above 0 to just below 1. The right plot shows the variable after subtracting 0.03 and dividing by 35 so that the smallest value is mapped to 0 and the largest value is mapped to 1. 
-
-
-```{r, out.width="100%", fig.width=6, fig.asp=0.5}
-bets2 <- left_join(bets, select(part2, ppt_id, exp_cond), by = "ppt_id") %>% 
-  filter(!(ppt_id %in% exclude_ids)) %>% 
-  mutate(average_odds2 = average_odds / 36) %>% 
-  mutate(average_odds3 = (average_odds - 0.03) / 35)
-
-bets_av <- bets2 %>% 
-  group_by(exp_cond, ppt_id) %>% 
-  summarise(across(starts_with("average_odds"), mean)) %>% 
-  ungroup()
-
-# bets2 %>% 
-#   summarise(mean(average_odds3 == 0),
-#             mean(average_odds3 == 1))
-# 
-# bets_av %>% 
-#   summarise(mean(average_odds3 == 0),
-#             mean(average_odds3 == 1))
-
-cowplot::plot_grid(
-  bets_av %>% 
-  ggplot(aes(average_odds)) +
-  geom_histogram(bins = 50), 
-  bets_av %>% 
-  ggplot(aes(average_odds2)) +
-  geom_histogram(bins = 50), 
-  bets_av %>% 
-  ggplot(aes(average_odds3)) +
-  geom_histogram(bins = 50), nrow = 1
-)
-
-  #facet_wrap("exp_cond")
-```
-
-## Beta Regression
-
-We first analyse the data with a beta-regression model. For this, the data needs to be between 0 and 1, but exclude exactly 0 and 1. Consequently, we use the transformation shown above in the middle panel. As before, we fit the data and allow for an effect of gambling message. 
-
-
-```{r, eval=FALSE}
-risk_frml2 <- bf(
-  average_odds2 ~ exp_cond,
-  phi ~ 1
-)
-
-# risk_frml <- bf(
-#   average_odds3 ~ exp_cond + (1 |s| ppt_id),
-#   phi ~ 1,
-#   zoi ~ exp_cond + (1 |s| ppt_id),
-#   coi ~ exp_cond + (1 |s| ppt_id)
-# )
-
-# zoib_model <- bf(
-#   new_prop ~ exp_cond,
-#   phi ~ 1,
-#   zipp ~ exp_cond,
-#   coi ~ exp_cond, 
-#   family = zoib2
-# )
-
-# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
-# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
-# str(tmp)
-# tmp$Y
-
-mrisk2 <- brm(formula = risk_frml2, data = bets_av, family = Beta(), 
-             chains = 4, cores = 4)
-save(mrisk2, file = "model_risk2.rda", compress = "xz")
-```
-
-The model does not show any obvious problems. In addition, we can see that the 95%-CIs for the gambling message specific effects both include 0.
-
-```{r}
-load("model_risk2.rda")
-summary(mrisk2)
-```
-
-```{r, fig.asp=1.0}
-plot(mrisk2)
-```
-
-The posterior predictive distribution shows some problems, but at least the shape of the synthetic data is similar to the distribution of the actual data (posterior predictive distributions of a model assuming a Gaussian response distribution was considerably worse and is therefore not incldued here).
-
-```{r, fig.width=6, out.width="100%"}
-pp_check(mrisk2, type = "hist", binwidth = 0.05, nsamples = 11)
-```
-
-The following tables show the average riskiness per warning label and differences from the no warning message group on the fitted scale, i.e., the (0, 1) scale used for the beta regression.
-
-```{r, warning=FALSE}
-
-lpars <- mrisk2 %>% 
-  gather_draws(`b_.*`, regex = TRUE) %>% 
-  filter(.variable != "b_phi_Intercept") %>% 
-  mutate(type = case_when(
-    str_detect(.variable, "Intercept") ~ "Intercept",
-    str_detect(.variable, "condyellow") ~ "yellow",
-    str_detect(.variable, "condwhite") ~ "white"
-  )) 
-
-condpars <- lpars %>% 
-  pivot_wider(id_cols = c(.chain:.draw), 
-              names_from = type, values_from = .value) %>% 
-  mutate(None = Intercept, 
-         White = Intercept + white,
-         Yellow = Intercept + yellow) %>% 
-  select(-Intercept, -white, -yellow) %>% 
-  pivot_longer(cols = c(None, White, Yellow), 
-               names_to = "condition", values_to = "estimate") %>% 
-  mutate(estimate = plogis(estimate))
-
-
-condpars %>% 
-  group_by(condition) %>% 
-  mean_qi()
-comppars <- condpars %>% 
-  #mutate(estimate = estimate * 36) %>% 
-  compare_levels(estimate, by = condition) %>% 
-  filter(condition != "Yellow - White") %>% 
-  mutate(condition = factor(
-    x = condition, 
-    levels = c("White - None", "Yellow - None"), 
-    labels = c("White", "Yellow")))
-
-comppars %>% 
-  group_by(condition) %>% 
-  mean_qi()
-
-```
-
-The following plot shows the distribution of the posteriors (left) and difference from the no message gorup (right). Both of these variables are back-transformed on the original scale from 0.03 to 35.03.
-
-```{r, out.width="100%", fig.width=6, fig.asp=0.55}
-
-p1 <- condpars %>% 
-  ggplot(aes(x = estimate * 36, y = condition)) +
-  #stat_histintervalh(breaks = 40) +
-  geom_halfeyeh() +
-  xlab("Average Riskiness")
-
-comppars <- condpars %>% 
-  mutate(estimate = estimate * 36) %>% 
-  compare_levels(estimate, by = condition) %>% 
-  filter(condition != "Yellow - White") %>% 
-  mutate(condition = factor(
-    x = condition, 
-    levels = c("White - None", "Yellow - None"), 
-    labels = c("White", "Yellow")))
-p2 <- comppars %>% 
-  ggplot(aes(x = estimate, y = condition)) +
-  geom_vline(xintercept = 0, color = "grey") +
-  geom_halfeyeh() +
-    xlab("Difference from no message condition") + 
-  ylab("No message vs.")
-cowplot::plot_grid(p1, p2, nrow = 1)
-
-```
-
-As is clear from the plots, there is no evidence for a difference. Furthermore, there is some evidence for no difference for the white message, but only ambigous evidence for the yellow message.
-
-
-## Zero-One Inflated Beta-Regression Model
-
-We also attempt to fit a zero-one inflated beta regression model to the data transformed onto the [0, 1] scale (i.e., right panel in the histograms above). Note that this model uses the `brms` default parameterisation for ZOIBR models and not the custom ones used above.
-
-
-```{r, eval=FALSE}
-risk_frml <- bf(
-  average_odds3 ~ exp_cond,
-  phi ~ 1,
-  zoi ~ exp_cond,
-  coi ~ exp_cond
-)
-
-# risk_frml <- bf(
-#   average_odds3 ~ exp_cond + (1 |s| ppt_id),
-#   phi ~ 1,
-#   zoi ~ exp_cond + (1 |s| ppt_id),
-#   coi ~ exp_cond + (1 |s| ppt_id)
-# )
-
-# zoib_model <- bf(
-#   new_prop ~ exp_cond,
-#   phi ~ 1,
-#   zipp ~ exp_cond,
-#   coi ~ exp_cond, 
-#   family = zoib2
-# )
-
-# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
-# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
-# str(tmp)
-# tmp$Y
-
-mrisk <- brm(formula = risk_frml, data = bets_av, family = zero_one_inflated_beta(), 
-             chains = 4, cores = 4)
-save(mrisk, file = "model_risk.rda", compress = "xz")
-```
-
-This model also does not show any effect of message condition as none of the effects involving message condition (i.e., variable names containing `exp`) excludes 0 from theit 95% CI.
-
-```{r}
-load("model_risk.rda")
-summary(mrisk)
-```
-
-Furthermore, the posterior predictive distribution is not actually better. Hence, we prefer the beta regression model above.
-
-```{r, fig.width=6, out.width="100%"}
-pp_check(mrisk, type = "hist", binwidth = 0.05, nsamples = 11)
-```
-
-
