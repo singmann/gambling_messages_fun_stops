@@ -36,8 +36,9 @@ par_labels <- c("Gamble at all?",
 cond_labels <- c("None", "Yellow")
 ylabel <- "Gambling message"
 
-ids_exclude <- c("F.0460", "F.0539", "F.0282", "F.0026", "F.0447")  
+## ids_exclude <- c("F.0460", "F.0539", "F.0282", "F.0026", "F.0447")  
 ## exclusion based on email from Leo, should result in 1003 participants
+## is now checked algogithmically below
 ```
 
 ## Load & Prepare Data
@@ -45,6 +46,44 @@ ids_exclude <- c("F.0460", "F.0539", "F.0282", "F.0026", "F.0447")
 We first load in the data from all participants and transform variables into correct type. We also perform some checks on the data to confirm that it matches our expectations (i.e., in size and structure).
 
 ```{r, message=FALSE, warning=FALSE}
+captchas_all <- read_csv("data/captchas_data.csv")
+
+## ids that should redirect from captchas to main task
+ids_redirect <- captchas_all %>% 
+   mutate(
+    pptid = factor(pptid)
+   ) %>% 
+  filter(progress == "redirect") %>% 
+  select(pptid)
+
+covariates <- read_csv("data/questionnaire_data.csv") %>% 
+  mutate(across(starts_with("ENH"), ~case_when(
+    . == "Almost never/never" ~ 0,
+    . == "Sometimes" ~ 1,
+    . == "Often" ~ 2, 
+    . == "Almost always" ~ 3, 
+    TRUE ~ NA_real_))) %>% 
+  mutate(across(starts_with("PGSI"), ~case_when(
+    . == "Never" ~ 0,
+    . == "Sometimes" ~ 1,
+    . == "Most of the time" ~ 2, 
+    . == "Almost always" ~ 3, 
+    TRUE ~ NA_real_))) %>% 
+  mutate(pptid = factor(pptid))
+# map(covariates[,-(1:8)], ~sort(unique(.)))
+## PGSI
+# 0 = never
+# 1 = sometimes
+# 2 = most often / often
+# 3 = always
+
+
+## we only retain bets from participants that were both redirected and
+## for which we have covariates
+ids_covariates <- covariates %>% 
+  select(pptid) 
+
+ids_use <- inner_join(ids_covariates, ids_redirect)
 
 bets <- read_csv("data/bets_data.csv") %>% 
   mutate(
@@ -52,11 +91,11 @@ bets <- read_csv("data/bets_data.csv") %>%
     Condition = factor(Condition, levels = 
                          c("Control", "Treatment"))
   ) %>% 
-  filter(!(pptid %in% ids_exclude)) %>% 
+  filter(pptid %in% ids_use$pptid) %>% 
   droplevels()
 colnames(bets) <- tolower(colnames(bets))
 
-stopifnot(length(levels(bets$pptid)) == 1003)
+stopifnot(length(levels(bets$pptid)) == 1003)  ## this number is hand checked
 
 ## make sure spent and unspent money for each participant is 3
 bets %>% 
@@ -86,26 +125,7 @@ part2 <- used %>%
 ```
 
 ```{r, include=FALSE}
-covariates <- read_csv("data/questionnaire_data.csv") %>% 
-  mutate(across(starts_with("ENH"), ~case_when(
-    . == "Almost never/never" ~ 0,
-    . == "Sometimes" ~ 1,
-    . == "Often" ~ 2, 
-    . == "Almost always" ~ 3, 
-    TRUE ~ NA_real_))) %>% 
-  mutate(across(starts_with("PGSI"), ~case_when(
-    . == "Never" ~ 0,
-    . == "Sometimes" ~ 1,
-    . == "Most of the time" ~ 2, 
-    . == "Almost always" ~ 3, 
-    TRUE ~ NA_real_))) %>% 
-  mutate(pptid = factor(pptid))
-# map(covariates[,-(1:8)], ~sort(unique(.)))
-## PGSI
-# 0 = never
-# 1 = sometimes
-# 2 = most often / often
-# 3 = always
+
 pgsi <- covariates %>% 
   #select(-starts_with("Motives")) %>% 
   pivot_longer(starts_with("PGSI")) %>% 
@@ -281,12 +301,13 @@ posterior_predict_zoib2 <- function(i, prep, ...) {
 ```
 
 ```{r, fig.width=6, out.width="100%"}
+options(mc.cores = 1)
 pp1 <- pp_check(mzoib, type = "hist", binwidth = 0.025, nsamples = 11) +
   coord_cartesian(ylim = c(0, 460)) +
   theme(legend.position = "none")
 pp1
 ggsave(plot = pp1, filename = "figures/ppp.png", width = 8, height = 6)
-
+options(mc.cores = parallel::detectCores())
 ```
 
 ## Model Estimates
@@ -410,7 +431,7 @@ ggsave(pr1  + theme_bw(base_size = 17), filename = "figures/res_e1.png",
 
 ## Difference distribution versus no message condition
 
-We can also focus and look at the difference distributions from the no message condition (i.e., we do not show the "Yellow versus White" comparison, but all below are against no message condition).
+We can also focus and look at the difference distributions from the no message condition.
 
 ```{r}
 comppars <- condpars %>% 
@@ -568,8 +589,10 @@ get_variables(mzoib2)
 ```
 
 ```{r, fig.width=6, out.width="100%"}
+options(mc.cores = 1)
 pp_check(mzoib2, type = "hist", binwidth = 0.025, nsamples = 11) +
   coord_cartesian(ylim = c(0, 350))
+options(mc.cores = parallel::detectCores())
 ```
 
 
@@ -785,8 +808,10 @@ get_variables(mzoib2)
 ```
 
 ```{r, fig.width=6, fig.height=6, out.width="100%"}
+options(mc.cores = 1)
 pp_check(mzoib3, type = "hist", binwidth = 0.025, nsamples = 11) +
   coord_cartesian(ylim = c(0, 350))
+options(mc.cores = parallel::detectCores())
 ```
 
 
