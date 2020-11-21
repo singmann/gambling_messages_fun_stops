@@ -1,0 +1,601 @@
+---
+title: "Frequentist Analysis of Gambling Warning: Roksy Choice Experiment"
+author: "Philip Newall, Lukasz Walasek, Henrik Singmann, Elliot Ludvig"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Setup
+
+```{r packages, message=FALSE, warning=FALSE, results='hide'}
+library("afex")
+library("emmeans")
+library("tidyverse")
+theme_set(theme_bw(base_size = 15) + 
+            theme(legend.position="bottom"))
+library("binom")
+library("parallel")
+library("emmeans")
+source("analysis_fun.R")
+nc <- detectCores() # number of cores
+cl <- makeCluster(rep("localhost", nc)) # make cluster
+clusterEvalQ(cl, library("optimx"))
+```
+
+```{r load}
+din <- read_csv("data/Soccerwarnings1.csv", 
+                col_types = cols(
+                  .default = col_double(),
+                  gendertext = col_logical(),
+                  comments = col_character(),
+                  PROLIFIC_PID = col_character(),
+                  ordercontrol = col_character(),
+                  orderwarning = col_character()
+                )) %>% 
+  mutate(newid = factor(1:nrow(.)))
+
+dl <- din %>% 
+  select(newid, starts_with("control"), starts_with("warning")) %>% 
+  gather("condition", "response", -newid) %>% 
+  filter(!is.na(response)) %>% 
+  mutate(item = as.numeric(str_extract(condition, "\\d"))) %>% 
+  mutate(label = factor(str_remove(condition, "\\d"), 
+                            levels = c("warning", "control"))) %>% 
+  mutate(complexity = factor(case_when(
+    item <= 3 ~ "low",
+    item <= 6 ~ "medium",
+    item <= 9 ~ "high",
+    TRUE ~ NA_character_
+  ), levels = c("low", "medium", "high")))
+dl %>% 
+  group_by(newid) %>% 
+  summarise(check = mean(label == "control")) %>% 
+  {all(.$check %in% c(0, 1))} ## all newid in one condition only?
+```
+
+Two (anonymized) IDs seem to have taken part in the experiment twice.
+
+```{r}
+ids <- table(din$PROLIFIC_PID)
+ids[ ids > 1 ]
+```
+
+We therefore exclude those participants from the data.
+
+```{r}
+
+ids_remove <- din %>% 
+  filter(PROLIFIC_PID %in% names(ids[ ids > 1 ])) %>% 
+  .$newid
+
+dl <- dl %>% 
+  filter(!(newid %in% ids_remove))
+```
+
+# Demographics
+
+```{r}
+add_vars <- din %>% 
+  filter(!(newid %in% ids_remove)) %>% 
+  mutate(psg = rowSums(select(., starts_with("pgsi")))) %>% 
+  select(newid, gender, age, freq, psg) %>% 
+  mutate(gender = factor(gender, levels = 1:4, 
+                         labels = c("Male", "Female", "other", "no-answer")), 
+         age_z = get_z(age),
+         freq_z = get_z(freq),
+         psg_z = get_z(psg))
+```
+
+Gender distribution:
+
+```{r, warning=FALSE}
+any(!is.na(din$gendertext))
+add_vars %>% 
+  group_by(gender) %>% 
+  tally() %>% 
+  mutate(p = n / sum(n))
+```
+
+Distribution of other covariates:
+
+```{r, fig.width=6, fig.height=3}
+add_vars %>% 
+  gather("variable", "value", psg, freq, age) %>% 
+  ggplot(aes(value)) +
+  geom_histogram(bins = 30) +
+  facet_wrap("variable", scales = "free")
+
+```
+
+```{r}
+add_vars %>% 
+  select(psg, freq, age) %>% 
+  psych::describe()
+```
+
+We can also inspect the inter-correlation among those:
+
+```{r, fig.height=7, fig.width=7, message=FALSE}
+add_vars %>% 
+  select(age, freq, psg, gender) %>% 
+  na.omit() %>% 
+  GGally::ggpairs(progress = FALSE, diag = list(continuous = "barDiag"))
+```
+
+
+# Descriptives
+
+
+```{r}
+dl %>% 
+  group_by(label) %>% 
+  summarise(c = list(binom.confint(sum(response), n = n()))) %>% 
+  unnest(c) %>% 
+  filter(method == "agresti-coull")
+```
+
+The descriptives show a slightly larger rate of choosing the gamble in the warning compared to the control condition.
+
+```{r}
+dl %>% 
+  group_by(complexity) %>% 
+  summarise(c = list(binom.confint(sum(response), n = n()))) %>% 
+  unnest(c) %>% 
+  filter(method == "agresti-coull")
+```
+
+The influence of complexity does not appear to be overly strong or monotonic.
+
+# Mixed Models
+
+## Models
+
+### Full Fixed Effects
+
+We begin with the maximal-model justified by the design which has by-participant random slopes and by-participant random slopes for complexity as well as correlation among the random-effect parameters.
+
+```{r, message=FALSE}
+
+mfull <- mixed(response ~ label*complexity + (complexity|newid), dl, 
+               method = "LRT", family = binomial, progress = FALSE, cl = cl)
+summary(mfull)$varcor
+mfull
+```
+
+This models shows clear convergence problems and a singular fit. We do not see an effect of `label`, only of `complexity`. 
+
+Consequently, we run a second model in which we remove the correlation among the random-effects parameters.
+
+```{r, message=FALSE}
+
+mnc <- mixed(response ~ label*complexity + (complexity||newid), dl, 
+               method = "LRT", family = binomial, expand_re = TRUE,
+             progress = FALSE, cl = cl)
+summary(mnc)$varcor
+mnc
+```
+
+This model still shows a singular fit. The pattern of significant and non-significant results is unchanged.
+
+We run a final model with full fixed-effects structure. This model only has by-participant random-intercepts.
+
+```{r, message=FALSE}
+
+mmin <- mixed(response ~ label*complexity + (1|newid), dl, 
+               method = "LRT", family = binomial, 
+             progress = FALSE, cl = cl)
+summary(mmin)$varcor
+mmin
+```
+
+This model appears to converge successfully, but shows the same pattern of significant results.
+
+### Main Effects Only
+
+Following the preregistration, we also run a model without the interaction of the fixed effects (i.e., main effects only). We again begin with the maximal random-effects structure justified by the design.
+
+```{r, message=FALSE}
+
+mme_full <- mixed(response ~ label+complexity + (complexity|newid), dl, 
+               method = "LRT", family = binomial, progress = FALSE, cl = cl)
+summary(mme_full)$varcor
+mme_full
+```
+
+This again shows a singular fit, a non-significant effect of `label`, and a significant effect of `complexity`. 
+
+We again run a reduced model without correlation among random-effects parameters.
+
+```{r, message=FALSE}
+mme_nc <- mixed(response ~ label+complexity + (complexity||newid), dl, 
+               method = "LRT", family = binomial, expand_re = TRUE,
+             progress = FALSE, cl = cl)
+summary(mme_nc)$varcor
+mme_nc
+```
+
+This model still shows a singular fit and the same pattern of significant results. Consequently, we also run a model with only by-participant random intercepts.
+
+```{r, message=FALSE}
+mme_min <- mixed(response ~ label+complexity + (1|newid), dl, 
+               method = "LRT", family = binomial, 
+             progress = FALSE, cl = cl)
+summary(mme_min)$varcor
+mme_min
+```
+
+This model converges successfully and also shows the same pattern of results.
+
+### Single Fixed-Effect Only
+
+As a final test of, we also run an analysis on a model that only included a single fixed-effect.
+
+We begin with a model that only includes fixed-effects for label and by-participant random intercepts.
+
+```{r, message=FALSE}
+m_cond <- mixed(response ~ label + (1|newid), dl, 
+               method = "LRT", family = binomial, expand_re = FALSE,
+             progress = FALSE, cl = cl)
+summary(m_cond)$varcor
+m_cond
+```
+
+This model converged successfully, but showed no effect of label.
+
+We also run a model with only a fixed-effect of complexity. Following the earlier failure to estimate by-participants random slopes for complexity, we only estimate the model that only includes by-participant random-intercepts.
+
+```{r, message=FALSE}
+mcomp_min <- mixed(response ~ complexity + (1|newid), dl, 
+               method = "LRT", family = binomial, expand_re = TRUE,
+             progress = FALSE, cl = cl)
+summary(mcomp_min)$varcor
+mcomp_min
+```
+
+This model converges successfully and also shows an effect of complexity.
+
+## Compare Predicted and Observed
+
+For generalized linear mixed models the predicted marginal means do not necessarily have to correspond to the observed marginal means, especially for lower-order terms. Consequently, it makes sense to compare both observed and predicted means to see whether both agree qualitatively and quantitatively. If there are large disagreements, results should be interpreted carefully.
+
+
+### Label
+
+First we check the agreement for the effect of label. We compare the observed mean proportions against the predictions of three models. The maximal model with interaction, the minimal model with interaction (this is the most reasonable model with interaction), and the main-effect only model (i.e., only fixed-effect is label).
+
+```{r, message=FALSE}
+dl %>% 
+  group_by(label) %>% 
+  summarise(prop = mean(response)) %>% 
+  mutate(
+    full = get_est(emmeans(mfull, "label", type = "response")), 
+    minimal = get_est(emmeans(mmin, "label", type = "response")),
+    me_only = get_est(emmeans(m_cond, "label", type = "response")), 
+  )
+```
+
+For the effect of label, the predicted response proportions are consistently smaller than the observed response proportions. In addition, there are rather small differences between the different models. This suggests that the main difference between model and data is due to the random-effects. Nevertheless, observed and predicted response proportions agree qualitatively. When the warning label is present, the proportion of betting seems to be slightly larger (note that this difference is NOT significant). 
+
+### Complexity
+
+We also check the agreement for the effect of complexity. We use the same three models here.
+
+```{r, message=FALSE}
+dl %>% 
+  group_by(complexity) %>% 
+  summarise(prop = mean(response)) %>% 
+  mutate(
+    full = get_est(emmeans(mfull, "complexity", type = "response")), 
+    minimal = get_est(emmeans(mmin, "complexity", type = "response")),
+    me_only = get_est(emmeans(mcomp_min, "complexity", type = "response")), 
+  )
+
+```
+
+We see the same pattern as above. Qualitative agreement is present, but quantitative agreement is not perfect, the observed values are somewhat larger. Specifically, for the medium complexity label.
+
+## Model Evaluation
+
+All models show at least qualitative agreement between observed and predicted response proportions, so we would be willing to interpret the results. 
+
+In terms of significance tests, the different models agree as well. The effect of label is not significant across seven models that include fixed-effects for label, smallest $p = .15$, largest $p = .18$. Likewise, the label by complexity interaction is not significant across the three models including the corresponding fixed-effects, smallest $p = .35$, largest $p = .43$. However, the main effect of complexity is significant in all seven models including it, all $p < .0001$.
+
+Given the very strong agreement in terms of hypothesis tests, the choice of which model is the "best" seems not particularly consequential. However, in line with the preregistered analysis plan we need to denote one model as the best model. Given our interest in both main effects and the interaction, and the fact that adding the interaction does not lead to dramatic distortions of the predictions, the best model is the model with interaction, but only by-participant random-effects (i.e., no more complicated random-effects structure). Models with more complicated structure did not converge successfully and therefore could potentially not be trustworthy.
+
+## Figure
+
+The figure of the results is based on the best (i.e., minimal) model that includes the interaction.
+
+```{r, fig.width=3.5, fig.height=3.5}
+afex_plot(mmin, "complexity", "label", dodge = 0.3,
+          data_alpha = 0.2, mapping = c("linetype", "fill", "color", "shape"),
+          data_arg = list(
+            position = 
+              ggplot2::position_jitterdodge(
+                jitter.width = 0.2, 
+                jitter.height = 0.05, 
+                dodge.width = 0.3  ## needs to be same as dodge
+                ))) +
+  ylab("Probability to gamble")
+
+```
+
+We also create a figure for the paper.
+
+```{r, fig.width=3.5, fig.height=3.5}
+theme_set(theme_bw(base_size = 16) + 
+            theme(legend.position="bottom"))
+
+afex_plot(mmin, "label", 
+          mapping = c(""),
+          data_geom = geom_count, 
+          data_arg = list(color = "darkgrey"),
+          point_arg = list(size = 3.5), 
+          error_arg = list(size = 2, width = 0), 
+          factor_levels = list(label = c("Warning", "Control"))) +
+  ylab("Probability to gamble") + xlab("Label") +
+  guides(shape = FALSE) + 
+  scale_size_area() +
+  geom_line(aes(group = 1), size = 2)
+ ggsave("plot1.png", device = "png", 
+       width = 9, height = 9, units = "cm", 
+       dpi = 600)
+
+```
+
+
+## Effect Size
+
+The effect size for binomial data is odds ratio (OR). Here, it is based on the best model.
+
+```{r}
+emmeans(mmin, c("label"), type = "response") %>% 
+  pairs %>% 
+  update(by = NULL) %>% 
+  summary(adjust = "holm", infer = TRUE)
+```
+
+For reference, again the predicted marginal means of the model.
+
+```{r}
+emmeans(mmin, c("label"), type = "response") 
+```
+
+
+# Exploratory Analysis
+
+Following our preregistration, we also inspect whether the additional covariates affect the probability to gamble.
+
+```{r}
+dfull <- left_join(dl, add_vars, by = "newid")
+## remove participant where gender is na
+dfull2 <- dfull %>% 
+  filter(!is.na(gender)) %>% 
+  droplevels
+covariates <- c("gender", "age_z", "freq_z", "psg_z")
+```
+
+```{r, warning=FALSE, message=FALSE}
+extra_main <- map(covariates, fit_combined_formula, 
+    formula_fixed = response ~ label*complexity, 
+    formula_random = "+ (1|newid)",
+    data = dfull2, by = "+", cl = cl)
+names(extra_main) <- covariates
+extra_inter <- map(covariates, fit_combined_formula, 
+    formula_fixed = response ~ label*complexity, 
+    formula_random = "+ (1|newid)", 
+    data = dfull2, by = "*", cl = cl, all_fit = TRUE)
+names(extra_inter) <- covariates
+```
+
+## Covariates added as main effects
+
+```{r}
+walk(extra_main, print)
+```
+
+When added as main effects, the additional covariates do not reveal additional significant effects.
+
+## Covariates added as interactions
+
+```{r}
+walk(extra_inter, print)
+```
+
+Gender and frequency of gambling still do not show any significant effects. Furthermore, the model containing PSG, shows numerical problem suggesting that the results cannot be trusted. However, age interacts with label and with label and complexity. We will explore this effect in the following. 
+
+Before doing so, we fit another variant of the model for PSG. However, this time without complexity. 
+
+```{r}
+extra_c <- fit_combined_formula(
+  covariate = "psg_z", 
+  formula_fixed = response ~ label, 
+  formula_random = "+ (1|newid)", 
+  data = dfull2, by = "*", cl = cl, all_fit = TRUE)
+extra_c
+```
+
+This model does not show any critical convergence problems, but still shows no interaction of PSG with label.
+
+## Effect of Age
+
+```{r}
+emmeans(extra_inter[["age_z"]], c("label"), by = "age_z",
+        type = "response", at = list(age_z = c(-1, 0, 1)), 
+        data = dfull2) %>% 
+  pairs %>% 
+  update(by = NULL) %>% 
+  summary(adjust = "holm")
+```
+
+```{r}
+emmeans(extra_inter[["age_z"]], c("label"), by = "age_z",
+        type = "response", at = list(age_z = c(-1, 0, 1)), 
+        data = dfull2) 
+```
+
+```{r}
+emmeans(extra_inter[["age_z"]], c("label"), by = c("complexity", "age_z"),
+        type = "response", at = list(age_z = c(-1, 0, 1)), 
+        data = dfull2) %>% 
+  pairs %>% 
+  update(by = NULL) %>% 
+  summary(adjust = "holm")
+```
+
+We see that there seems to be an ironic effect of the warning labels for older participants (at mean age plus 1 SD), such that the warning **increases** the probability to gamble. The second analysis shows that this seems to hold only for medium complex gambles. 
+
+One possibility is that this finding does not represent a genuine effect but noise, potentially because there there are only few older participants. To check this, we look whether we can find a similar pattern, after binning the data. We use two binning approaches, approximately similar bin widths or bins with approximately the same number of participants.
+
+```{r}
+add_vars <- add_vars %>% 
+  mutate(age_bin3 = cut(age, 3, labels = c("low", "medium", "high")),
+         age_bin2 = cut(age, 2, labels = c("low", "high")), 
+         age_bin_m2 = cut_number(age, 2, labels = c("low", "high")),
+         age_bin_m3 = cut_number(age, 3, labels = c("low", "medium", "high"))) 
+dfull2 <- left_join(dl, add_vars) %>% 
+  filter(!is.na(gender)) %>% 
+  droplevels
+
+add_vars %>% 
+  group_by(age_bin2) %>% 
+  summarise(mean = mean(age), 
+            min = min(age),
+            max = max(age), 
+            n = n())
+add_vars %>% 
+  group_by(age_bin_m2) %>% 
+  summarise(mean = mean(age), 
+            min = min(age),
+            max = max(age), 
+            n = n())
+psych::describe(add_vars$age)
+
+```
+
+### Equally Sized Bins
+
+We first look at the data split into two approximately equally sized bins (at the median, with the median age being assigned to the lower category).
+
+```{r, fig.width=4, fig.height=3.5}
+add_vars %>% 
+  right_join(dl, by = "newid") %>% 
+  group_by(newid, age_bin_m2, label) %>% 
+  summarise(response = mean(response)) %>% 
+  ggplot(aes(x = label, y = response)) +
+  geom_boxplot(outlier.color = "transparent") +
+  geom_jitter(width = 0.2, height = 0.025, alpha = 0.2) +
+  stat_summary(fun.data = mean_se) + 
+  facet_wrap("age_bin_m2")
+```
+
+```{r, warning=FALSE, message=FALSE}
+mextra_age_a <- fit_combined_formula(
+  covariate = "age_bin_m2",
+  formula_fixed = response ~ label*complexity, 
+  formula_random = "+ (1|newid)", 
+  data = dfull2, by = "*", cl = cl
+)
+nice(mextra_age_a)
+```
+
+```{r}
+emmeans(mextra_age_a, "label", by = "age_bin_m2", type = "response")
+emmeans(mextra_age_a, "label", by = "age_bin_m2", type = "response") %>% 
+  pairs %>% 
+  update(by = NULL) %>% 
+  summary(adjust = "holm")
+```
+
+The graphical analysis as well as the statistical analysis suggest that there might be such an ironic effect of the warning label for older participants. 
+
+### Bins of Equal Width
+
+We then inspect the data in the same way based on bins with equal width.
+
+```{r, fig.width=4, fig.height=3.5}
+add_vars %>% 
+  right_join(dl, by = "newid") %>% 
+  group_by(newid, age_bin2, label) %>% 
+  summarise(response = mean(response)) %>% 
+  ggplot(aes(x = label, y = response)) +
+  geom_boxplot(outlier.color = "transparent") +
+  geom_jitter(width = 0.2, height = 0.025, alpha = 0.2) +
+  stat_summary(fun.data = mean_se) + 
+  facet_wrap("age_bin2")
+```
+
+```{r, warning=FALSE, message=FALSE}
+mextra_age_b <- fit_combined_formula(
+  covariate = "age_bin2",
+  formula_fixed = response ~ label*complexity, 
+  formula_random = "+ (1|newid)", 
+  data = dfull2, by = "*", cl = cl
+)
+nice(mextra_age_b)
+```
+
+```{r, message=FALSE}
+emmeans(mextra_age_b, "label", by = "age_bin2", type = "response")
+emmeans(mextra_age_b, "label", by = "age_bin2", type = "response") %>% 
+  pairs %>% 
+  update(by = NULL) %>% 
+  summary(adjust = "holm")
+```
+
+Here, the interaction does not reach significance anymore. However, at least descriptively the pattern is still there.
+
+In sum, there is some evidence that there exists an ironic effect of the warning label on older participants, but the evidence is weak. Replication is necessary to provide more conclusive evidence.
+
+## All Covariates
+
+As a final model, we try to run a model with all covariates. For computational reasons we only include the effect of label in addition to the effect of the four covariates.
+
+```{r}
+
+m_joint_1 <- mixed(response ~ label * (gender + age_z + freq_z + psg_z) +
+                     (1|newid), 
+                   dfull2, method = "LRT", family = binomial, 
+                   progress = FALSE, cl = cl)
+m_joint_1
+```
+
+This model shows the same effect of age as above.
+
+```{r}
+emmeans(m_joint_1, c("label"), by = "age_z",
+        type = "response", at = list(age_z = c(-1, 0, 1)), 
+        data = dfull2) %>% 
+  pairs %>% 
+  update(by = NULL) %>% 
+  summary(adjust = "holm")
+```
+
+```{r}
+emmeans(m_joint_1, c("label"), by = "age_z",
+        type = "response", at = list(age_z = c(-1, 0, 1)), 
+        data = dfull2) 
+```
+
+It also no suggests there might be an effect of frequency of gambling (`freq_z`). However, this effect does not reach significance (i.e., $p > .05$). When inspecting this effect, it suggests that if anything, the ironic effect of the warning label appears for participants with a low frequency of gambling.
+
+```{r}
+emmeans(m_joint_1, c("label"), by = "freq_z",
+        type = "response", at = list(freq_z = c(-1, 0, 1)), 
+        data = dfull2) %>% 
+  pairs %>% 
+  update(by = NULL) %>% 
+  summary(adjust = "holm")
+```
+
+```{r}
+emmeans(m_joint_1, c("label"), by = "freq_z",
+        type = "response", at = list(freq_z = c(-1, 0, 1)), 
+        data = dfull2) 
+```
+
+
