@@ -104,6 +104,15 @@ bets %>%
   {all(.$all == 3)} %>% 
   stopifnot()
 
+bets <- bets %>% 
+  filter(bet.description != "Unspent") %>% 
+  mutate(
+    decimal_odds = potential.payout/stake,
+    fractional_odds = (potential.payout - stake) /stake
+  )
+stopifnot(all.equal(min(bets$decimal_odds), 1.4)) ## hand checked
+stopifnot(all.equal(max(bets$decimal_odds), 126)) ## hand checked
+
 used <- bets %>% 
   filter(bet.description != "Unspent") %>% 
   group_by(pptid, .drop = FALSE) %>% 
