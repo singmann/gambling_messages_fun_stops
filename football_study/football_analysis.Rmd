@@ -105,13 +105,17 @@ bets %>%
   stopifnot()
 
 bets <- bets %>% 
-  filter(bet.description != "Unspent") %>% 
+  #filter(bet.description != "Unspent") %>% 
   mutate(
     decimal_odds = potential.payout/stake,
     fractional_odds = (potential.payout - stake) /stake
   )
-stopifnot(all.equal(min(bets$decimal_odds), 1.4)) ## hand checked
-stopifnot(all.equal(max(bets$decimal_odds), 126)) ## hand checked
+
+only_bets <-  bets %>% 
+  filter(bet.description != "Unspent")
+
+stopifnot(all.equal(min(only_bets$decimal_odds, na.rm = TRUE), 1.4)) ## hand checked
+stopifnot(all.equal(max(only_bets$decimal_odds), 126)) ## hand checked
 
 used <- bets %>% 
   filter(bet.description != "Unspent") %>% 
@@ -119,6 +123,13 @@ used <- bets %>%
   summarise(bet = sum(stake))
 
 used <- left_join(used, unique(select(bets, pptid, condition)))
+
+riskiness <- bets %>% 
+  filter(bet.description != "Unspent") %>% 
+  group_by(pptid, .drop = FALSE) %>% 
+  summarise(decimal_odds = mean(decimal_odds)) %>% 
+  mutate(scaled_risk = (decimal_odds - 1.4) / (126 - 1.4))
+riskiness <- left_join(riskiness, unique(select(bets, pptid, condition)))
 
 #table(used$bet)
 stopifnot(!any(is.na(used$bet)))
@@ -885,3 +896,113 @@ comppars %>%
   ylab("") +
   scale_x_continuous(labels = scales::percent_format(1))
 ```
+
+# Riskiness
+
+For the analysis of riskiness, we had to exclude all participants that did not place a single bet. This led to the following N:
+
+```{r}
+risk2 <- riskiness %>% 
+  filter(!is.na(decimal_odds))
+risk2 %>% 
+  group_by(condition) %>% 
+  tally()
+```
+
+The distribution of riskiness is:
+
+```{r}
+risk2 %>% 
+  ggplot(aes(scaled_risk)) +
+  geom_histogram(binwidth = 0.01)
+```
+
+It turns out that there are two participants with a scaled riskiness of zero, both in the treatment condition. And no participants with a riskiness of 1.
+
+```{r}
+risk2 %>% 
+  group_by(condition) %>% 
+  summarise(n_zero = sum(scaled_risk == 0), 
+            n_one = sum(scaled_risk == 1))
+```
+
+## Beta-Regression
+
+We run the first analysis, using a beta-regression model, after excluding the two zeros.
+
+```{r}
+risk3 <- risk2 %>% 
+  filter(scaled_risk != 0)
+```
+
+```{r, eval=TRUE, include=FALSE}
+risk_frml2 <- bf(
+  scaled_risk ~ condition,
+  phi ~ 1
+)
+
+tmp_model_filename <- "model_fits/model_risk2.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mrisk2 <- brm(formula = risk_frml2, data = risk3, family = Beta())
+  save(mrisk2, file = tmp_model_filename, compress = "xz")
+}
+
+```
+
+
+The model does not show any obvious problems. In addition, we can see that the 95%-CI for the gambling message specific effect includes 0.
+
+```{r}
+summary(mrisk2)
+```
+
+```{r, fig.asp=1.0}
+plot(mrisk2)
+```
+
+The data and the posterior predictive distribution look good.
+
+```{r, fig.width=6, out.width="100%"}
+pp_check(mrisk2, type = "hist", binwidth = 0.01, nsamples = 11)
+```
+
+## Zero-Inflated Beta-Regression
+
+We re-run the analysis, using a zero-inflated beta-regression model.
+
+```{r, eval=TRUE, include=FALSE}
+risk_frml3 <- bf(
+  scaled_risk ~ condition,
+  zi ~ condition,
+  phi ~ 1
+)
+
+tmp_model_filename <- "model_fits/model_risk3.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mrisk3 <- brm(formula = risk_frml3, data = risk2, family = zero_inflated_beta())
+  save(mrisk3, file = tmp_model_filename, compress = "xz")
+}
+
+```
+
+
+The model also does not show any obvious problems. As above, the 95% CIs of the condition effects contain 0 indicated no evidence that the warning label affects the riskiness of gambles.
+
+```{r}
+summary(mrisk3)
+```
+
+```{r, fig.asp=1.0}
+plot(mrisk3)
+```
+
+As expected, the data and the posterior predictive distribution also look good.
+
+```{r, fig.width=6, out.width="100%"}
+pp_check(mrisk3, type = "hist", binwidth = 0.01, nsamples = 11)
+```
+
