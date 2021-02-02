@@ -89,7 +89,8 @@ bets <- read_csv("data/bets_data.csv") %>%
   mutate(
     pptid = factor(pptid),
     Condition = factor(Condition, levels = 
-                         c("Control", "Treatment"))
+                         c("Control", "Treatment"), 
+                       labels = cond_labels)
   ) %>% 
   filter(pptid %in% ids_use$pptid) %>% 
   droplevels()
@@ -287,7 +288,7 @@ plot(mzoib, pars = "Intercept")
 We can also plot the three parameters showing the difference distribution of the message condition from the no message condition. These differences are given on the logit scale.
 
 ```{r, fig.asp=1.0}
-plot(mzoib, pars = "conditionTreatment")
+plot(mzoib, pars = "conditionYellow")
 ```
 
 
@@ -341,7 +342,7 @@ lpars <- mzoib %>%
   filter(.variable != "b_phi_Intercept") %>% 
   mutate(type = case_when(
     str_detect(.variable, "Intercept") ~ "Intercept",
-    str_detect(.variable, "conditionTreatment") ~ "effect",
+    str_detect(.variable, "conditionYellow") ~ "effect",
   )) %>%  
   mutate(parameter = case_when(
     str_detect(.variable, "zipp") ~ "g",
@@ -352,10 +353,10 @@ lpars <- mzoib %>%
 condpars <- lpars %>% 
   pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
               names_from = type, values_from = .value) %>% 
-  mutate(Control = Intercept, 
-         Treatment = Intercept + effect) %>% 
+  mutate(None = Intercept, 
+         Yellow = Intercept + effect) %>% 
   select(-Intercept, -effect) %>% 
-  pivot_longer(cols = c(Control, Treatment), 
+  pivot_longer(cols = c(None, Yellow), 
                names_to = "condition", values_to = "estimate") %>% 
   mutate(estimate = plogis(estimate)) %>% 
   mutate(parameter = factor(
@@ -458,7 +459,7 @@ comppars <- condpars %>%
   group_by(parameter) %>% 
   compare_levels(estimate, by = condition) %>% 
   mutate(condition = factor(
-    x = condition, labels = "Difference"
+    x = condition, labels = "          "
   ))
 comppars %>% 
   group_by(parameter, condition) %>% 
@@ -476,8 +477,10 @@ pr2 <- comppars %>%
   stat_halfeye() +
   facet_wrap("parameter", scales = "free_x") +
   xlab("Difference from no message condition (on probability/proportion scale)") + 
-  ylab("") +
+  ylab("   ") +
   scale_x_continuous(labels = scales::percent_format(1)) 
+
+#pr2 + theme(axis.ticks.y = element_blank())
 
 ciwidths <- comppars %>% 
   group_by(parameter, condition) %>% 
@@ -516,7 +519,8 @@ ggsave(pr2  + theme_bw(base_size = 17) + theme(
        width = 9.5, height = 4)
 pr2use <- pr2  + theme_bw(base_size = 17) + theme(
     panel.grid.minor.x = element_blank(), 
-    panel.grid.major.x = element_blank()
+    panel.grid.major.x = element_blank(),
+    axis.ticks.y = element_blank()
   )
 ```
 
@@ -531,7 +535,7 @@ ggsave(plot = cowplot::plot_grid(pr1use, pr2use, ncol = 1,
 
 The following plot shows all the difference distributions with overlayed density estimate (in black) and some possible prior distributions in colour (note again that the model did not actually include any priors). These priors are normal priors (who have a higher peak at 0 compared to Cauchy and t) with two different SDs.
 
-```{r, out.width="100%", fig.width=8, fig.asp=0.8, warning=FALSE}
+```{r, out.width="100%", fig.width=8, fig.asp=0.3, warning=FALSE}
 comppars %>% 
   ggplot() +
   geom_histogram(aes(estimate, after_stat(density)), binwidth = 0.001) +
@@ -559,6 +563,21 @@ The covariates do not differ between conditions (BF provide evidence for the nul
 1/anovaBF(pgsi ~ condition, part2, progress = FALSE)
 1/anovaBF(motives ~ condition, part2, progress = FALSE)
 ```
+
+The following table shows descriptives for the covariates:
+
+```{r}
+part2 %>% 
+  group_by(condition) %>% 
+  summarise(across(c(pgsi, motives), c(mean = mean, sd = sd)))
+```
+
+Correlation of covariates:
+
+```{r}
+cor.test(~pgsi + motives, part2)
+```
+
 
 ## Model with Main Effects
 
@@ -595,7 +614,7 @@ plot(mzoib2, pars = "Intercept")
 We can also plot the three parameters showing the difference distribution of the message condition from the no message condition. These differences are given on the logit scale.
 
 ```{r, fig.asp=1.0}
-plot(mzoib2, pars = "conditionTreatment")
+plot(mzoib2, pars = "conditionYellow")
 ```
 We also check the chains for the PGSI and motives scales.
 ```{r, fig.asp=1.0}
@@ -625,7 +644,7 @@ lpars <- mzoib2 %>%
   filter(!str_detect(.variable, "pgsi|motives")) %>% 
   mutate(type = case_when(
     str_detect(.variable, "Intercept") ~ "Intercept",
-    str_detect(.variable, "conditionTreatment") ~ "effect"
+    str_detect(.variable, "conditionYellow") ~ "effect"
   )) %>%  
   mutate(parameter = case_when(
     str_detect(.variable, "zipp") ~ "g",
@@ -676,6 +695,50 @@ comppars %>%
     xlab("Difference from no message condition (on proportion/probability scale)") + 
   ylab("") +
   scale_x_continuous(labels = scales::percent_format(1))
+```
+
+
+
+## Model with Main Effects (only PGSI)
+
+```{r, eval=TRUE, include=FALSE}
+zoib_model2p <- bf(
+  new_prop ~ condition + pgsi_c ,
+  phi ~ 1,
+  zipp ~ condition + pgsi_c,
+  coi ~ condition + pgsi_c, 
+  family = zoib2
+)
+
+tmp_model_filename <- "model_fits/model_zoib2p.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib2p <- brm(formula = zoib_model2p, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib2p, file = tmp_model_filename, compress = "xz")
+}
+```
+
+```{r}
+summary(mzoib2p)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib2p, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib2p, pars = "conditionYellow")
+```
+We also check the chains for the PGSI and motives scales.
+```{r, fig.asp=1.0}
+plot(mzoib2p, pars = "pgsi")
 ```
 
 ### Plot of Relationships and BANOVA
@@ -820,7 +883,7 @@ plot(mzoib3, pars = "Intercept")
 We can also plot the three parameters showing the difference distribution of the yellow message condition from the no messafe condition. These differences are given on the logit scale.
 
 ```{r, fig.asp=1.0}
-plot(mzoib3, pars = "conditionTreatment$")
+plot(mzoib3, pars = "conditionYellow$")
 ```
 
 ```{r, include=FALSE}
@@ -844,7 +907,7 @@ gather_draws(`b_.*`, regex = TRUE) %>%
   filter(!str_detect(.variable, "pgsi|motives")) %>% 
   mutate(type = case_when(
     str_detect(.variable, "Intercept") ~ "Intercept",
-    str_detect(.variable, "conditionTreatment") ~ "effect"
+    str_detect(.variable, "conditionYellow") ~ "effect"
   )) %>%  
   mutate(parameter = case_when(
     str_detect(.variable, "zipp") ~ "g",
@@ -896,6 +959,75 @@ comppars %>%
   ylab("") +
   scale_x_continuous(labels = scales::percent_format(1))
 ```
+
+
+## Model With Interactions (only PGSI)
+
+```{r, eval=TRUE, include=FALSE}
+zoib_model3p <- bf(
+  new_prop ~ condition * (pgsi_c),
+  phi ~ 1,
+  zipp ~ condition * (pgsi_c),
+  coi ~ condition * (pgsi_c), 
+  family = zoib2
+)
+
+# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
+# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
+# str(tmp)
+# tmp$Y
+
+tmp_model_filename <- "model_fits/model_zoib3p.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib3p <- brm(formula = zoib_model3p, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib3p, file = tmp_model_filename, compress = "xz")
+}
+```
+
+
+
+```{r}
+summary(mzoib3p)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib3p, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the yellow message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib3p, pars = "conditionYellow$")
+```
+
+Is the overall effect of PGSI credibly negative?
+
+```{r}
+emmeans::emtrends(mzoib3p, "condition", "pgsi_c") %>% 
+  gather_emmeans_draws() %>% 
+  median_qi()
+
+emmeans::emtrends(mzoib3p, "condition", "pgsi_c") %>% 
+  gather_emmeans_draws() %>% 
+  pivot_wider(id_cols = .draw, names_from = condition, 
+              values_from = .value) %>% 
+  mutate(Overall = (None + Yellow)/2) %>% 
+  median_qi(Overall)
+
+## same as:
+# emmeans::emtrends(mzoib3p, "1", "pgsi_c") %>% 
+#   gather_emmeans_draws() %>% 
+#   median_qi()
+
+
+```
+
 
 # Riskiness
 
