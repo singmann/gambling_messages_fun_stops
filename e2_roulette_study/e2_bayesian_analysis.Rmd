@@ -565,7 +565,8 @@ comppars %>%
                 mapping =  aes(color = "SD = 0.25")) +
   geom_vline(xintercept = 0, color = "grey") +
   facet_grid(rows = vars(condition), 
-             cols = vars(parameter), scales = "free_x") 
+             cols = vars(parameter), scales = "free_x") + 
+  guides(colour = guide_legend("prior width"))
 ```
 
 We see that even with an extremely small prior with SD = 0.05 we still see evidence for no difference (i.e., black density estimate above the prior at 0) for all but the lower right plot. Note that a prior with SD of .05 means that we expect with 95% that the largest effect we observe is `r scales::percent(plogis(0.05 *2) - 0.5, accuracy = 0.01)` on the response scale.
