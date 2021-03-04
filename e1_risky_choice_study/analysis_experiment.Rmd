@@ -598,4 +598,11 @@ emmeans(m_joint_1, c("label"), by = "freq_z",
         data = dfull2) 
 ```
 
+# Session Info
+
+```{r}
+options(width = 100)
+sessionInfo()
+```
+
 
