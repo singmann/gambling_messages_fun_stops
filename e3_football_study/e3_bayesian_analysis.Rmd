@@ -9,6 +9,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+library("checkpoint")
+create_checkpoint("2021-02-18", project_dir=".")
+use_checkpoint("2021-02-18")
+```
+
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(dpi=200, out.width="70%", fig.asp = 0.618,
                       fig.width=4, fig.align = "center")
@@ -17,6 +23,7 @@ options("dplyr.summarise.inform" = FALSE)
 options(pillar.sigfig = 3)
 options(mc.cores = parallel::detectCores()) # fitting uses multicore by default
 ```
+
 
 # Preparation
 
@@ -38,7 +45,7 @@ ylabel <- "Gambling message"
 
 ## ids_exclude <- c("F.0460", "F.0539", "F.0282", "F.0026", "F.0447")  
 ## exclusion based on email from Leo, should result in 1003 participants
-## is now checked algogithmically below
+## is now checked algorithmically below
 ```
 
 ## Load & Prepare Data
@@ -558,6 +565,8 @@ We see that even with an extremely small prior with SD = 0.05 we still see evide
 
 # Model With Covariates
 
+## Plot of Relationships and BANOVA
+
 The covariates do not differ between conditions (BF provide evidence for the null).
 
 ```{r, warning=FALSE}
@@ -573,11 +582,135 @@ part2 %>%
   summarise(across(c(pgsi, motives), c(mean = mean, sd = sd)))
 ```
 
-Correlation of covariates:
+The following plot shows the relationships of the covariates among each other and with proportion bet.
+
+```{r, message=FALSE, out.width="100%", fig.width=12, fig.height=4, fig.asp=0.4}
+tmpp1 <- part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = pgsi, y = motives)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth() +
+  geom_smooth(method = "lm", color = "red")
+tmpp2 <- part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = new_prop, y = motives)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth() +
+  geom_smooth(method = "lm", color = "red")
+tmpp3 <- part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = new_prop, y = pgsi)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth() +
+  geom_smooth(method = "lm", color = "red")
+cowplot::plot_grid(tmpp1, tmpp2, tmpp3, nrow = 1)
+```
+
+The figures show some relationships which can also be seen when just looking at the correlation.
 
 ```{r}
-cor.test(~pgsi + motives, part2)
+cor.test(part2$pgsi, part2$motives)
+cor.test(part2$pgsi, part2$new_prop)
+cor.test(part2$motives, part2$new_prop)
 ```
+
+The figure below provides an alternative visualisation of the relationships between covariates and betting behaviour. In particular, participants were categorized into one of three experimental betting behavior groups: participants who did not bet at all (“none”, 39% of participants), participants who bet some of their money (19% of participants), and participants who bet “all” of their money (42%). For both gambling scales we see a positive relationship between the betting behavior group and the gambling score. Participants who bet more have on average higher scores on the two gambling scales. 
+
+
+```{r, eval=FALSE}
+part2 %>% 
+  summarise(gamble_at_all = 1 - mean(new_prop  == 0), 
+            gamble_everything = mean(new_prop[new_prop != 0] == 1), 
+            proportion_bet_rest = mean(new_prop[!(new_prop %in% c(0, 1))]))
+
+part2 %>% 
+  filter(!(new_prop %in% c(0, 1))) %>% 
+  with(cor.test(new_prop, motives))
+
+part2 %>% 
+  filter(!(new_prop %in% c(1))) %>% 
+  with(cor.test(new_prop, motives))
+
+
+part2 %>% 
+  filter(!(new_prop %in% c(0, 1))) %>% 
+  ggplot(aes(x = new_prop, y = motives)) +
+  geom_point(alpha = 0.2)
+
+part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = new_prop, y = motives)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth()
+
+part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = new_prop, y = pgsi)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth()
+```
+
+
+```{r}
+
+part2 <- part2 %>% 
+  mutate(gamble_cat = if_else(new_prop == 1, "all", if_else(new_prop == 0, "none", "some"))) %>% 
+  mutate(gamble_cat = factor(gamble_cat, levels = c("none", "some", "all")))
+#library("ggbeeswarm")
+
+prop.table(table(part2$gamble_cat))
+
+cvp1 <- part2 %>% 
+  #filter(!(new_prop %in% c(0))) %>% 
+  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
+  ggplot(aes(x = gamble_cat, y = pgsi)) +
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
+  #geom_quasirandom(alpha = 0.2) +
+  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
+  xlab("Proportion bet") + ylab("Enhancement Motives") +
+  theme_bw(base_size = 15) + theme(
+    panel.grid.minor.x = element_blank(), 
+    panel.grid.major.x = element_blank()
+  )
+
+cvp2 <- part2 %>% 
+  #filter(!(new_prop %in% c(0))) %>% 
+  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
+  ggplot(aes(x = gamble_cat, y = motives)) +
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
+  #geom_quasirandom(alpha = 0.2) +
+  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
+  xlab("Proportion bet") + ylab("Problem Gambling Severity Index") + 
+  theme_bw(base_size = 15) + theme(
+    panel.grid.minor.x = element_blank(), 
+    panel.grid.major.x = element_blank()
+  )
+cvp <- cowplot::plot_grid(cvp2, cvp1)
+ggsave(filename = "figures/cov_plot.png", plot = cvp, width = 6.5, height = 4)
+
+cvp
+
+```
+
+This is supported by Bayesian ANOVAs for the enhancement motives scale, with a Bayes factor of over 700,000 for the effect of betting behavior group on motives score. However, there was evidence for a null effect (BF around 50 for the null) for the PGSI effect even though it showed descriptively the same pattern. 
+
+Furthermore, the effect on the motive score was not moderated by gambling message condition. The evidence for the absence of a main effect of condition was ambigous (around 1), but there was substantial evidence for the absence of the interaction (BF > 30).
+
+```{r, eval=FALSE}
+anovaBF(pgsi ~ gamble_cat, as.data.frame(part2), progress = FALSE)
+anovaBF(motives ~ gamble_cat, as.data.frame(part2), progress = FALSE)
+```
+
+```{r, warning=FALSE}
+bfa1 <- anovaBF(pgsi ~ gamble_cat*condition, as.data.frame(part2), progress = FALSE)
+bfa1
+bfa1[2]/bfa1
+
+bfa2 <- anovaBF(motives ~ gamble_cat*condition, as.data.frame(part2), progress = FALSE)
+bfa2
+bfa2[2]/bfa2
+```
+
 
 
 ## Model with Main Effects
@@ -698,8 +831,6 @@ comppars %>%
   scale_x_continuous(labels = scales::percent_format(1))
 ```
 
-
-
 ## Model with Main Effects (only PGSI)
 
 ```{r, eval=TRUE, include=FALSE}
@@ -742,104 +873,124 @@ We also check the chains for the PGSI and motives scales.
 plot(mzoib2p, pars = "pgsi")
 ```
 
-### Plot of Relationships and BANOVA
-
-The figure below provides an alternative visualisation of the relationships between covariates and betting behaviour. In particular, participants were categorized into one of three experimental betting behavior groups: participants who did not bet at all (“none”, 39% of participants), participants who bet some of their money (19% of participants), and participants who bet “all” of their money (42%). For both gambling scales we see a positive relationship between the betting behavior group and the gambling score. Participants who bet more have on average higher scores on the two gambling scales. 
+## Model with Main Effects (only Motives)
 
 
-```{r, eval=FALSE}
-part2 %>% 
-  summarise(gamble_at_all = 1 - mean(new_prop  == 0), 
-            gamble_everything = mean(new_prop[new_prop != 0] == 1), 
-            proportion_bet_rest = mean(new_prop[!(new_prop %in% c(0, 1))]))
+```{r, eval=TRUE, include=FALSE}
+zoib_model2m <- bf(
+  new_prop ~ condition + motives_c,
+  phi ~ 1,
+  zipp ~ condition + motives_c,
+  coi ~ condition + motives_c, 
+  family = zoib2
+)
 
-part2 %>% 
-  filter(!(new_prop %in% c(0, 1))) %>% 
-  with(cor.test(new_prop, motives))
-
-part2 %>% 
-  filter(!(new_prop %in% c(1))) %>% 
-  with(cor.test(new_prop, motives))
-
-
-part2 %>% 
-  filter(!(new_prop %in% c(0, 1))) %>% 
-  ggplot(aes(x = new_prop, y = motives)) +
-  geom_point(alpha = 0.2)
-
-part2 %>% 
-  #filter(!(new_prop %in% c(1))) %>% 
-  ggplot(aes(x = new_prop, y = motives)) +
-  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
-  geom_smooth()
-
-part2 %>% 
-  #filter(!(new_prop %in% c(1))) %>% 
-  ggplot(aes(x = new_prop, y = pgsi)) +
-  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
-  geom_smooth()
+tmp_model_filename <- "model_fits/model_zoib2m.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib2m <- brm(formula = zoib_model2m, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib2m, file = tmp_model_filename, compress = "xz")
+}
 ```
+
+```{r}
+summary(mzoib2m)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib2m, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib2m, pars = "conditionYellow")
+```
+We also check the chains for the PGSI and motives scales.
+```{r, fig.asp=1.0}
+plot(mzoib2m, pars = "motives")
+```
+
+
+```{r, include=FALSE}
+get_variables(mzoib2)
+```
+
+```{r, fig.width=6, out.width="100%"}
+options(mc.cores = 1)
+pp_check(mzoib2m, type = "hist", binwidth = 0.025, nsamples = 11) +
+  coord_cartesian(ylim = c(0, 350))
+options(mc.cores = parallel::detectCores())
+```
+
 
 
 ```{r}
 
-part2 <- part2 %>% 
-  mutate(gamble_cat = if_else(new_prop == 1, "all", if_else(new_prop == 0, "none", "some"))) %>% 
-  mutate(gamble_cat = factor(gamble_cat, levels = c("none", "some", "all")))
-#library("ggbeeswarm")
+lpars <- mzoib2m %>% 
+  gather_draws(`b_.*`, regex = TRUE) %>% 
+  filter(!(.variable %in% c("b_phi_Intercept"))) %>%
+  filter(!str_detect(.variable, "pgsi|motives")) %>% 
+  mutate(type = case_when(
+    str_detect(.variable, "Intercept") ~ "Intercept",
+    str_detect(.variable, "conditionYellow") ~ "effect"
+  )) %>%  
+  mutate(parameter = case_when(
+    str_detect(.variable, "zipp") ~ "g",
+    str_detect(.variable, "coi") ~ "f",
+    TRUE ~ "mu"
+  ))
+#unique(lpars$.variable)
 
-prop.table(table(part2$gamble_cat))
-
-cvp1 <- part2 %>% 
-  #filter(!(new_prop %in% c(0))) %>% 
-  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
-  ggplot(aes(x = gamble_cat, y = pgsi)) +
-  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
-  #geom_quasirandom(alpha = 0.2) +
-  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
-  xlab("Proportion bet") + ylab("Enhancement Motives") +
-  theme_bw(base_size = 15) + theme(
-    panel.grid.minor.x = element_blank(), 
-    panel.grid.major.x = element_blank()
-  )
-
-cvp2 <- part2 %>% 
-  #filter(!(new_prop %in% c(0))) %>% 
-  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
-  ggplot(aes(x = gamble_cat, y = motives)) +
-  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
-  #geom_quasirandom(alpha = 0.2) +
-  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
-  xlab("Proportion bet") + ylab("Problem Gambling Severity Index") + 
-  theme_bw(base_size = 15) + theme(
-    panel.grid.minor.x = element_blank(), 
-    panel.grid.major.x = element_blank()
-  )
-cvp <- cowplot::plot_grid(cvp2, cvp1)
-ggsave(filename = "figures/cov_plot.png", plot = cvp, width = 6.5, height = 4)
-
-cvp
+condpars <- lpars %>% 
+  pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
+              names_from = type, values_from = .value) %>% 
+  mutate(control = Intercept, 
+         treatment = Intercept + effect) %>% 
+  select(-Intercept, -effect) %>% 
+  pivot_longer(cols = c(control, treatment), 
+               names_to = "condition", values_to = "estimate") %>% 
+  mutate(estimate = plogis(estimate)) %>% 
+  mutate(parameter = factor(
+    x = parameter, 
+    levels = c("g", "f", "mu"), 
+    labels = par_labels))
 
 ```
 
-This is supported by Bayesian ANOVAs for the enhancement motives scale, with a Bayes factor of over 700,000 for the effect of betting behavior group on motives score. However, there was evidence for a null effect (BF around 50 for the null) for the PGSI effect even though it showed descriptively the same pattern. 
-
-Furthermore, the effect on the motive score was not moderated by gambling message condition. The evidence for the absence of a main effect of condition was ambigous (around 1), but there was substantial evidence for the absence of the interaction (BF > 30).
-
-```{r, eval=FALSE}
-anovaBF(pgsi ~ gamble_cat, as.data.frame(part2), progress = FALSE)
-anovaBF(motives ~ gamble_cat, as.data.frame(part2), progress = FALSE)
+```{r, out.width="100%", fig.width=6, fig.asp=0.55}
+condpars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  #stat_histintervalh(breaks = 40) +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+  xlab("Probability/Proportion") +
+  scale_x_continuous(labels = scales::percent_format(1))
 ```
 
-```{r, warning=FALSE}
-bfa1 <- anovaBF(pgsi ~ gamble_cat*condition, as.data.frame(part2), progress = FALSE)
-bfa1
-bfa1[2]/bfa1
 
-bfa2 <- anovaBF(motives ~ gamble_cat*condition, as.data.frame(part2), progress = FALSE)
-bfa2
-bfa2[2]/bfa2
+```{r, out.width="100%", fig.width=6, fig.asp=0.55}
+comppars <- condpars %>% 
+  group_by(parameter) %>% 
+  compare_levels(estimate, by = condition) %>% 
+  mutate(condition = factor(
+    x = condition, 
+    labels = c("difference")))
+comppars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  geom_vline(xintercept = 0, color = "grey") +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+    xlab("Difference from no message condition (on proportion/probability scale)") + 
+  ylab("") +
+  scale_x_continuous(labels = scales::percent_format(1))
 ```
+
 
 
 ## Model With Interactions
@@ -1029,6 +1180,73 @@ emmeans::emtrends(mzoib3p, "condition", "pgsi_c") %>%
 
 ```
 
+
+## Model With Interactions (only Motives)
+
+```{r, eval=TRUE, include=FALSE}
+zoib_model3m <- bf(
+  new_prop ~ condition * (motives_c),
+  phi ~ 1,
+  zipp ~ condition * (motives_c),
+  coi ~ condition * (motives_c), 
+  family = zoib2
+)
+
+# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
+# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
+# str(tmp)
+# tmp$Y
+
+tmp_model_filename <- "model_fits/model_zoib3m.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib3m <- brm(formula = zoib_model3m, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib3m, file = tmp_model_filename, compress = "xz")
+}
+```
+
+
+
+```{r}
+summary(mzoib3m)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib3m, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the yellow message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib3m, pars = "conditionYellow$")
+```
+
+Is the overall effect of Motives credibly negative?
+
+```{r}
+emmeans::emtrends(mzoib3m, "condition", "motives_c") %>% 
+  gather_emmeans_draws() %>% 
+  median_qi()
+
+emmeans::emtrends(mzoib3m, "condition", "motives_c") %>% 
+  gather_emmeans_draws() %>% 
+  pivot_wider(id_cols = .draw, names_from = condition, 
+              values_from = .value) %>% 
+  mutate(Overall = (None + Yellow)/2) %>% 
+  median_qi(Overall)
+
+## same as:
+# emmeans::emtrends(mzoib3p, "1", "pgsi_c") %>% 
+#   gather_emmeans_draws() %>% 
+#   median_qi()
+
+
+```
 
 # Riskiness
 

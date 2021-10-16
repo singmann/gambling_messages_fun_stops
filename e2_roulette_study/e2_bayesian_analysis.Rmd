@@ -1,3 +1,4 @@
+
 ---
 title: "Analysis Roulette Gambling Study"
 author: "Philip W. S. Newall, Leonardo Weiss-Cohen, Henrik Singmann, Lukasz Walasek, & Elliot A. Ludvig"
@@ -255,7 +256,7 @@ save(mzoib, file = tmp_model_filename, compress = "xz")
 summary(mzoib)
 ```
 
-As a visual convergence check, we plot the density and trace plots for the four intercept pasrameters representing the no message condition or the overall mean (for `phi`).
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
 
 ```{r, fig.asp=1.2}
 plot(mzoib, pars = "Intercept")
@@ -633,6 +634,7 @@ comppars2 %>%
 
 # Model With Covariates
 
+## Plot of Relationships and BANOVA
 The covariates do not differ between conditions (strong BF evidence for the null).
 
 ```{r, warning=FALSE}
@@ -650,7 +652,102 @@ part2 %>%
 ```
 
 
-## Model with Main Effects
+The following plot shows the relationships of the covariates among each other and with proportion bet.
+
+```{r, message=FALSE, out.width="100%", fig.width=12, fig.height=4, fig.asp=0.4}
+tmpp1 <- part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = pgsi, y = motives)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth() +
+  geom_smooth(method = "lm", color = "red")
+tmpp2 <- part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = new_prop, y = motives)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth() +
+  geom_smooth(method = "lm", color = "red")
+tmpp3 <- part2 %>% 
+  #filter(!(new_prop %in% c(1))) %>% 
+  ggplot(aes(x = new_prop, y = pgsi)) +
+  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
+  geom_smooth() +
+  geom_smooth(method = "lm", color = "red")
+cowplot::plot_grid(tmpp1, tmpp2, tmpp3, nrow = 1)
+```
+
+The figures show some relationships which can also be seen when just looking at the correlation.
+
+```{r}
+cor.test(part2$pgsi, part2$motives)
+cor.test(part2$pgsi, part2$new_prop)
+cor.test(part2$motives, part2$new_prop)
+```
+
+The figure below provides an alternative visualisation of the relationships between covariates and betting behaviour. In particular, participants were categorized into one of three experimental betting behavior groups: participants who did not bet at all (“none”, 14% of participants), participants who bet some of their money (68% of participants), and participants who bet “all” of their money (18%). For both gambling scales we see a positive relationship between the betting behavior group and the gambling score. Participants who bet more have on average higher scores on the two gambling scales. 
+
+
+```{r}
+
+part2 <- part2 %>% 
+  mutate(gamble_cat = if_else(new_prop == 1, "all", if_else(new_prop == 0, "none", "some"))) %>% 
+  mutate(gamble_cat = factor(gamble_cat, levels = c("none", "some", "all")))
+#library("ggbeeswarm")
+
+prop.table(table(part2$gamble_cat))
+
+cvp1 <- part2 %>% 
+  #filter(!(new_prop %in% c(0))) %>% 
+  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
+  ggplot(aes(x = gamble_cat, y = pgsi)) +
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
+  #geom_quasirandom(alpha = 0.2) +
+  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
+  xlab("Proportion bet") + ylab("Enhancement Motives") +
+  theme_bw(base_size = 15) + theme(
+    panel.grid.minor.x = element_blank(), 
+    panel.grid.major.x = element_blank()
+  )
+
+cvp2 <- part2 %>% 
+  #filter(!(new_prop %in% c(0))) %>% 
+  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
+  ggplot(aes(x = gamble_cat, y = motives)) +
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
+  #geom_quasirandom(alpha = 0.2) +
+  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
+  xlab("Proportion bet") + ylab("Problem Gambling Severity Index") + 
+  theme_bw(base_size = 15) + theme(
+    panel.grid.minor.x = element_blank(), 
+    panel.grid.major.x = element_blank()
+  )
+cvp <- cowplot::plot_grid(cvp2, cvp1)
+ggsave(filename = "figures/cov_plot.png", plot = cvp, width = 6.5, height = 4)
+
+cvp
+
+```
+
+This is supported by Bayesian ANOVAs with Bayes factors of over 400,000 for the effect of betting behavior group on the gambing scale scores. However, this effect was not moderated by gambling message condition. In particular, there was evidence for the absence of both a main effect of gambling message condition and an interaction of gambling message condition with betting behaviour group for both gambling scale scores (Bayes factors for the null > 25).
+
+```{r, eval=FALSE}
+anovaBF(pgsi ~ gamble_cat, part2, progress = FALSE)
+anovaBF(motives ~ gamble_cat, part2, progress = FALSE)
+```
+
+```{r, warning=FALSE}
+bfa1 <- anovaBF(pgsi ~ gamble_cat*exp_cond, part2, progress = FALSE)
+bfa1
+bfa1[2]/bfa1
+
+bfa2 <- anovaBF(motives ~ gamble_cat*exp_cond, part2, progress = FALSE)
+bfa2
+bfa2[2]/bfa2
+```
+
+
+
+## Model with Both Main Effects
 
 ```{r, eval=TRUE, include=FALSE}
 zoib_model2 <- bf(
@@ -777,105 +874,258 @@ comppars %>%
   scale_x_continuous(labels = scales::percent_format(1))
 ```
 
-### Plot of Relationships and BANOVA
+## Model with PGSI Main Effect
 
-The figure below provides an alternative visualisation of the relationships between covariates and betting behaviour. In particular, participants were categorized into one of three experimental betting behavior groups: participants who did not bet at all (“none”, 14% of participants), participants who bet some of their money (68% of participants), and participants who bet “all” of their money (18%). For both gambling scales we see a positive relationship between the betting behavior group and the gambling score. Participants who bet more have on average higher scores on the two gambling scales. 
+```{r, eval=TRUE, include=FALSE}
+zoib_model2p <- bf(
+  new_prop ~ exp_cond + pgsi_c,
+  phi ~ 1,
+  zipp ~ exp_cond + pgsi_c,
+  coi ~ exp_cond + pgsi_c, 
+  family = zoib2
+)
 
+# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
+# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
+# str(tmp)
+# tmp$Y
 
-```{r, eval=FALSE}
-part2 %>% 
-  summarise(gamble_at_all = 1 - mean(new_prop  == 0), 
-            gamble_everything = mean(new_prop[new_prop != 0] == 1), 
-            proportion_bet_rest = mean(new_prop[!(new_prop %in% c(0, 1))]))
+tmp_model_filename <- "model_fits/model_zoib2p.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib2p <- brm(formula = zoib_model2p, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib2p, file = tmp_model_filename, compress = "xz")
+}
 
-part2 %>% 
-  filter(!(new_prop %in% c(0, 1))) %>% 
-  with(cor.test(new_prop, motives))
-
-part2 %>% 
-  filter(!(new_prop %in% c(1))) %>% 
-  with(cor.test(new_prop, motives))
-
-
-part2 %>% 
-  filter(!(new_prop %in% c(0, 1))) %>% 
-  ggplot(aes(x = new_prop, y = motives)) +
-  geom_point(alpha = 0.2)
-
-part2 %>% 
-  #filter(!(new_prop %in% c(1))) %>% 
-  ggplot(aes(x = new_prop, y = motives)) +
-  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
-  geom_smooth()
-
-part2 %>% 
-  #filter(!(new_prop %in% c(1))) %>% 
-  ggplot(aes(x = new_prop, y = pgsi)) +
-  geom_jitter(alpha = 0.2, width = 0.01, height = 0.2) +
-  geom_smooth()
 ```
+
+```{r}
+summary(mzoib2p)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib2p, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the yellow message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib2p, pars = "_condyellow")
+```
+
+Likewise, we can plot the three parameters showing the difference distribution of the white message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib2p, pars = "_condwhite")
+```
+
+
+```{r, include=FALSE}
+get_variables(mzoib2)
+```
+
+```{r, fig.width=6, out.width="100%"}
+pp_check(mzoib2p, type = "hist", binwidth = 0.025, nsamples = 11) +
+  coord_cartesian(ylim = c(0, 350))
+```
+
 
 
 ```{r}
 
-part2 <- part2 %>% 
-  mutate(gamble_cat = if_else(new_prop == 1, "all", if_else(new_prop == 0, "none", "some"))) %>% 
-  mutate(gamble_cat = factor(gamble_cat, levels = c("none", "some", "all")))
-#library("ggbeeswarm")
+lpars <- mzoib2p %>% 
+  gather_draws(`b_.*`, regex = TRUE) %>% 
+  filter(!(.variable %in% c("b_phi_Intercept"))) %>%
+  filter(!str_detect(.variable, "pgsi|motives")) %>% 
+  mutate(type = case_when(
+    str_detect(.variable, "Intercept") ~ "Intercept",
+    str_detect(.variable, "condyellow") ~ "yellow",
+    str_detect(.variable, "condwhite") ~ "white"
+  )) %>%  
+  mutate(parameter = case_when(
+    str_detect(.variable, "zipp") ~ "g",
+    str_detect(.variable, "coi") ~ "f",
+    TRUE ~ "mu"
+  ))
+#unique(lpars$.variable)
 
-prop.table(table(part2$gamble_cat))
-
-cvp1 <- part2 %>% 
-  #filter(!(new_prop %in% c(0))) %>% 
-  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
-  ggplot(aes(x = gamble_cat, y = pgsi)) +
-  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
-  #geom_quasirandom(alpha = 0.2) +
-  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
-  xlab("Proportion bet") + ylab("Enhancement Motives") +
-  theme_bw(base_size = 15) + theme(
-    panel.grid.minor.x = element_blank(), 
-    panel.grid.major.x = element_blank()
-  )
-
-cvp2 <- part2 %>% 
-  #filter(!(new_prop %in% c(0))) %>% 
-  #ggplot(aes(x = interaction(exp_cond, gamble_cat), y = pgsi)) +
-  ggplot(aes(x = gamble_cat, y = motives)) +
-  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
-  #geom_quasirandom(alpha = 0.2) +
-  stat_summary(fun.data = ~mean_se(., mult = 1.96)) +
-  xlab("Proportion bet") + ylab("Problem Gambling Severity Index") + 
-  theme_bw(base_size = 15) + theme(
-    panel.grid.minor.x = element_blank(), 
-    panel.grid.major.x = element_blank()
-  )
-cvp <- cowplot::plot_grid(cvp2, cvp1)
-ggsave(filename = "figures/cov_plot.png", plot = cvp, width = 6.5, height = 4)
-
-cvp
+condpars <- lpars %>% 
+  pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
+              names_from = type, values_from = .value) %>% 
+  mutate(control = Intercept, 
+         white = Intercept + white,
+         yellow = Intercept + yellow) %>% 
+  select(-Intercept) %>% 
+  pivot_longer(cols = c(control, white, yellow), 
+               names_to = "condition", values_to = "estimate") %>% 
+  mutate(estimate = plogis(estimate)) %>% 
+  mutate(parameter = factor(
+    x = parameter, 
+    levels = c("g", "f", "mu"), 
+    labels = par_labels))
 
 ```
 
-This is supported by Bayesian ANOVAs with Bayes factors of over 400,000 for the effect of betting behavior group on the gambing scale scores. However, this effect was not moderated by gambling message condition. In particular, there was evidence for the absence of both a main effect of gambling message condition and an interaction of gambling message condition with betting behaviour group for both gambling scale scores (Bayes factors for the null > 25).
-
-```{r, eval=FALSE}
-anovaBF(pgsi ~ gamble_cat, part2, progress = FALSE)
-anovaBF(motives ~ gamble_cat, part2, progress = FALSE)
-```
-
-```{r, warning=FALSE}
-bfa1 <- anovaBF(pgsi ~ gamble_cat*exp_cond, part2, progress = FALSE)
-bfa1
-bfa1[2]/bfa1
-
-bfa2 <- anovaBF(motives ~ gamble_cat*exp_cond, part2, progress = FALSE)
-bfa2
-bfa2[2]/bfa2
+```{r, out.width="100%", fig.width=6, fig.asp=0.55}
+condpars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  #stat_histintervalh(breaks = 40) +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+  xlab("Probability/Proportion") +
+  scale_x_continuous(labels = scales::percent_format(1))
 ```
 
 
-## Model With Interactions
+```{r, out.width="100%", fig.width=6, fig.asp=0.55}
+comppars <- condpars %>% 
+  group_by(parameter) %>% 
+  compare_levels(estimate, by = condition) %>% 
+  mutate(condition = factor(
+    x = condition, 
+    levels = c("yellow - white", "white - control", "yellow - control")))
+comppars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  geom_vline(xintercept = 0, color = "grey") +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+    xlab("Difference from no message condition (on proportion/probability scale)") + 
+  ylab("No message vs.") +
+  scale_x_continuous(labels = scales::percent_format(1))
+```
+
+## Model with Motives Main Effects
+
+```{r, eval=TRUE, include=FALSE}
+zoib_model2 <- bf(
+  new_prop ~ exp_cond + motives_c,
+  phi ~ 1,
+  zipp ~ exp_cond + motives_c,
+  coi ~ exp_cond + motives_c, 
+  family = zoib2
+)
+
+# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
+# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
+# str(tmp)
+# tmp$Y
+
+tmp_model_filename <- "model_fits/model_zoib2m.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib2m <- brm(formula = zoib_model2, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib2m, file = tmp_model_filename, compress = "xz")
+}
+
+
+
+```
+
+```{r}
+summary(mzoib2m)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept pasrameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib2m, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the yellow message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib2m, pars = "_condyellow")
+```
+
+Likewise, we can plot the three parameters showing the difference distribution of the white message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib2m, pars = "_condwhite")
+```
+
+
+```{r, include=FALSE}
+get_variables(mzoib2m)
+```
+
+```{r, fig.width=6, out.width="100%"}
+pp_check(mzoib2m, type = "hist", binwidth = 0.025, nsamples = 11) +
+  coord_cartesian(ylim = c(0, 350))
+```
+
+```{r}
+
+lpars <- mzoib2m %>% 
+  gather_draws(`b_.*`, regex = TRUE) %>% 
+  filter(!(.variable %in% c("b_phi_Intercept"))) %>%
+  filter(!str_detect(.variable, "pgsi|motives")) %>% 
+  mutate(type = case_when(
+    str_detect(.variable, "Intercept") ~ "Intercept",
+    str_detect(.variable, "condyellow") ~ "yellow",
+    str_detect(.variable, "condwhite") ~ "white"
+  )) %>%  
+  mutate(parameter = case_when(
+    str_detect(.variable, "zipp") ~ "g",
+    str_detect(.variable, "coi") ~ "f",
+    TRUE ~ "mu"
+  ))
+#unique(lpars$.variable)
+
+condpars <- lpars %>% 
+  pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
+              names_from = type, values_from = .value) %>% 
+  mutate(control = Intercept, 
+         white = Intercept + white,
+         yellow = Intercept + yellow) %>% 
+  select(-Intercept) %>% 
+  pivot_longer(cols = c(control, white, yellow), 
+               names_to = "condition", values_to = "estimate") %>% 
+  mutate(estimate = plogis(estimate)) %>% 
+  mutate(parameter = factor(
+    x = parameter, 
+    levels = c("g", "f", "mu"), 
+    labels = par_labels))
+
+```
+
+```{r, out.width="100%", fig.width=6, fig.asp=0.55}
+condpars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  #stat_histintervalh(breaks = 40) +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+  xlab("Probability/Proportion") +
+  scale_x_continuous(labels = scales::percent_format(1))
+```
+
+
+```{r, out.width="100%", fig.width=6, fig.asp=0.55}
+comppars <- condpars %>% 
+  group_by(parameter) %>% 
+  compare_levels(estimate, by = condition) %>% 
+  mutate(condition = factor(
+    x = condition, 
+    levels = c("yellow - white", "white - control", "yellow - control")))
+comppars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  geom_vline(xintercept = 0, color = "grey") +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+    xlab("Difference from no message condition (on proportion/probability scale)") + 
+  ylab("No message vs.") +
+  scale_x_continuous(labels = scales::percent_format(1))
+```
+
+
+## Model With Interactions (Both Variables)
 
 ```{r, eval=TRUE, include=FALSE}
 zoib_model3 <- bf(
@@ -1000,6 +1250,259 @@ comppars %>%
   ylab("No message vs.") +
   scale_x_continuous(labels = scales::percent_format(1))
 ```
+
+## Model With Interactions (Only PGSI)
+
+```{r, eval=TRUE, include=FALSE}
+zoib_model3p <- bf(
+  new_prop ~ exp_cond * pgsi_c,
+  phi ~ 1,
+  zipp ~ exp_cond * pgsi_c,
+  coi ~ exp_cond * pgsi_c, 
+  family = zoib2
+)
+
+# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
+# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
+# str(tmp)
+# tmp$Y
+
+tmp_model_filename <- "model_fits/model_zoib3p.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib3p <- brm(formula = zoib_model3p, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib3p, file = tmp_model_filename, compress = "xz")
+}
+```
+
+
+```{r}
+summary(mzoib3p)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib3p, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the yellow message condition from the no messafe condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib3p, pars = "_condyellow$")
+```
+
+Likewise, we can plot the three parameters showing the difference distribution of the white message condition from the no messafe condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib3p, pars = "_condwhite$")
+```
+
+
+
+```{r, include=FALSE}
+get_variables(mzoib2)
+```
+
+```{r, fig.width=6, fig.height=6, out.width="100%"}
+pp_check(mzoib3p, type = "hist", binwidth = 0.025, nsamples = 11) +
+  coord_cartesian(ylim = c(0, 350))
+```
+
+
+
+```{r}
+
+lpars <- mzoib3p %>% 
+  gather_draws(`b_.*`, regex = TRUE) %>% 
+  filter(!(.variable %in% c("b_phi_Intercept"))) %>%
+  filter(!str_detect(.variable, "pgsi|motives")) %>% 
+  mutate(type = case_when(
+    str_detect(.variable, "Intercept") ~ "Intercept",
+    str_detect(.variable, "condyellow") ~ "yellow",
+    str_detect(.variable, "condwhite") ~ "white"
+  )) %>%  
+  mutate(parameter = case_when(
+    str_detect(.variable, "zipp") ~ "g",
+    str_detect(.variable, "coi") ~ "f",
+    TRUE ~ "mu"
+  ))
+#unique(lpars$.variable)
+
+condpars <- lpars %>% 
+  pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
+              names_from = type, values_from = .value) %>% 
+  mutate(control = Intercept, 
+         white = Intercept + white,
+         yellow = Intercept + yellow) %>% 
+  select(-Intercept) %>% 
+  pivot_longer(cols = c(control, white, yellow), 
+               names_to = "condition", values_to = "estimate") %>% 
+  mutate(estimate = plogis(estimate)) %>% 
+  mutate(parameter = factor(
+    x = parameter, 
+    levels = c("g", "f", "mu"), 
+    labels = par_labels))
+
+```
+
+```{r, out.width="100%", fig.width=6}
+condpars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  #stat_histintervalh(breaks = 40) +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+  xlab("Probability/Proportion") +
+  scale_x_continuous(labels = scales::percent_format(1))
+```
+
+
+```{r, out.width="100%", fig.width=6}
+comppars <- condpars %>% 
+  group_by(parameter) %>% 
+  compare_levels(estimate, by = condition) %>% 
+  mutate(condition = factor(
+    x = condition, 
+    levels = c("yellow - white", "white - control", "yellow - control")))
+comppars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  geom_vline(xintercept = 0, color = "grey") +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+  xlab("Difference from no message condition (on proportion/probability scale)") + 
+  ylab("No message vs.") +
+  scale_x_continuous(labels = scales::percent_format(1))
+```
+
+## Model With Interactions (Only Motives)
+
+```{r, eval=TRUE, include=FALSE}
+zoib_model3m <- bf(
+  new_prop ~ exp_cond * motives_c,
+  phi ~ 1,
+  zipp ~ exp_cond * motives_c,
+  coi ~ exp_cond * motives_c, 
+  family = zoib2
+)
+
+# make_stancode(zoib_model, data = part2, stanvars = stanvars, prior = np)
+# tmp <- make_standata(zoib_model, data = part2, stanvars = stanvars) 
+# str(tmp)
+# tmp$Y
+
+tmp_model_filename <- "model_fits/model_zoib3m.rda"
+if (file.exists(tmp_model_filename)) {
+  load(tmp_model_filename)
+} else {
+  mzoib3m <- brm(formula = zoib_model3m, data = part2, 
+                stanvars = stanvars, prior = np,
+                iter = 26000, warmup = 1000, chains = 4)
+  save(mzoib3m, file = tmp_model_filename, compress = "xz")
+}
+```
+
+
+```{r}
+summary(mzoib3m)
+```
+
+As a visual convergence check, we plot the density and trace plots for the four intercept parameters representing the no message condition or the overall mean (for `phi`).
+
+```{r, fig.asp=1.2}
+plot(mzoib3m, pars = "Intercept")
+```
+
+We can also plot the three parameters showing the difference distribution of the yellow message condition from the no message condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib3m, pars = "_condyellow$")
+```
+
+Likewise, we can plot the three parameters showing the difference distribution of the white message condition from the no messafe condition. These differences are given on the logit scale.
+
+```{r, fig.asp=1.0}
+plot(mzoib3m, pars = "_condwhite$")
+```
+
+
+
+```{r, include=FALSE}
+get_variables(mzoib2)
+```
+
+```{r, fig.width=6, fig.height=6, out.width="100%"}
+pp_check(mzoib3m, type = "hist", binwidth = 0.025, nsamples = 11) +
+  coord_cartesian(ylim = c(0, 350))
+```
+
+
+
+```{r}
+
+lpars <- mzoib3m %>% 
+  gather_draws(`b_.*`, regex = TRUE) %>% 
+  filter(!(.variable %in% c("b_phi_Intercept"))) %>%
+  filter(!str_detect(.variable, "pgsi|motives")) %>% 
+  mutate(type = case_when(
+    str_detect(.variable, "Intercept") ~ "Intercept",
+    str_detect(.variable, "condyellow") ~ "yellow",
+    str_detect(.variable, "condwhite") ~ "white"
+  )) %>%  
+  mutate(parameter = case_when(
+    str_detect(.variable, "zipp") ~ "g",
+    str_detect(.variable, "coi") ~ "f",
+    TRUE ~ "mu"
+  ))
+#unique(lpars$.variable)
+
+condpars <- lpars %>% 
+  pivot_wider(id_cols = c(.chain:.draw, parameter, parameter), 
+              names_from = type, values_from = .value) %>% 
+  mutate(control = Intercept, 
+         white = Intercept + white,
+         yellow = Intercept + yellow) %>% 
+  select(-Intercept) %>% 
+  pivot_longer(cols = c(control, white, yellow), 
+               names_to = "condition", values_to = "estimate") %>% 
+  mutate(estimate = plogis(estimate)) %>% 
+  mutate(parameter = factor(
+    x = parameter, 
+    levels = c("g", "f", "mu"), 
+    labels = par_labels))
+
+```
+
+```{r, out.width="100%", fig.width=6}
+condpars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  #stat_histintervalh(breaks = 40) +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+  xlab("Probability/Proportion") +
+  scale_x_continuous(labels = scales::percent_format(1))
+```
+
+
+```{r, out.width="100%", fig.width=6}
+comppars <- condpars %>% 
+  group_by(parameter) %>% 
+  compare_levels(estimate, by = condition) %>% 
+  mutate(condition = factor(
+    x = condition, 
+    levels = c("yellow - white", "white - control", "yellow - control")))
+comppars %>% 
+  ggplot(aes(x = estimate, y = condition)) +
+  geom_vline(xintercept = 0, color = "grey") +
+  stat_halfeye() +
+  facet_wrap("parameter", scales = "free_x") +
+  xlab("Difference from no message condition (on proportion/probability scale)") + 
+  ylab("No message vs.") +
+  scale_x_continuous(labels = scales::percent_format(1))
+```
+
 
 # Riskiness of Bets
 
