@@ -275,7 +275,8 @@ dl %>%
     full = get_est(emmeans(mfull, "label", type = "response")), 
     minimal = get_est(emmeans(mmin, "label", type = "response")),
     me_only = get_est(emmeans(m_cond, "label", type = "response")), 
-  )
+  ) %>% 
+  as.data.frame()
 ```
 
 For the effect of label, the predicted response proportions are consistently smaller than the observed response proportions. In addition, there are rather small differences between the different models. This suggests that the main difference between model and data is due to the random-effects. Nevertheless, observed and predicted response proportions agree qualitatively. When the warning label is present, the proportion of betting seems to be slightly larger (note that this difference is NOT significant). 
@@ -292,8 +293,8 @@ dl %>%
     full = get_est(emmeans(mfull, "complexity", type = "response")), 
     minimal = get_est(emmeans(mmin, "complexity", type = "response")),
     me_only = get_est(emmeans(mcomp_min, "complexity", type = "response")), 
-  )
-
+  ) %>% 
+  as.data.frame()
 ```
 
 We see the same pattern as above. Qualitative agreement is present, but quantitative agreement is not perfect, the observed values are somewhat larger. Specifically, for the medium complexity label.
@@ -313,6 +314,7 @@ The figure of the results is based on the best (i.e., minimal) model that includ
 ```{r, fig.width=3.5, fig.height=3.5}
 afex_plot(mmin, "complexity", "label", dodge = 0.3,
           data_alpha = 0.2, mapping = c("linetype", "fill", "color", "shape"),
+          factor_levels = list(label = c("Message", "Control")),
           data_arg = list(
             position = 
               ggplot2::position_jitterdodge(
@@ -336,13 +338,53 @@ afex_plot(mmin, "label",
           data_arg = list(color = "darkgrey"),
           point_arg = list(size = 3.5), 
           error_arg = list(size = 2, width = 0), 
-          factor_levels = list(label = c("Warning", "Control"))) +
+          factor_levels = list(label = c("Message", "Control"))) +
   ylab("Probability to gamble") + xlab("Label") +
-  guides(shape = FALSE) + 
+  guides(shape = "none") + 
   scale_size_area() +
   geom_line(aes(group = 1), size = 2)
  ggsave("plot1.png", device = "png", 
        width = 9, height = 9, units = "cm", 
+       dpi = 600)
+
+```
+
+```{r, include=FALSE, eval=FALSE}
+theme_set(theme_bw(base_size = 14) + 
+            theme(legend.position="bottom", panel.grid.major.x = element_blank()))
+breaks <- c(0, 25, 50, 75, 100)
+
+exp_p1 <- afex_plot(mmin, "complexity", "label", dodge = 0.4,
+          mapping = c("fill", "color", "shape"),
+          factor_levels = list(label = c("Message", "Control")),
+          data_geom = geom_count) +
+  labs(y = "Probability to gamble", x = "Bet specificity") + 
+  scale_size(breaks = breaks, guide = guide_legend(NULL)) + 
+  guides(colour = guide_legend("Condition"),
+         fill = guide_legend("Condition"),
+         linetype = guide_legend("Condition"), 
+         shape = guide_legend("Condition"), 
+         size = "none")  +
+  ggsci::scale_color_lancet()
+
+exp_p2 <- afex_plot(mmin, "label", 
+          mapping = c("shape", "color"),
+          data_geom = geom_count, 
+          data_arg = list(color = "darkgrey"),
+          point_arg = list(size = 3.5), 
+          error_arg = list(size = 2, width = 0), 
+          factor_levels = list(label = c("Message", "Control"))) +
+  ylab("Probability to gamble") + xlab("Condition") +
+  guides(shape = "none", color = "none") + 
+  scale_size(breaks = breaks, limits = c(min(breaks), max(breaks))) +
+  #geom_line(aes(group = 1), size = 1) +
+  ggsci::scale_color_lancet()
+cowplot::plot_grid(exp_p1, exp_p2, labels = "auto")
+ggsave("supp_e1.png", device = "png", 
+       width = 20, height = 9, units = "cm", 
+       dpi = 600)
+ggsave("supp_e1.pdf", device = "pdf", 
+       width = 20, height = 9, units = "cm", 
        dpi = 600)
 
 ```

@@ -1,4 +1,4 @@
-get_est <- function(emmeans, digits = 2) {
+get_est <- function(emmeans, digits = 3) {
   tmp <- as_tibble(emmeans)
   paste0(
     formatC(tmp[["prob"]], digits = digits, format = "f"), 
