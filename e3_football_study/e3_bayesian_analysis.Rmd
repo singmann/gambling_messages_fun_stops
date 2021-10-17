@@ -561,6 +561,64 @@ comppars %>%
 
 We see that even with an extremely small prior with SD = 0.05 we still see evidence for no difference (i.e., black density estimate above the prior at 0) for all but "gamble evewrything" for which we see some evidence for a backfire effect. Note that a prior with SD of .05 means that we expect with 95% probability that the largest effect we observe is `r scales::percent(plogis(0.05 *2) - 0.5, accuracy = 0.01)` on the response scale.
 
+## All Difference Distributions with Possible Priors
+
+The following plot shows the estimated differences of the message condition from the no message control condition with overlaid density estimate (in black) and some possible prior distributions in colour (note again that the model did not actually include any priors). These differences are shown on the linear scale before applying the logistic link function. These priors are normal priors (who have a higher peak at 0 compared to Cauchy and t) with different SDs.
+
+```{r}
+prior_pars <- lpars %>% 
+  filter(type != "Intercept") %>% 
+  mutate(parameter = factor(
+    x = parameter, 
+    levels = c("g", "f", "mu"), 
+    labels = par_labels)) 
+# prior_pars %>% 
+#   unique(.$.variable)
+```
+
+```{r, out.width="100%", fig.width=4, warning=FALSE}
+prior_plot <- prior_pars %>% 
+  ggplot() +
+  geom_histogram(aes(.value, after_stat(density)), binwidth = 0.001) +
+  geom_density(aes(.value)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = c(0.25)), 
+                mapping =  aes(color = "SD = 0.25")) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = c(0.5)), 
+                mapping =  aes(color = "SD = 0.5")) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = c(1)), 
+                mapping =  aes(color = "SD = 1.00")) +
+  geom_vline(xintercept = 0, color = "grey") +
+  facet_grid(cols = vars(parameter), rows = vars("No message vs. yellow"),scales = "free_x") + 
+  guides(colour = guide_legend("prior width")) +
+  labs(x = "estimate on linear scale") +
+  ggsci::scale_color_lancet()
+prior_plot
+```
+
+```{r, eval=FALSE}
+if (dir.exists("../figures/")) {
+  ggsave("../figures/e3_prior_plot.png", device = "png", 
+         width = 19, height = 5, units = "cm", 
+         dpi = 600)
+  ggsave("../figures/e3_prior_plot.pdf", device = "pdf", 
+         width = 19, height = 5, units = "cm", 
+         dpi = 600)
+}
+```
+
+
+```{r, eval=FALSE}
+
+plogis(qnorm(0.975) * 1) - 0.5
+
+```
+
+
+In this figure we considered three prior width. For a prior width of SD = 0.25 we expect with 95% that the largest possible effect we observe is `r scales::percent(plogis(qnorm(0.975) * 0.25) - 0.5, accuracy = 0.01)` on the response scale. For a prior width of SD = 0.5 we expect with 95% that the largest possible effect we observe is `r scales::percent(plogis(qnorm(0.975) * 0.5) - 0.5, accuracy = 0.01)` on the response scale. For a prior width of SD = 0.5 we expect with 95% that the largest possible effect we observe is `r scales::percent(plogis(qnorm(0.975) * 1) - 0.5, accuracy = 0.01)` on the response scale.
+
+What the image shows is that for "gamble at all" and "proportion bet" there appears to be evidence for the null. We see that for all priors the posterior density at 0 (i.e., y-axis position at which the black line crosses the 0 line) is larger then the prior density at 0 (i.e., the density of the prior curve at 0). However, for the narrow prior the evidence appears to be only anecdotal (i.e., ratio of posterior density to prior density at 0 is smaller than 3). 
+
+For gamble everything, we only see anecdotal evidence. The narrow prior provides anecdotal evidence for a backfire effect. The other two priors appear to provide anecdotal evidence for the null.  
 
 
 # Model With Covariates
