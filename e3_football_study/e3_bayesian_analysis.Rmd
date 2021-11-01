@@ -538,28 +538,6 @@ ggsave(plot = cowplot::plot_grid(pr1use, pr2use, ncol = 1,
        width = 9.5, height = 8.5)
 
 ```
-## Difference Distributions with Possible Priors
-
-The following plot shows all the difference distributions with overlayed density estimate (in black) and some possible prior distributions in colour (note again that the model did not actually include any priors). These priors are normal priors (who have a higher peak at 0 compared to Cauchy and t) with two different SDs.
-
-```{r, out.width="100%", fig.width=8, fig.asp=0.3, warning=FALSE}
-comppars %>% 
-  ggplot() +
-  geom_histogram(aes(estimate, after_stat(density)), binwidth = 0.001) +
-  geom_density(aes(estimate)) +
-  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = c(0.05)), 
-                mapping =  aes(color = "SD = 0.05")) +
-  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = c(0.1)), 
-                mapping =  aes(color = "SD = 0.1")) +
-  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = c(0.25)), 
-                mapping =  aes(color = "SD = 0.25")) +
-  geom_vline(xintercept = 0, color = "grey") +
-  facet_grid(rows = vars(condition), 
-             cols = vars(parameter), scales = "free_x") + 
-  guides(colour = guide_legend("prior width"))
-```
-
-We see that even with an extremely small prior with SD = 0.05 we still see evidence for no difference (i.e., black density estimate above the prior at 0) for all but "gamble evewrything" for which we see some evidence for a backfire effect. Note that a prior with SD of .05 means that we expect with 95% probability that the largest effect we observe is `r scales::percent(plogis(0.05 *2) - 0.5, accuracy = 0.01)` on the response scale.
 
 ## All Difference Distributions with Possible Priors
 
