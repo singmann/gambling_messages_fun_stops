@@ -126,6 +126,15 @@ part2 %>%
   tally()
 ```
 
+# Descriptives
+
+```{r}
+part_excl <- part %>% 
+  filter(!is.na(exp_cond)) %>% 
+  filter(!(ppt_id %in% exclude_ids))
+psych::describe(part_excl[,c("bonus","age")])
+```
+
 
 # Payed bonus
 
@@ -162,8 +171,13 @@ part2 %>%
 ```{r}
 part2 %>% 
   summarise(gamble_at_all = 1 - mean(new_prop  == 0), 
-            gamble_everything = mean(new_prop[new_prop != 0] == 1), 
+            gamble_everything = mean(new_prop[new_prop != 0] == 1),
             proportion_bet_rest = mean(new_prop[!(new_prop %in% c(0, 1))]))
+
+part2 %>% 
+  summarise(no_gamble = sum(new_prop  == 0),
+            gamble_at_all = sum(new_prop  != 0), 
+            gamble_everything = sum(new_prop[new_prop != 0] == 1))
 
 
 ```

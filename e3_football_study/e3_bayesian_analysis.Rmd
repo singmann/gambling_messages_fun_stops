@@ -182,6 +182,14 @@ part2 %>%
   tally()
 ```
 
+# Descriptives
+
+```{r}
+part_excl <- captchas_all %>% 
+  filter(pptid %in% ids_use$pptid)
+psych::describe(part_excl$age)
+```
+
 
 # Distribution of DV
 
@@ -200,6 +208,19 @@ Binomial confidence or credibility intervals for the probability to gamble at al
 binom.confint(nrow(part2) - sum(part2$new_prop == 0), nrow(part2))
 ```
 
+```{r}
+part2 %>% 
+  summarise(gamble_at_all = 1 - mean(new_prop  == 0), 
+            gamble_everything = mean(new_prop[new_prop != 0] == 1),
+            proportion_bet_rest = mean(new_prop[!(new_prop %in% c(0, 1))]))
+
+part2 %>% 
+  summarise(no_gamble = sum(new_prop  == 0),
+            gamble_at_all = sum(new_prop  != 0), 
+            gamble_everything = sum(new_prop[new_prop != 0] == 1))
+
+
+```
 
 
 # Zero-One Inflated Beta Regression
