@@ -129,6 +129,20 @@ add_vars %>%
 
 # Descriptives
 
+Overview of participants that decided to reject all bets:
+
+```{r}
+dl %>% 
+  group_by(newid, label) %>% 
+  summarise(average = mean(response)) %>% 
+  ungroup()  %>% 
+  summarise(
+    n_no_gamble = sum(average == 0), 
+    prop_no_gamble = mean(average == 0)
+  )
+```
+
+
 
 ```{r}
 dl %>% 
