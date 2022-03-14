@@ -184,9 +184,12 @@ part2 %>%
 
 # Descriptives
 
+Age distribution (first number is N of NAs):
+
 ```{r}
 part_excl <- captchas_all %>% 
   filter(pptid %in% ids_use$pptid)
+sum(is.na(part_excl$age))
 psych::describe(part_excl$age)
 ```
 
