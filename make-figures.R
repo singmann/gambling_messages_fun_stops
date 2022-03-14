@@ -174,7 +174,8 @@ pr2use <- pr2  + theme_bw(base_size = 17) + theme(
 plot_res_e2 <- cowplot::plot_grid(pr1use, pr2use, ncol = 1, 
                    rel_heights = c(4.5, 4))
 
-
+ggsave(plot = plot_res_e2, filename = "figures/res-e2.pdf", device = "pdf",
+       width = 10, height = 6.5, units = "in")
 
 ### exp 3
 
@@ -293,6 +294,8 @@ pr2use_e3 <- pr2_e3  + theme_bw(base_size = 17) + theme(
 
 plot_res_e3 <- cowplot::plot_grid(pr1use_e3, pr2use_e3, ncol = 1, 
                    rel_heights = c(6.5, 5), align = "hv")
+ggsave(plot = plot_res_e3, filename = "figures/res-e3.pdf", device = "pdf",
+       width = 10, height = 5, units = "in")
 
 plot_res_out <- plot_grid(plot_res_e2, plot_res_e3, ncol = 1,
                           labels = c("Exp. 2", "Exp. 3"), 
