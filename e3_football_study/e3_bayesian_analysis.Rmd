@@ -193,6 +193,11 @@ sum(is.na(part_excl$age))
 psych::describe(part_excl$age)
 ```
 
+```{r}
+table(part_excl$Sex, useNA = "always")
+prop.table(table(part_excl$Sex, useNA = "always"))
+```
+
 
 # Distribution of DV
 
